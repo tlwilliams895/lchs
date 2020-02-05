@@ -10,12 +10,12 @@ sys.path.append(os.path.abspath('../exts'))
 # Customize for the specific site. Any options in the html_theme_options
 # dictionary below may be overriden here
 site_theme_options = {
-    'navbar_title': 'Curriculum Book',
+    'navbar_title': 'LaunchCode\'s LCHS',
     'navbar_site_name': "",
     'bootswatch_theme': 'launchcode',
 }
 
-project = 'LaunchCode Curriculum Book'
+project = 'LaunchCode\'s LCHS'
 
 # -- Project information -----------------------------------------------------
 
@@ -175,8 +175,7 @@ htmlhelp_basename = 'CurriculumModuledoc'
 # -- Options for todo extension ----------------------------------------------
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
-
+todo_include_todos = True
 
 def setup(app):
     app.add_stylesheet('fa/css/all.css')
