@@ -5,4 +5,3 @@ Introduction to Python Programming
    :maxdepth: 3
 
    exercises
-   studio
