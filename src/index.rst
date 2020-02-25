@@ -7,6 +7,7 @@ Chapters
    :name: chapterstoc
 
    chapters/introduction/index
+   chapters/booleans-and-conditionals/index
 
 .. toctree::
 
