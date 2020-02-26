@@ -6,6 +6,7 @@ Booleans and Conditionals
 
    booleans
    logical-operators
+   truth-tables
    conditionals
    nested-conditionals
    chained-conditionals
