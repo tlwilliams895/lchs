@@ -5,13 +5,11 @@ Logical Operators
 
 Recall that an *operator* carries out an action on one or more operands
 (values). In the Data and Variables chapter we learned about the different
-math operators (``+``, ``-``, ``*``, ``/``, ``//``. ``**``, and ``%``), which
-we use to perform calculations.
+math operators (``+``, ``-``, ``*``, ``/``, ``//``. ``**``, and ``%``).
 
    TODO: Add chapter link!
 
-We also saw how the operators ``+`` and ``*`` behave when applied to strings,
-and we practiced with compound assignment operators, such as ``+=`` and ``-=``.
+We also saw how the operators ``+`` and ``*`` behave when applied to strings.
 
 Boolean Operators
 -----------------
@@ -21,17 +19,21 @@ Boolean Operators
    single: operator; boolean
    single: operator; logical
 
-In the previous section, we learned about comparison operators like ``==`` and
-``<``. These operators are part of a larger class known as
-**boolean operators**, so-called because they each return a value of either
-``True`` or ``False``.
+Comparison operators like ``==`` and ``<`` are part of a larger class known as
+**boolean operators**. When used, they each return a value of either ``True``
+or ``False``.
 
-Three additional boolean operators allow us to make more complex comparisons.
-These are called **logical operators**, and there are only three---``and``,
-``or``, and ``not``.
+Comparison operators perform a single check of two values. For example, the
+statement ``if len(name) > 8`` compares the length of the string stored in
+``name`` to the value 8.
 
-``n - 2 == 0 or n - 3 == 0`` is true if EITHER of the conditions is true. In
-this case, only one part has to be true for the overall result to be true.
+What if we wanted to set another limit to the length of ``name``? We could use
+``if len(name) < 20`` to accomplish this, but we would lose the first
+comparison. Fortunately, we can fix this.
+
+Three additional boolean operators allow us to make more than one comparison
+in a single ``if`` statement. These are called **logical operators**, and there
+are only three---``and``, ``or``, and ``not``.
 
 Logical ``and``
 ^^^^^^^^^^^^^^^
@@ -41,27 +43,28 @@ Logical ``and``
 .. index::
    single: boolean; expression, compound
 
-Here is one boolean expression: ``num > 0``. It returns ``True`` when ``num``
-has any value larger than 0.
+Let's take the two boolean expressions from above:
 
-Another boolean expression is ``num < 10``, which returns ``True`` when ``num``
-has any value smaller than 10.
+#. ``len(name) > 8`` returns ``True`` when ``name`` contains more than 8
+    characters.
+#. ``len(name) < 20`` returns ``True`` when ``name`` contains less than 20
+    characters.
 
 A **compound boolean expression** is a boolean expression built out of smaller
 ones. Python allows us to combine expressions by using the ``and`` operator.
 
 .. sourcecode:: Python
 
-   num > 0 and num < 10
+   len(name) > 8 and len(name) < 20
 
-Here, ``num > 0 and num < 10`` is true only if ``num`` is greater than 0 AND,
-at the same time, ``num`` is less than 10. The compound expression returns only
-ONE boolean value, which depends on the results from BOTH of the smaller
-comparisons.
+Here, ``len(name) > 8 and len(name) < 20`` is true only if ``len(name)`` is
+greater than 8 AND, at the same time, ``len(name)`` is less than 20. The
+compound expression returns only ONE boolean value, which depends on the
+results from BOTH of the smaller comparisons.
 
-Stated again: Logical ``and`` combines two operands, and the resulting
-expression is ``True`` only if *both* operands return ``True``. If either
-operand is ``False``, the overall expression is ``False``.
+Stated again: Logical ``and`` combines two conditions, and the resulting
+expression is ``True`` only if *both* conditions return ``True``. If either
+condition is ``False``, the overall expression is ``False``.
 
 .. admonition:: Example
 
@@ -110,39 +113,45 @@ Logical ``or``
 .. index:: ! or
 
 Python's logical ``or`` also combines two boolean expressions. In this case,
-however, the resulting expression is ``True`` if *either* of the operands are
-``True`` individually. If both operands are ``False``, the overall expression
+however, the resulting expression is ``True`` if *either* of the conditions are
+``True`` individually. If both conditions are ``False``, the overall expression
 is ``False``.
+
+The compound expression ``num - 2 == 0 or num - 3 == 0`` is true if EITHER of
+the conditions is true. In this case, only one part has to be true for the
+overall result to be true.
 
 .. admonition:: Example
 
-   Logical ``or`` also resembles our English experience. The sentence "Pigs can
+   Logical ``or`` also resembles its English use. The sentence "Pigs can
    fly, or dogs can run," is true as a whole. Even though pigs cannot fly, dogs
    CAN run. Only one of the two statements has to be true in order for the whole
    sentence to be true.
 
-   When both of the statements joined by "or" are false, the statement as a
+   When both of the statements joined by ``or`` are false, the statement as a
    whole is false. "Pigs can fly or the Earth is flat," is a false statement.
 
 Let's look at some more code examples.
 
-.. sourcecode:: Python
-   :linenos:
+.. admonition:: Example
 
-   num = 5
-   print(num > 0 or num < 10)
+   .. sourcecode:: Python
+      :linenos:
 
-   print(7 > num or num == 3)
+      num = 5
+      print(num > 0 or num < 10)
 
-   print(num*5 > 100 or 'dog' == 'cat')
+      print(7 > num or num == 3)
 
-**Console Output**
+      print(num*5 > 100 or 'dog' == 'cat')
 
-::
+   **Console Output**
 
-   True
-   True
-   False
+   ::
+
+      True
+      True
+      False
 
 Lines 2 and 4 both return ``True`` because at least one of the comparisons
 joined by ``or`` is ``True``. Line 6 returns ``False`` because both of the
@@ -154,8 +163,8 @@ Logical ``not``
 .. index:: ! not
 
 The logical ``not`` operator takes a single operand and flips its boolean
-value. If a comparison evaluates to ``False``, then applying ``not`` changes
-the result to ``True`` (and vice versa).
+value. If a comparison returns ``False``, then applying ``not`` changes the
+result to ``True`` (and vice versa).
 
 .. admonition:: Examples
 
@@ -214,12 +223,12 @@ many comparisons as we want!
 
    #. If we try to describe this out loud, we might say, “num is equal to 5 or 6
       or 7”.
-   #. If we translate this into Python as ``num == 5 or 6 or 7``,
-      we get an error when we run the code.
+   #. If we translate this into Python as ``num == 5 or 6 or 7``, we get an
+      error when we run the code.
 
    To prevent this error, we must combine three separate equality comparisons,
-   ``num == 5 or num == 6 or num == 7``. This may seem like a lot of typing but
-   it is necessary.
+   ``num == 5 or num == 6 or num == 7``. This may seem like a lot of extra
+   typing, but it is necessary.
 
 Check Your Understanding
 ------------------------
@@ -239,4 +248,6 @@ Check Your Understanding
 
 .. Answer = a
 
-   TODO: Add more CC questions.
+.. todo: Add more CC questions for logical operators.
+
+**TODO: Add more CC questions.**

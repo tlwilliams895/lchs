@@ -3,36 +3,23 @@
 Boolean Values and Boolean Expressions
 ======================================
 
-.. index:: data type
-
-One of the key features of any programming language is the ability to decide
-whether to run a segment of code. This means you can execute a set of
-statements *only if* a given condition is met.
-
-.. admonition:: Example
-
-   Consider an application that reminds you when you have an overdue book. The
-   app sends you a message *only if* the due date has passed and you have not
-   returned the book.
-
-The *condition* for this example depends on the status of the book. If the
-condition is true (overdue), a message gets sent.
-
-In order for us to code this type of decision making, we need to understand how
-programming languages represent true and false.
+In order for us to build code that can make decisions, we need to understand
+how programming languages represent *true* and *false*.
 
 Boolean Values
 --------------
 
-.. index:: ! True, ! False, ! boolean ! bool
+.. index:: ! True, ! False, ! boolean ! bool, data type
 
 .. index::
    single: boolean; value
 
-In the previous chapter, you learned about two data types for numbers---``int``
-and ``float``. You also considered the ``string`` data type, which deals with
-collections of characters. To this, we will add the data type ``bool``, which
-stands for **boolean value**.
+In the previous chapter, you learned about three data types---``int``,
+``float``, and ``string``. The first two deal with numbers, while ``string``
+deals with collections of characters.
+
+To this, we will add the data type ``bool``, which stands for
+**boolean value**.
 
 There are only two boolean values---``True`` and ``False``.
 
@@ -58,8 +45,8 @@ There are only two boolean values---``True`` and ``False``.
       <class 'bool'>
       <class 'bool'>
 
-The values ``True`` and ``False`` are *not* strings. If you use quotes to
-surround booleans (``"True"`` and ``"False"``), those values become strings.
+The values ``True`` and ``False`` are NOT strings. Putting quotes around
+booleans (``"True"`` and ``"False"``) makes them strings.
 
 .. admonition:: Example
 
@@ -101,12 +88,19 @@ not solve calculations.
       1
       0
 
-What times 5 gives 5? What times 2 gives 0? When we use a mathematical operator
-(``+``, ``-``, ``*``, etc.) with boolean values, Python automatically converts
-``True`` and ``False`` to the integers ``1`` and ``0``, respectively.
+What times 5 gives 5? What times 2 gives 0?
+
+When we use a mathematical operator (``+``, ``-``, ``*``, etc.) with boolean
+values, Python automatically converts ``True`` and ``False`` to the integers
+``1`` and ``0``, respectively.
+
+.. index:: ! condition
 
 Most of the time, calculations with boolean values are not very useful.
-Instead, we use booleans to evaluate *conditions*.
+Instead, we use booleans to evaluate a *condition*.
+
+A **condition** is a comparison that can be called correct (``True``) or
+incorrect (``False``).
 
 Boolean Expressions
 -------------------
@@ -119,9 +113,17 @@ Boolean Expressions
 
 .. index:: ! ==
 
-A **boolean expression** is one that evaluates to either ``True`` or ``False``.
-For example, the **equality operator**, ``==``, compares two values and returns
-``True`` or ``False`` depending on whether the values are identical.
+A **boolean expression** makes a comparison and returns either ``True`` or
+``False``.
+
+To make a decision within your code, a boolean expression is used as the
+*condition*.
+
+Testing for Equality
+^^^^^^^^^^^^^^^^^^^^
+
+The **equality operator**, ``==``, compares two values and returns ``True`` or
+``False`` depending on whether the values are identical.
 
 .. admonition:: Example
 
@@ -145,10 +147,10 @@ For example, the **equality operator**, ``==``, compares two values and returns
 
 In line 4, the two values are equal, so the expression evaluates to ``True``.
 In the line 5, the string ``abc`` is not equal to ``def``, so we get ``False``.
-Line 7 subtracts 3 from the value stored in ``other_num`` and compares the
-result with ``num``.
+Line 7 compares the result of ``other_num - 3`` with the value stored in
+``num``.
 
-We can also use ``==`` to see that ``True`` and ``"True"`` are NOT equal.
+We can also use ``==`` to prove that ``True`` and ``"True"`` are NOT equal.
 
 .. admonition:: Example
 
@@ -162,14 +164,31 @@ We can also use ``==`` to see that ``True`` and ``"True"`` are NOT equal.
 
       False
 
-.. admonition:: Fun Fact
+.. admonition:: Tip
 
-   Boolean values are named after the British mathematician George Boole, who
-   created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
-   which is the basis of all modern computer arithmetic.
+   A common error is using a single equals sign (``=``) instead of a double
+   equals (``==``) when comparing two values. Remember that ``=`` is an
+   *assignment* operator and ``==`` is a *comparison* operator.
 
-Comparison Operators
-^^^^^^^^^^^^^^^^^^^^
+   #. To set the value of a variable, use ``=`` (e.g. ``name = 'Mae'``).
+   #. To compare values, use ``==`` (e.g. ``name == other_name``).
+
+An equality test is *symmetric*, meaning that we can swap the places of the
+operands and get the same the result.  If ``num == 7`` is ``True``, then
+``7 == num`` is also ``True``. However, an assignment statement is NOT
+symmetric: ``num = 7`` works while ``7 = num`` does not.
+
+Try It!
+^^^^^^^
+
+Use the simple code editor below to explore flipping an assignment statement:
+
+.. raw:: HTML
+
+   <iframe src="https://trinket.io/embed/python3/151042b620" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+
+Other Comparisons
+-----------------
 
 .. index::
    single: operator; comparison
@@ -192,7 +211,7 @@ The ``==`` operator is one of six common **comparison operators**.
      - Examples Returning ``False``
    * - Equal (``==``)
      - Returns ``True`` if two compared values (operands) are equal, and ``False`` otherwise.
-     - ``7 == 7``
+     - ``7 == 3 + 4``
 
        ``'ab' == 'a'+'b'``
 
@@ -251,29 +270,12 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'b' <= 'a'``
 
-.. admonition:: Tip
 
-   A common error is using a single equals sign (``=``) instead of a double
-   equals (``==``) when comparing two values. Remember that ``=`` is an
-   *assignment* operator and ``==`` is a *comparison* operator.
+.. admonition:: Fun Fact
 
-   #. To set or change the value of a variable, use ``=`` (e.g. ``name = 'Mae'``).
-   #. To compare values, use ``==`` (e.g. ``name == other_name``).
-
-An equality test is *symmetric*, meaning that we can swap the places of the
-operands and get the same the result.  For a variable ``num``, if ``num == 7``
-is ``True``, then ``7 == num`` is also ``True``. However, an assignment
-statement is NOT symmetric: ``num = 7`` works while ``7 = num`` does not.
-
-Try It!
-^^^^^^^
-
-Use the simple code editor below to explore flipping an assignment statement:
-
-.. raw:: HTML
-
-   <iframe src="https://trinket.io/embed/python3/98f98f32c9" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0"></iframe>
-
+   Boolean values are named after the British mathematician George Boole, who
+   created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
+   which is the basis of all modern computer arithmetic.
 
 Check Your Understanding
 ------------------------
