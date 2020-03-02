@@ -270,7 +270,6 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'b' <= 'a'``
 
-
 .. admonition:: Fun Fact
 
    Boolean values are named after the British mathematician George Boole, who
@@ -282,7 +281,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following are Boolean expressions? Select all that apply.
+   Which of the following are Boolean expressions? Select ALL that apply.
 
    #. ``3 <= 4``
    #. ``3 + 4``
@@ -291,3 +290,24 @@ Check Your Understanding
    #. ``text = 'Rutabagas!'``
 
 .. Answers = a and c.
+
+.. admonition:: Question
+
+   .. raw:: html
+
+      <script type="text/JavaScript">
+         function highlight(id, answer) {
+            if (answer) {
+               document.getElementById(id).style.background = 'lightgreen';
+            }
+         }
+      </script>
+
+      <p>Which of the following are Boolean expressions? Click ALL that apply.</p>
+      <ol type="a">
+         <li><span id = "3 <= 4" onclick="highlight('3 <= 4', true)">3 <= 4</span></li>
+         <li><span id = "3 + 4" onclick="highlight('3 + 4', false)">3 + 4</span></li>
+         <li><span id = "DogCat" onclick="highlight('DogCat', true)">"DogCat" == "dog" + "cat"</span></li>
+         <li><span id = "False" onclick="highlight('Rutabagas', false)">"False"</span></li>
+         <li><span id = "Rutabagas" onclick="highlight('Rutabagas', false)">text = 'Rutabagas!'</span></li>
+      </ol>

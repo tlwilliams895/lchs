@@ -1,6 +1,19 @@
 Truth Tables
 ============
 
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function reveal(id) {
+         state = document.getElementById(id).style.opacity
+         if (state > 0) {
+            document.getElementById(id).style.opacity = 0;
+         } else {
+            document.getElementById(id).style.opacity = 1;
+         }
+      }
+   </script>
+
 .. index:: ! truth table
 
 **Truth tables** help us understand how logical operators work by showing all
@@ -30,78 +43,16 @@ assumes we have two boolean expressions, ``A`` and ``B``.
         - ``False``
 
 Consider the first row of the table. This row states that if A is true
-and B is true, then A and B is true. The two middle rows show that if
-either A or B is false, then A and B is false. Finally, if both A and B are
-false, then A and B is false.
+and B is true, then ``A and B`` is true. The two middle rows show that if
+either A or B is false, then ``A and B`` is false. Finally, if both A and B are
+false, then ``A and B`` is false.
 
-Order of Operations
--------------------
+.. admonition:: Try It!
 
-.. index:: order of operations
+   Now take a look at the truth table for ``or``.
 
-We now have a number of operators in our toolkit. It is important to understand
-how these operators relate to each other. Which ones get done first?
-
-Python always performs operations in a specific order:
-
-#. Complete all math calculations
-#. Evaluate all comparisons as ``True`` or ``False``
-#. Apply all ``not`` operators
-#. Evaluate ``and`` and ``or`` operations
-
-This means that the expression ``x * 5 >= 10 && y - 6 <= 20`` will be evaluated
-so as to first perform the arithmetic and then check the relationships. The
-``&&`` evaluation will be done last. The order of evaluation is the same as if
-we were to use parentheses to group, as follows:
-
-.. sourcecode:: js
-
-   ((x * 5) >= 10) && ((y - 6) <= 20)
-
-While parentheses are not always necessary due to default operator precedence,
-they make expressions much more readable. As a best practice, we encourage you
-to use them, especially for more complicated expressions.
-
-The following table lists operators in order of precedence, from highest (applied first) to lowest (applied last). A complete table for the entire language can be found in the `MDN Python Documentation <https://developer.mozilla.org/en-US/docs/Web/Python/Reference/Operators/Operator_Precedence#Table>`_.
-
-.. list-table:: Operator Precedence
-   :widths: auto
-   :header-rows: 1
-
-   * - Precedence
-     - Category
-     - Operators
-   * - (highest)
-     - Logical NOT
-     - ``!``
-   * -
-     - Exponentiation
-     - ``**``
-   * -
-     - Multiplication and division
-     - ``*``, ``/``, ``%``
-   * -
-     - Addition and subtraction
-     - ``+``, ``-``
-   * -
-     - Comparison
-     - ``<=``, ``>=``, ``>``, ``<``
-   * -
-     - Equality
-     - ``===``, ``!==``, ``==``, ``!=``
-   * -
-     - Logical AND
-     - ``&&``
-   * - (lowest)
-     - Logical OR
-     - ``||``
-
-Check Your Understanding
-------------------------
-
-.. admonition:: Question
-
-   Complete the table below.
+   #. PREDICT whether ``A or B`` should be ``True`` or ``False`` for each row.
+   #. Click in the empty spaces to check your answers.
 
    .. list-table:: Truth Table for ``or``
       :widths: auto
@@ -112,13 +63,111 @@ Check Your Understanding
         - A ``or`` B
       * - ``True``
         - ``True``
-        -
+        - .. raw:: html
+
+             <b id = "optionA" onclick="reveal('optionA')" style="opacity:0">True</b>
+
       * - ``True``
         - ``False``
-        -
+        - .. raw:: html
+
+             <b id = "optionB" onclick="reveal('optionB')" style="opacity:0">True</b>
+
       * - ``False``
         - ``True``
-        -
+        - .. raw:: html
+
+             <b id = "optionC" onclick="reveal('optionC')" style="opacity:0">True</b>
+
       * - ``False``
         - ``False``
-        -
+        - .. raw:: html
+
+             <b id = "optionD" onclick="reveal('optionD')" style="opacity:0">False</b>
+
+Order of Operations
+-------------------
+
+.. index:: order of operations
+
+We now have a lot of operators in our toolkit, so it is important to understand
+how they relate to each other. Which operators get done first?
+
+Python always performs operations in a specific order:
+
+#. Math calculations get done first.
+#. Next, evaluate all comparisons as ``True`` or ``False``.
+#. Next, apply all ``not`` operators.
+#. Finally, evaluate ``and`` and ``or`` operations.
+
+.. admonition:: Example
+
+   The expression ``x * 5 >= 10 and y - 6 <= 20`` will be completed in this order:
+
+   #. x * 5 is calculated, then y - 6.
+   #. The ``>=`` comparison is evaluated as ``True`` or ``False``.
+   #. The ``<=`` comparison is evaluated as ``True`` or ``False``.
+   #. The ``and`` operator is done last.
+
+   If we assume x = 2 and y = 46, then:
+
+   .. sourcecode:: Python
+      :lineno-start: 0
+
+      x * 5 >= 10 and y - 6 <= 20
+      10 >= 10 and 40 <= 20
+      True and 40 <= 20
+      True and False
+      False
+
+Table of Operator Order
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following table lists operators in order of importance, from highest
+(applied first) to lowest (applied last).
+
+.. list-table:: Operator Order
+   :widths: auto
+   :header-rows: 1
+
+   * - Level
+     - Category
+     - Operators
+   * - (Highest)
+     - Exponent
+     - ``**`` Example: ``2**3``
+   * -
+     - Multiplication and Division
+     - ``*  /  //  %``
+   * -
+     - Addition and subtraction
+     - ``+  -``
+   * -
+     - Comparison
+     - ``==  !=  <=  >=  >  <``
+   * -
+     - Logical
+     - ``not``
+   * -
+     - Logical
+     - ``and``
+   * - (Lowest)
+     - Logical
+     - ``or``
+
+.. admonition:: Tip
+
+   Using parentheses is not always necessary, but they make a BIG difference when
+   someone else has to read your code. As a best practice, use ``()`` to improve the
+   look of your expressions!
+
+   ``x * 5 >= 10 and y - 6 <= 20``
+
+   vs.
+
+   ``(x * 5 >= 10) and (y - 6 <= 20)``
+
+Check Your Understanding
+------------------------
+
+Lorem ipsum...
