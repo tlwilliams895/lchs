@@ -1,5 +1,9 @@
-Chained vs. Sequential Conditionals
-===================================
+Chained Conditionals
+====================
+
+A **chained conditional** consists of a series of checks that are evaluated one
+after the other. If a check in the series evaluates to ``True``, then all of
+the following checks are ignored.
 
 ``elif`` Statements
 ----------------------
@@ -44,9 +48,92 @@ our code to follow.
 #. The code block for the ``else`` clause (line 9) is skipped, because one of
    the conditions above was true.
 
-As with a simple ``if`` statement, the ``else`` clause is optional in this
-context as well. The following example does not print anything, since both
-conditions evaluate to false and there is no ``else`` clause.
+.. admonition:: Note
+
+   Just like with a simple ``if`` statement, the ``else`` clause is optional for
+   ``elif`` statements as well. In the example above, removing lines 8 & 9 will
+   not break anything. However, the program will not print anything when
+   ``num`` equals ``other_num``, since the ``if`` and ``elif`` conditions are
+   both ``False``.
+
+Word Analysis Redo
+^^^^^^^^^^^^^^^^^^
+
+On the previous page, we used a nested conditional to print different outputs
+based on the length of a word. We can accomplish the same result with a
+chained conditional.
+
+.. admonition:: Example
+
+   Here is the nested conditional again:
+
+   .. sourcecode:: python
+      :linenos:
+
+      word = input('Please enter a word: ')
+
+      if len(word) == 4:
+         print("What did your mom tell you about using 4-letter words?")
+      else:
+         if len(word) < 4:
+            print("You can think of a longer word than that!")
+         else:
+            print("Excellent word!")
+
+   The following chained conditional produces the same result:
+
+   .. sourcecode:: python
+      :linenos:
+
+      word = input('Please enter a word: ')
+
+      if len(word) == 4:
+         print("What did your mom tell you about using 4-letter words?")
+      elif len(word) < 4:
+         print("You can think of a longer word than that!")
+      else:
+         print("Excellent word!")
+
+Nested vs. Chained
+^^^^^^^^^^^^^^^^^^
+
+Nesting one conditional inside of another performs a *check within a check*,
+and we can do this any number of times.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      if condition_1:
+         # code here
+
+         if condition_2:
+            # code here
+
+            if condition_3:
+               # code here
+            else:
+               # code here
+
+         else:
+            # code here
+
+      else:
+         # code here
+
+Perhaps you see the problem with nesting more than once or twice. The code
+quickly gets very difficult to read and follow.
+
+Even though we COULD code a check within a check within a check within a check
+within a check (etc.), we really SHOULDN'T. In most instances, we can
+make our code more readable by using chained conditionals and/or logical
+operators in place of nested conditionals.
+
+Next Section
+------------
+
+
 
 .. sourcecode:: python
    :linenos:
