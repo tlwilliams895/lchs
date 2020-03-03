@@ -5,6 +5,7 @@ Making Decisions With Conditionals
    :maxdepth: 3
 
    introduction
+   bool-data-type
    booleans
    conditionals
    logical-operators

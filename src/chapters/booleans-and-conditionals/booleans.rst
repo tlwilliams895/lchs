@@ -1,109 +1,5 @@
-.. _booleans:
-
-Boolean Values and Boolean Expressions
-======================================
-
-In order for us to build code that can make decisions, we need to understand
-how programming languages represent *true* and *false*.
-
-Boolean Values
---------------
-
-.. index:: ! True, ! False, ! boolean, ! bool, data type
-
-.. index::
-   single: boolean; value
-
-In the previous chapter, you learned about three data types---``int``,
-``float``, and ``string``. The first two deal with numbers, while ``string``
-deals with collections of characters.
-
-To this, we will add the data type ``bool``, which stands for
-**boolean value**.
-
-There are only two boolean values---``True`` and ``False``.
-
-.. admonition:: Note
-
-   Capitalization matters! Since Python is case-sensitive, ``true`` and
-   ``false`` are NOT valid boolean values.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(True, False)
-      print(type(True))
-      print(type(False))
-
-   **Console Output**
-
-   ::
-
-      True False
-      <class 'bool'>
-      <class 'bool'>
-
-The values ``True`` and ``False`` are NOT strings. Putting quotes around
-booleans (``"True"`` and ``"False"``) makes them strings.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(type(True))
-      print(type("True"))
-
-   **Console Output**
-
-   ::
-
-      <class 'bool'>
-      <class 'str'>
-
-Can We Do Math with Boolean Values?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We CAN, but we probably SHOULDN'T. Boolean values are used to make decisions,
-not solve calculations.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(True*5)
-      print(False*2)
-      print(True + False)
-      print(True * False)
-
-   **Console Output**
-
-   ::
-
-      5
-      0
-      1
-      0
-
-What times 5 gives 5? What times 2 gives 0?
-
-When we use a mathematical operator (``+``, ``-``, ``*``, etc.) with boolean
-values, Python automatically converts ``True`` and ``False`` to the integers
-``1`` and ``0``, respectively.
-
-.. index:: ! condition
-
-Most of the time, calculations with boolean values are not very useful.
-Instead, we use booleans to evaluate a *condition*.
-
-A **condition** is a comparison that can be called correct (``True``) or
-incorrect (``False``).
-
 Boolean Expressions
--------------------
+===================
 
 .. index::
    single: boolean; expression
@@ -111,16 +7,17 @@ Boolean Expressions
 .. index::
    single: operator; equality
 
-.. index:: ! ==
+.. index:: ! ==, ! condition
 
-A **boolean expression** makes a comparison and returns either ``True`` or
-``False``.
+A **boolean expression** makes a comparison and returns one of the boolean
+values, either ``True`` or ``False``.
 
-To make a decision within your code, a boolean expression is used as the
-*condition*.
+To make a decision within our code, a boolean expression is used as the
+**condition**. A condition is a comparison that can be called correct
+(``True``) or incorrect (``False``).
 
 Testing for Equality
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 The **equality operator**, ``==``, compares two values and returns ``True`` or
 ``False`` depending on whether the values are identical.
@@ -150,31 +47,17 @@ In the line 5, the string ``abc`` is not equal to ``def``, so we get ``False``.
 Line 7 compares the result of ``other_num - 3`` with the value stored in
 ``num``.
 
-We can also use ``==`` to prove that ``True`` and ``"True"`` are NOT equal.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-
-      print(True == "True")
-
-   **Console Output**
-
-   ::
-
-      False
-
 .. admonition:: Tip
 
    A common error is using a single equals sign (``=``) instead of a double
-   equals (``==``) when comparing two values. Remember that ``=`` is an
-   *assignment* operator and ``==`` is a *comparison* operator.
+   equals (``==``) when comparing two values. We call ``=`` an
+   *assignment* operator, but ``==`` is a *comparison* operator.
 
    #. To set the value of a variable, use ``=`` (e.g. ``name = 'Mae'``).
    #. To compare values, use ``==`` (e.g. ``name == other_name``).
 
-An equality test is *symmetric*, meaning that we can swap the places of the
-operands and get the same the result.  If ``num == 7`` is ``True``, then
+An equality test is *symmetric*, meaning that we can switch the places of the
+two values and get the same the result.  If ``num == 7`` is ``True``, then
 ``7 == num`` is also ``True``. However, an assignment statement is NOT
 symmetric: ``num = 7`` works while ``7 = num`` does not.
 
@@ -275,6 +158,40 @@ The ``==`` operator is one of six common **comparison operators**.
    Boolean values are named after the British mathematician George Boole, who
    created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
    which is the basis of all modern computer arithmetic.
+
+Can We Do Math with Boolean Values?
+-----------------------------------
+
+We CAN, but we probably SHOULDN'T. Boolean values are used to make decisions,
+not solve calculations.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      print(True*5)
+      print(False*2)
+      print(True + False)
+      print(True * False)
+
+   **Console Output**
+
+   ::
+
+      5
+      0
+      1
+      0
+
+What times 5 gives 5? What times 2 gives 0?
+
+When we use a mathematical operator (``+``, ``-``, ``*``, etc.) with boolean
+values, Python automatically converts ``True`` and ``False`` to the integers
+``1`` and ``0``, respectively.
+
+Most of the time, calculations with boolean values are not very useful.
+Instead, we use booleans to evaluate a *condition*.
 
 Check Your Understanding
 ------------------------
