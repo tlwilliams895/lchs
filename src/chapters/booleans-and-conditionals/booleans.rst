@@ -9,7 +9,7 @@ how programming languages represent *true* and *false*.
 Boolean Values
 --------------
 
-.. index:: ! True, ! False, ! boolean ! bool, data type
+.. index:: ! True, ! False, ! boolean, ! bool, data type
 
 .. index::
    single: boolean; value

@@ -1,14 +1,17 @@
 Chained Conditionals
 ====================
 
+.. index::
+   single: conditional; chained
+
 A **chained conditional** consists of a series of checks that are evaluated one
-after the other. If a check in the series evaluates to ``True``, then all of
+after the other. If one check in the series evaluates to ``True``, then all of
 the following checks are ignored.
 
 ``elif`` Statements
 ----------------------
 
-.. index:: conditional, ! elif
+.. index:: ! elif
 
 If-else statements provide two alternative paths. A single condition determines
 which path to follow. We can build more complex conditionals using an
@@ -46,18 +49,89 @@ our code to follow.
    ``num < other_num`` returns ``True``, since 10 is less than 20. This
    triggers line 7.
 #. The code block for the ``else`` clause (line 9) is skipped, because one of
-   the conditions above was true.
+   the conditions above it was true.
 
 .. admonition:: Note
 
-   Just like with a simple ``if`` statement, the ``else`` clause is optional for
-   ``elif`` statements as well. In the example above, removing lines 8 & 9 will
+   Just like with a simple ``if`` statement, the ``else`` clause is also optional
+   for ``elif`` statements. In the example above, removing lines 8 & 9 will
    not break anything. However, the program will not print anything when
-   ``num`` equals ``other_num``, since the ``if`` and ``elif`` conditions are
-   both ``False``.
+   ``num`` equals ``other_num``, since the ``if`` and ``elif`` conditions both
+   return ``False``.
 
-Word Analysis Redo
-^^^^^^^^^^^^^^^^^^
+Multiple ``elif`` Statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can include more than one ``elif`` statement within a conditional. For
+example, the following code sample prints different messages depending on the
+first character in a string.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      text = 'Python ROCKS!'
+      lowercase = 'abcdefghijklmnopqrstuvwxyz'
+      uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      digits = '0123456789'
+
+      if text[0] in lowercase:
+         print(text, 'starts with a lowercase character.')
+      elif text[0] in uppercase:
+         print(text, 'starts with an UPPERCASE character.')
+      elif text[0] in digits:
+         print(text, 'starts with a number.')
+      else:
+         print('&**%#!', text, 'starts with punctuation or a space.')
+
+We can easily add more ``elif`` statements to the conditional if we need to
+perform more checks. This gives us a huge amount of flexibility if we decide
+to modify the program later.
+
+Here are some rules for building ``if/elif/else`` statements:
+
+#. Order is important. The ``if`` statement comes first, then the ``elif``
+   statements, and finally the ``else``.
+#. The ``if`` statement and code block are required. The ``elif`` and ``else``
+   clauses are optional.
+#. Conditionals contain only ONE ``if`` statement and only ONE ``else``
+   (if used).
+#. Multiple ``elif`` statements are allowed after the ``if`` statement, but
+   they must come before the ``else`` clause.
+
+No matter how long we make a chained conditional, *no more than one* of the
+code blocks will run.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      x = 10;
+      y = 20;
+
+      if x > y:
+         print("x is greater than y")
+      elif x < y:
+         print("x is less than y")
+      elif x % 5 == 0:
+         print("x is divisible by 5")
+      elif x % 2 == 0:
+         print("x is even")
+
+   **Console Output**
+
+   ::
+
+      x is less than y
+
+Even though both of the conditions ``x % 5 == 0`` and ``x % 2 == 0`` evaluate
+to ``True``, neither line 9 nor 11 run. Since line 6 is satisfied first, the
+rest of the conditional is skipped.
+
+Nested vs. Chained Conditionals
+-------------------------------
 
 On the previous page, we used a nested conditional to print different outputs
 based on the length of a word. We can accomplish the same result with a
@@ -94,13 +168,15 @@ chained conditional.
       else:
          print("Excellent word!")
 
-Nested vs. Chained
-^^^^^^^^^^^^^^^^^^
-
-Nesting one conditional inside of another performs a *check within a check*,
-and we can do this any number of times.
+Often, you can use a nested conditional or a chained conditional to solve the
+same problem. Which one you choose depends on your personal preference, but
+you should always use the option that makes your code easier for others to
+read.
 
 .. admonition:: Example
+
+   Nesting one conditional inside of another performs a *check within a check*,
+   and we can do this any number of times.
 
    .. sourcecode:: python
       :linenos:
@@ -130,64 +206,6 @@ within a check (etc.), we really SHOULDN'T. In most instances, we can
 make our code more readable by using chained conditionals and/or logical
 operators in place of nested conditionals.
 
-Next Section
-------------
-
-
-
-.. sourcecode:: python
-   :linenos:
-
-   let x = 10;
-   let y = 10;
-
-   if (x > y) {
-       console.log("x is greater than y");
-   } else if (x < y) {
-       console.log("x is less than y");
-   }
-
-We can construct conditionals using ``if``, ``else if``, and ``else`` with a
-lot of flexibility. The only rules are:
-
-#. We may not use ``else`` or ``else if`` without a preceding ``if``
-   statement.
-#. ``else`` and ``else if`` clauses are optional.
-#. Multiple ``else if`` statements may follow the ``if`` statement, but they
-   must precede the ``else`` clause, if one is present.
-#. Only one ``else`` clause may be used.
-
-Regardless of the complexity of a conditional, *no more than one* of the code
-blocks will be executed.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      let x = 10;
-      let y = 20;
-
-      if (x > y) {
-         console.log("x is greater than y");
-      } else if (x < y) {
-         console.log("x is less than y");
-      } else if (x % 5 === 0) {
-         console.log("x is divisible by 5");
-      } else if (x % 2 === 0) {
-         console.log("x is even");
-      }
-
-   **Console Output**
-
-   ::
-
-      x is less than y
-
-Even though both of the conditions ``x % 5 == 0`` and ``x % 2 == 0`` evaluate
-to ``True``, neither of the associated code blocks is executed. When a
-condition is satisfied, the rest of the conditional is skipped.
-
 Check Your Understanding
 ------------------------
 
@@ -198,18 +216,20 @@ Check Your Understanding
    .. sourcecode:: python
       :linenos:
 
-      a = 8
+      num = 8
 
-      if a % 2 == 0:
+      if num % 2 == 0:
          print("Launch")
-      elif a > 5:
+      elif num > 5:
          print("Code")
       else:
          print("LaunchCode")
 
-   #. ``"Launch"``
-   #. ``"Code"``
-   #. ``"Launch"``
+   #. ``Launch``
+   #. ``Code``
+   #. ``Launch``
 
-      ``"Code"``
-   #. ``"LaunchCode"``
+      ``Code``
+   #. ``LaunchCode``
+
+.. Answer = a

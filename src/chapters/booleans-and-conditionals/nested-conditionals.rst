@@ -44,8 +44,13 @@ from one has no influence on the other. Checking ``entry`` as even or odd works
 fine on its own. However, the second check gets carried out whether or not
 ``entry`` is even or odd.
 
+.. index::
+   single: conditional; nested
+
 We want to see if ``entry`` is positive ONLY IF the number is even. To do this,
-we need to put the second conditional *inside* the first.
+we need to put the second conditional *inside* the first. This code structure
+is called a **nested conditional**. The result of the first conditional
+determines whether or not to consider the second.
 
 .. replit:: python
    :linenos:
@@ -97,7 +102,9 @@ to check your predictions).
 
 This diagram shows the *flow of control* for this program:
 
-   TODO: Insert diagram!
+.. figure:: figures/nested-control-flow.png
+   :height: 350px
+   :alt: A diagram showing how the flow of a program branches based on the value of the condition in a nested if-else statement.
 
 .. admonition:: Note
 

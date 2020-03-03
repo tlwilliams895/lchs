@@ -93,6 +93,8 @@ In the editor below, try the following:
 #. **Advanced:** Use the modulus operator (``%``) in the condition in order to
    print a message when ``num`` is even.
 
+.. todo:: Add chapter link for modulus.
+
 **TODO: Add chapter link for modulus!**
 
 .. raw:: html
@@ -106,7 +108,7 @@ The example above either prints a message or nothing at all, depending on the
 value of ``num``. What if we ALWAYS want to print something, but we want the
 message to change based on the value of ``num``?
 
-.. index:: conditional, ! else, ! if-else, branching
+.. index:: ! else, ! if-else, branching
 
 Adding an **else clause** to an ``if`` statement allows us to include code that
 runs when the condition is ``False``.
