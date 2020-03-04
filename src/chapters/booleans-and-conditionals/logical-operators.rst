@@ -262,4 +262,53 @@ Check Your Understanding
 
 .. Answer = a
 
-.. todo:: Add more CC questions for logical operators.
+.. admonition:: Question
+
+   Predict if each of the following expressions evaluates to ``True`` or
+   ``False``.
+
+   #. ``12 * 2 == 24``
+   #. ``'dog' == 'cat or 'dog' == 'Dog'``
+   #. ``12%2 == 0 and len('flower') < 6``
+   #. ``'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10``
+
+.. Answer = True, False, False, True
+
+.. admonition:: Question
+
+   What is the correct Python expression for checking to see if a number
+   stored in a variable x is between 0 and 5.
+
+   #. ``x > 0 and < 5``
+   #. ``x > 0 or < 5``
+   #. ``x > 0 and x < 5``
+   #. ``x > 0 or x < 5``
+
+.. Answer = c
+
+.. admonition:: Question
+
+   Predict if each of the following expressions evaluates to ``True`` or
+   ``False``.
+
+   .. raw:: html
+
+      <script type="text/JavaScript">
+         function revealTrueFalse(id, correct) {
+            if (document.getElementById(id).innerHTML != '') {
+               document.getElementById(id).innerHTML = '';
+            } else if (correct) {
+               document.getElementById(id).innerHTML = 'True';
+               document.getElementById(id).style.color = 'blue';
+            } else {
+               document.getElementById(id).innerHTML = 'False';
+               document.getElementById(id).style.color = 'red';
+            }
+         }
+      </script>
+      <ol type="a">
+         <li onclick="revealTrueFalse('resultA', true)">12 * 2 == 24 <span id="resultA"></span></li>
+         <li onclick="revealTrueFalse('resultB', false)">'dog' == 'cat or 'dog' == 'Dog' <span id="resultB"></span></li>
+         <li onclick="revealTrueFalse('resultC', false)">12%2 == 0 and len('flower') < 6 <span id="resultC"></span></li>
+         <li onclick="revealTrueFalse('resultD', true)">'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10 <span id="resultD"></span></li>
+      </ol>

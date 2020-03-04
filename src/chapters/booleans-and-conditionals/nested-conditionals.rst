@@ -68,7 +68,7 @@ conditional is indented by two levels rather than one. This convention provides
 an easy, visual way to see which code is part of which conditional.
 
 Nesting Also Works With ``else``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 In the examples above, we left out the ``else`` clauses from the conditionals.
 Let's take nesting a step further by including them.
