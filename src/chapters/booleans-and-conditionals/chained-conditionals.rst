@@ -233,3 +233,49 @@ Check Your Understanding
    #. ``LaunchCode``
 
 .. Answer = a
+
+.. admonition:: Question
+
+   Examine this nested conditional:
+
+   .. sourcecode:: python
+      :linenos:
+
+      num = -10
+      if num < 0:
+         print("The negative number", num, "is not valid here.")
+      else:
+         if num > 0:
+            print(num, "is a positive number")
+         else:
+            print(num, "is 0")
+
+   Which of the following code blocks gives the same result?
+
+   #. .. sourcecode:: python
+         :lineno-start: 2
+
+         if num < 0:
+            print("The negative number", num, "is not valid here.")
+         else num > 0:
+            print(num, "is a positive number")
+         else:
+            print(num, "is 0")
+   #. .. sourcecode:: python
+         :lineno-start: 2
+
+         if num < 0:
+            print("The negative number", num, "is not valid here.")
+         elif num > 0:
+            print(num, "is a positive number")
+         else:
+            print(num, "is 0")
+   #. .. sourcecode:: python
+         :lineno-start: 2
+
+         if num < 0:
+            print("The negative number", num, "is not valid here.")
+         if num > 0:
+            print(num, "is a positive number")
+         else:
+            print(num, "is 0")

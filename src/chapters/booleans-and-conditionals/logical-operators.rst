@@ -87,7 +87,7 @@ suggestions to see how they change the output.
 A compound expression returns only ONE boolean value, which depends on the
 results from BOTH of the smaller comparisons.
 ``len(name) > 5 and len(name) < 10`` is true only if ``len(name)`` is
-greater than ``5`` AND, at the same time, ``len(name)`` is less than ``10``. 
+greater than ``5`` AND, at the same time, ``len(name)`` is less than ``10``.
 
 .. admonition:: Take-Home Idea
 
