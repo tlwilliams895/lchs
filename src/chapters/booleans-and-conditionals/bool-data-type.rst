@@ -12,8 +12,8 @@ how programming languages represent *true* and *false*.
 
       <iframe height="400px" width="100%" src="https://repl.it/@launchcode/TF-Data-Type?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
-In the code above, we made four *comparisons*, and we see the results printed
-in the output. Python evaluates each comparison as being either ``True`` or
+In the code above, we make four *comparisons* and then print the results to the
+console. Python evaluates each comparison as being either ``True`` or
 ``False``.
 
 #. In line 1, the *equality operator* ``==`` compares the strings ``'dog'``
@@ -26,8 +26,8 @@ in the output. Python evaluates each comparison as being either ``True`` or
    ``'dog' != 'cat'`` returns ``True``, while something like ``3 != 3`` would
    return ``False``.
 
-Try It!
-^^^^^^^
+Identify ``True`` and ``False``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Recall that the ``type()`` function tells us the data type of what's inside
 the ``()``.
@@ -59,8 +59,8 @@ There are only two boolean values---``True`` and ``False``.
    Capitalization matters! Since Python is case-sensitive, ``true`` and
    ``false`` are NOT valid boolean values.
 
-The values ``True`` and ``False`` are NOT strings. We can see this by using
-another set of ``print`` statements:
+The values ``True`` and ``False`` are NOT strings. We can see this by printing
+another set of ``type()`` results:
 
 .. admonition:: Example
 
@@ -82,7 +82,8 @@ another set of ``print`` statements:
 Putting quotes around boolean values (``"True"`` and ``"False"``) makes them
 strings, just like ``"1234"`` is a string rather than an ``int`` data type.
 
-Line 3 shows that ``str`` and ``bool`` are different data types!
+Line 3 shows that even though they look similar, ``True`` and ``"True"`` are
+NOT the same! ``str`` and ``bool`` are different data types.
 
 Data Type Review
 ----------------
@@ -91,8 +92,3 @@ Data Type Review
 #. The integer (``int``) data type represents a whole number.
 #. The float (``float``) data type represents a decimal value.
 #. The boolean (``bool``) data type represents ``True`` or ``False``.
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...

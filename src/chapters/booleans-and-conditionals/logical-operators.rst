@@ -5,11 +5,15 @@ Logical Operators
 
 Recall that an *operator* carries out an action on one or more operands
 (values). In the Data and Variables chapter we learned about the different
-math operators (``+``, ``-``, ``*``, ``/``, ``//``. ``**``, and ``%``).
+math operators (``+``, ``-``, ``*``, ``/``, ``//``, ``**``, and ``%``).
 
-   TODO: Add chapter link!
+.. todo:: Add chapter link!
 
 We also saw how the operators ``+`` and ``*`` behave when applied to strings.
+
+.. raw:: html
+
+   <iframe height="320px" width="100%" src="https://repl.it/@launchcode/String-and?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
 Boolean Operators
 -----------------
@@ -20,19 +24,35 @@ Boolean Operators
    single: operator; logical
 
 Comparison operators like ``==`` and ``<`` are part of a larger class known as
-**boolean operators**. When used, they each return a value of either ``True``
-or ``False``.
+**boolean operators**. When used, they return a value of either ``True`` or
+``False``.
 
-Comparison operators perform a single check of two values. For example, the
-statement ``if len(name) > 8`` compares the length of the string stored in
-``name`` to the value 8.
+Comparison operators perform a single check of two values.
 
-What if we wanted to set another limit to the length of ``name``? We could use
-``if len(name) < 20`` to accomplish this, but we would lose the first
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      name = input('Please enter a username: ')
+
+      if len(name) > 5:
+         print("Welcome, " + name + "!")
+      else:
+         print("Invalid username.")
+
+   The expression ``len(name) > 5`` compares the length of the string stored
+   in ``name`` to the value ``5``.
+
+   If ``False``, the program prints ``Invalid username.`` If ``True``, the
+   program prints the welcome message.
+
+What if we wanted to set another limit to the length of ``name``? We could
+replace line 3 with ``if len(name) < 10``, but then we would lose the first
 comparison. Fortunately, we can fix this.
 
-Three additional boolean operators allow us to make more than one comparison
-in a single ``if`` statement. These are called **logical operators**, and there
+Three boolean operators allow us to make more than one comparison in a single
+``if`` statement. These are called **logical operators**, and there
 are only three---``and``, ``or``, and ``not``.
 
 Logical ``and``
@@ -45,28 +65,38 @@ Logical ``and``
 
 Let's take the two boolean expressions from above:
 
-#. ``len(name) > 8`` returns ``True`` when ``name`` contains more than 8
-    characters.
-#. ``len(name) < 20`` returns ``True`` when ``name`` contains less than 20
-    characters.
+#. ``len(name) > 5`` returns ``True`` when ``name`` contains more than 5
+   characters.
+#. ``len(name) < 10`` returns ``True`` when ``name`` contains less than 10
+   characters.
 
 A **compound boolean expression** is a boolean expression built out of smaller
 ones. Python allows us to combine expressions by using the ``and`` operator.
 
 .. sourcecode:: Python
 
-   len(name) > 8 and len(name) < 20
+   len(name) > 5 and len(name) < 10
 
-Here, ``len(name) > 8 and len(name) < 20`` is true only if ``len(name)`` is
-greater than 8 AND, at the same time, ``len(name)`` is less than 20. The
-compound expression returns only ONE boolean value, which depends on the
+Run the following code and examine the output. Try each of the ``name``
+suggestions to see how they change the output.
+
+.. raw:: html
+
+   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Explore-logical-and?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+
+A compound expression returns only ONE boolean value, which depends on the
 results from BOTH of the smaller comparisons.
+``len(name) > 5 and len(name) < 10`` is true only if ``len(name)`` is
+greater than ``5`` AND, at the same time, ``len(name)`` is less than ``10``. 
 
-Stated again: Logical ``and`` combines two conditions, and the resulting
-expression is ``True`` only if *both* conditions return ``True``. If either
-condition is ``False``, the overall expression is ``False``.
+.. admonition:: Take-Home Idea
 
-.. admonition:: Example
+   #. Logical ``and`` combines two conditions.
+   #. The combined expression is ``True`` only if *both* conditions return
+      ``True``.
+   #. If either condition is ``False``, the overall expression is ``False``.
+
+.. admonition:: Tip
 
    The meaning of ``and`` resembles its use in English. A sentence like "Roses
    are red and violets are blue," is true as a whole precisely because roses are
@@ -75,7 +105,7 @@ condition is ``False``, the overall expression is ``False``.
    On the other hand, the sentence "Roses are red and violets are green," is
    false as a whole. While roses are indeed red, violets are NOT green.
 
-Let's see how this works in Python code.
+Let's look at another Python example.
 
 .. admonition:: Example
 
@@ -114,14 +144,24 @@ Logical ``or``
 
 Python's logical ``or`` also combines two boolean expressions. In this case,
 however, the resulting expression is ``True`` if *either* of the conditions are
-``True`` individually. If both conditions are ``False``, the overall expression
-is ``False``.
+``True``. If both conditions are ``False``, the overall expression is
+``False``.
 
-The compound expression ``num - 2 == 0 or num - 3 == 0`` is true if EITHER of
-the conditions is true. In this case, only one part has to be true for the
-overall result to be true.
+For the compound expression ``num - 2 == 0 or num - 3 == 0`` only one part has
+to be true for the overall result to be ``True``.
 
-.. admonition:: Example
+Let's look at another code example. Change the value of ``num`` to see when
+each combined expression returns ``True``.
+
+.. raw:: html
+
+   <iframe height="350px" width="100%" src="https://repl.it/@launchcode/Explore-logical-or?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+
+Using ``num = 5``, lines 2 and 4 both return ``True`` because at least one of
+the two comparisons is ``True``. Line 6 returns ``False`` because both of the
+comparisons are ``False``.
+
+.. admonition:: Tip
 
    Logical ``or`` also resembles its English use. The sentence "Pigs can
    fly, or dogs can run," is true as a whole. Even though pigs cannot fly, dogs
@@ -130,32 +170,6 @@ overall result to be true.
 
    When both of the statements joined by ``or`` are false, the statement as a
    whole is false. "Pigs can fly or the Earth is flat," is a false statement.
-
-Let's look at some more code examples.
-
-.. admonition:: Example
-
-   .. sourcecode:: Python
-      :linenos:
-
-      num = 5
-      print(num > 0 or num < 10)
-
-      print(7 > num or num == 3)
-
-      print(num*5 > 100 or 'dog' == 'cat')
-
-   **Console Output**
-
-   ::
-
-      True
-      True
-      False
-
-Lines 2 and 4 both return ``True`` because at least one of the comparisons
-joined by ``or`` is ``True``. Line 6 returns ``False`` because both of the
-comparisons are ``False``.
 
 Logical ``not``
 ^^^^^^^^^^^^^^^
@@ -248,6 +262,4 @@ Check Your Understanding
 
 .. Answer = a
 
-.. todo: Add more CC questions for logical operators.
-
-**TODO: Add more CC questions.**
+.. todo:: Add more CC questions for logical operators.

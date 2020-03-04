@@ -51,20 +51,6 @@ create one in Python:
    condition is ``False``, this code gets ignored.
 #. *The first unindented line marks the end of the if statement*.
 
-.. admonition:: Note
-
-   Should you indent with tabs or spaces? This question usually starts BIG
-   arguments within the programming world (think Marvel vs. DC or Hermione
-   Granger with Harry instead of Ron).
-
-   Many code editors automatically indent the lines within an if-block, so most
-   of the time you won't need to worry about how far to move in the cursor.
-   However, here are the accepted guidelines for Python:
-
-   #. Use SPACES, not tabs
-   #. Four spaces are preferred
-   #. Indentation should be consistent
-
 Here is an example that checks the length of a string:
 
 .. sourcecode:: python
@@ -80,6 +66,20 @@ Here is an example that checks the length of a string:
 console. If the string is less than 10 characters long, then no message
 appears.
 
+.. admonition:: Note
+
+   Should you indent with tabs or spaces? This question usually starts BIG
+   arguments within the programming world (think Marvel vs. DC or Hermione
+   Granger with Harry instead of Ron).
+
+   Many code editors automatically indent the lines within an if-block, so most
+   of the time you won't need to worry about how far to move in the cursor.
+   However, here are the accepted guidelines for Python:
+
+   #. Use SPACES, not tabs
+   #. Four spaces are preferred
+   #. Indentation must be consistent within a code block.
+
 Try It!
 ^^^^^^^
 
@@ -94,8 +94,6 @@ In the editor below, try the following:
    print a message when ``num`` is even.
 
 .. todo:: Add chapter link for modulus.
-
-**TODO: Add chapter link for modulus!**
 
 .. raw:: html
 
@@ -115,22 +113,13 @@ runs when the condition is ``False``.
 
 .. admonition:: Example
 
-   .. sourcecode:: python
-      :linenos:
+   #. Run the following code as-is and examine the output.
+   #. Change line 2 to ``book_status = 'overdue'`` and run the code again.
+   #. How does the output change?
 
-      book_title = 'Ready Player One'
-      book_status = ''
+   .. raw:: html
 
-      if book_status == 'overdue':
-         print(book_title + ' is overdue!')
-      else:
-         print('No overdue books!')
-
-   **Console Output**
-
-   ::
-
-      No overdue books!
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Else-clause?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
 This structure is known as an **if-else statement**, and it allows our program
 to **branch**. The flow of the program takes one of two paths when it reaches a
@@ -157,24 +146,45 @@ Use the code below to answer the following questions:
 
 .. admonition:: Question
 
-   What does the code print if the user tries "Aahliyah" as their username?
+   What message gets printed if the user enters ``"Aahliyah"`` as their username?
 
-   #. Invalid username.
-   #. Welcome, name!
-   #. Welcome, Aahliyah!
-   #. Nothing is printed.
+   .. raw:: html
+
+      <script type="text/JavaScript">
+         function evaluateMC(id, correct) {
+            if (correct) {
+               document.getElementById(id).innerHTML = 'Yep!';
+               document.getElementById(id).style.color = 'blue';
+            } else {
+               document.getElementById(id).innerHTML = 'Nope!';
+               document.getElementById(id).style.color = 'red';
+            }
+         }
+      </script>
+      <ol type="a">
+         <li><input type="radio" name="Q1" value="true" autocomplete="off" onclick="evaluateMC(name, true)"> Invalid username.</li>
+         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, name!</li>
+         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, Aahliyah!</li>
+         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is printed.</li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a
 
 .. admonition:: Question
 
-   Assume that you replace line 3 with ``if len(name) < 5:``. When would
-   "Invalid username" get printed?
+      Assume that you replace line 3 with ``if len(name) < 5:``. When would
+      "Invalid username" get printed?
 
-   #. For any name with 5 characters or more
-   #. For any name with 4 characters or more
-   #. For any name with 5 characters or less
-   #. For any name with 4 characters or less
+      .. raw:: html
+
+         <ol type="a">
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 5 characters or more</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 4 characters or more</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 5 characters or less</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> For any name with 4 characters or less</li>
+         </ol>
+         <p id="Q2"></p>
 
 .. Answer = d
 

@@ -95,10 +95,10 @@ how they relate to each other. Which operators get done first?
 
 Python always performs operations in a specific order:
 
-#. Math calculations get done first.
-#. Next, evaluate all comparisons as ``True`` or ``False``.
-#. Next, apply all ``not`` operators.
-#. Finally, evaluate ``and`` and ``or`` operations.
+#. It does all math calculations first.
+#. Next, it evaluates all comparisons as ``True`` or ``False``.
+#. Next, it applies all ``not`` operators.
+#. Finally, it evaluates ``and`` and ``or`` operations.
 
 .. admonition:: Example
 
@@ -135,7 +135,7 @@ The following table lists operators in order of importance, from highest
      - Operators
    * - (Highest)
      - Exponent
-     - ``**`` Example: ``2**3``
+     - ``**`` (For example: ``2**3``)
    * -
      - Multiplication and Division
      - ``*  /  //  %``

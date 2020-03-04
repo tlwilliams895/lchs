@@ -22,9 +22,9 @@ structure:
    :linenos:
 
    if condition_is_true:
-      # Execute this code
+      # Run this code
    else:
-      # Execute this other code
+      # Run this other code
 
 We will dive into the details soon, but first we need to understand how Python
 determines if a condition is true or false.
