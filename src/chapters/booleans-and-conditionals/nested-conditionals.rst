@@ -42,35 +42,29 @@ we see the output ``POSITIVE``. The code doesn't work as we want. Why not?
 Written this way, the two conditionals are separate from each other. The result
 from one has no influence on the other. Checking ``entry`` as even or odd works
 fine on its own. However, the second check gets carried out whether or not
-``entry`` is even or odd.
+``entry%2 == 0`` is ``True`` or ``False``.
 
 .. index::
    single: conditional; nested
 
-We want to see if ``entry`` is positive ONLY IF the number is even. To do this,
-we need to put the second conditional *inside* the first. This code structure
-is called a **nested conditional**. The result of the first conditional
-determines whether or not to consider the second.
-
-.. replit:: python
-   :linenos:
-   :slug: Positive-and-Even
-
-   entry = int(input('Enter a whole number: '))
-
-   if entry%2 == 0:
-      print("EVEN!")
-
-      if entry > 0:
-         print("POSITIVE")
+We want to check if ``entry`` is positive ONLY IF the number is even. To do
+this, we need to put the second conditional *inside* the first. This code
+structure is called a **nested conditional**. The result of the first
+conditional determines whether or not to consider the second.
 
 .. admonition:: Try It!
 
    Run this code several times and choose different values for ``entry`` (even,
    odd, positive, negative) to prove that it works as desired. Nice, huh?
 
+   .. raw:: html
+
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Positive-and-Even?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+
+   Try removing the indentation for lines 6 & 7 to see how the output changes!
+
 Notice that when we put one conditional inside another, the body of the nested
-conditional is indented by two tabs rather than one. This convention provides
+conditional is indented by two levels rather than one. This convention provides
 an easy, visual way to see which code is part of which conditional.
 
 Nesting Also Works With ``else``
