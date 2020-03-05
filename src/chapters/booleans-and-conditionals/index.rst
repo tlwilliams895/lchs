@@ -14,3 +14,4 @@ Making Decisions With Conditionals
    nested-conditionals
    chained-conditionals
    exercises
+   project
