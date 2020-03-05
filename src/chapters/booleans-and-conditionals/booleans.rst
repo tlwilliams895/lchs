@@ -78,6 +78,8 @@ Other Comparisons
 
 The ``==`` operator is one of six common **comparison operators**.
 
+.. index:: ! operand
+
 .. admonition:: Vocabulary
 
    The values on either side of an operator are called **operands**.

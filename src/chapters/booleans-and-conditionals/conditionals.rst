@@ -90,8 +90,8 @@ In the editor below, try the following:
 #. Indent line 6 to match line 4, then re-run the code. How did the output
    change?
 #. Change the condition to print a message when ``num`` is positive.
-#. **Advanced:** Use the modulus operator (``%``) in the condition in order to
-   print a message when ``num`` is even.
+#. **Advanced:** Use the modulus operator (``%``) in line 3 in order to print a
+   message when ``num`` is even.
 
 .. todo:: Add chapter link for modulus.
 
@@ -121,7 +121,7 @@ runs when the condition is ``False``.
 
       <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Else-clause?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
-This structure is known as an **if-else statement**, and it allows our program
+This structure is known as an **if/else statement**, and it allows our program
 to **branch**. The flow of the program takes one of two paths when it reaches a
 conditional, depending on whether the condition is ``True`` or ``False``.
 
@@ -139,10 +139,10 @@ Use the code below to answer the following questions:
 
    name = input('Please enter a username: ')
 
-   if len(name) <= 8:
-      print("Invalid username.")
-   else:
+   if len(name) >= 8:
       print("Welcome, " + name + "!")
+   else:
+      print("Invalid username.")
 
 .. admonition:: Question
 
@@ -162,10 +162,10 @@ Use the code below to answer the following questions:
          }
       </script>
       <ol type="a">
-         <li><input type="radio" name="Q1" value="true" autocomplete="off" onclick="evaluateMC(name, true)"> Invalid username.</li>
-         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, name!</li>
-         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, Aahliyah!</li>
-         <li><input type="radio" name="Q1" value="false" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is printed.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Invalid username.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, name!</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Welcome, Aahliyah!</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is printed.</li>
       </ol>
       <p id="Q1"></p>
 
@@ -174,15 +174,15 @@ Use the code below to answer the following questions:
 .. admonition:: Question
 
       Assume that you replace line 3 with ``if len(name) < 5:``. When would
-      "Invalid username" get printed?
+      ``Invalid username`` get printed?
 
       .. raw:: html
 
          <ol type="a">
-            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 5 characters or more</li>
-            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 4 characters or more</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 4 characters or less</li>
             <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 5 characters or less</li>
-            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> For any name with 4 characters or less</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For any name with 4 characters or more</li>
+            <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> For any name with 5 characters or more</li>
          </ol>
          <p id="Q2"></p>
 
