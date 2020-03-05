@@ -153,46 +153,6 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'b' <= 'a'``
 
-.. admonition:: Fun Fact
-
-   Boolean values are named after the British mathematician George Boole, who
-   created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
-   which is the basis of all modern computer arithmetic.
-
-Can We Do Math with Boolean Values?
------------------------------------
-
-We CAN, but we probably SHOULDN'T. Boolean values are used to make decisions,
-not solve calculations.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(True*5)
-      print(False*2)
-      print(True + False)
-      print(True * False)
-
-   **Console Output**
-
-   ::
-
-      5
-      0
-      1
-      0
-
-What times 5 gives 5? What times 2 gives 0?
-
-When we use a mathematical operator (``+``, ``-``, ``*``, etc.) with boolean
-values, Python automatically converts ``True`` and ``False`` to the integers
-``1`` and ``0``, respectively.
-
-Most of the time, calculations with boolean values are not very useful.
-Instead, we use booleans to evaluate a *condition*.
-
 Check Your Understanding
 ------------------------
 
