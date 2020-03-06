@@ -2,11 +2,11 @@ Project: Conditional Launch
 ===========================
 
 Complete this project to boost your conditional skills. Don't worry if you
-struggle a bit. Struggling and reviewing before succeeding is natural, and the
-process helps you learn.
+struggle a bit. Struggling (and needing to review) before succeeding is a
+natural and frequent part of coding. Making mistakes helps you learn.
 
-In class, be sure to ask about the topics you do not understand. You are NOT
-the only person who needs help.
+Spacecraft Data
+---------------
 
 Use the following variables for a spacecraft we want to launch:
 
@@ -19,9 +19,9 @@ Use the following variables for a spacecraft we want to launch:
    * - ``engine_indicator_light``
      - ``"red blinking"``
    * - ``space_suits_on``
-     - ``true``
+     - ``True``
    * - ``shuttle_cabin_ready``
-     - ``true``
+     - ``True``
    * - ``crew_status``
      - ``space_suits_on and shuttle_cabin_ready``
    * - ``computer_status_code``
@@ -32,7 +32,7 @@ Part A: PREDICT
 
 #. Examine the code below. What will be printed to the console?
 
-   Use the value of ``engine_indicator_light`` defined above to answer this
+   Use the value of ``engine_indicator_light`` assigned above to answer this
    question.
 
    .. sourcecode:: python
@@ -45,7 +45,7 @@ Part A: PREDICT
       else:
          print("Engines off")
 
-#. Do these code blocks produce the same result?
+#. Do these two code blocks produce the same result?
 
    .. sourcecode:: python
       :linenos:
@@ -60,17 +60,17 @@ Part A: PREDICT
       if (not crew_status or computer_status_code != 200 or not space_suits_on):
          print("WARNING. Not ready")
       else:
-         print("all systems go")
+         print("All systems go!")
 
-Part B: Safety Checks
----------------------
+Part B: Cabin Safety Checks
+---------------------------
 
-#. Use an ``input`` statement to prompt the user to enter speed of the
+#. Use an ``input`` statement to prompt the user to enter the speed of the
    spacecraft. Store this result in the variable ``spacecraft_speed``. Remember
    to convert the input from the ``str`` data type to ``int`` or ``float``.
 
-#. Write conditional expressions to satisfy the safety rules below, using the
-   same variables defined at the top of the page.
+#. Write conditional expressions to satisfy the safety rules below. Use
+   ``spacecraft_speed`` and the same variables defined at the top of the page.
 
    a. ``crew_status``
 
@@ -86,89 +86,109 @@ Part B: Safety Checks
 
    c. ``spacecraft_speed``
 
-      - If the value is ``> 17,500``, print
+      - If the speed is ``> 17500``, print
         ``"ALERT: Escape velocity reached!"``
-      - Else, if the value is ``< 8000``, print
+      - Else, if the speed is ``< 8000``, print
         ``"ALERT: Cannot maintain orbit!"``
       - Else print ``"Stable speed"``
+
+#. Before you move to part C, run your program several times to test your code.
+   Change only ONE variable value at a time to make sure your conditionals
+   print the expected results.
+
+   a. Change the value of ``space_suits_on`` to ``False``.
+   b. Change ``computer_status_code`` to ``400``, then ``100``.
+   c. Enter different values for ``spacecraft_speed``. (Tip: ``17500`` and
+      ``8000`` should both produce ``Stable speed``).
+
+.. admonition:: Note
+
+   In step 3, you are *trying* to make your code fail. Testing helps you spot
+   and fix bugs!
+
+Part C: Fuel Safety Checks
+--------------------------
 
 #. Use ``if/elif/else`` statements to monitor the spacecraft's fuel status.
    Order is important when working with conditionals, and the checks below are
    NOT written in the correct sequence.
 
    Read ALL of the checks before coding and decide on the best order for the
-   conditionals.
+   statements.
 
-   #. If ``fuel_level`` is above 20000 AND ``engine_temperature`` is at or
+   a. If ``fuel_level`` is above 20000 AND ``engine_temperature`` is at or
       below 2500, print ``"Full tank. Engines good."``
-   #. If ``fuel_level`` is above 10000 AND ``engine_temperature`` is at or
+   b. If ``fuel_level`` is above 10000 AND ``engine_temperature`` is at or
       below 2500, print ``"Fuel level above 50%.  Engines good."``
-   #. If ``fuel_level`` is above 5000 AND ``engine_temperature`` is at or below
+   c. If ``fuel_level`` is above 5000 AND ``engine_temperature`` is at or below
       2500, print ``"Fuel level above 25%. Engines good."``
-   #. If ``fuel_level`` is at or below 5000 OR ``engine_temperature`` is above
+   d. If ``fuel_level`` is at or below 5000 OR ``engine_temperature`` is above
       2500, print ``"Check fuel level. Engines running hot."``
-   #. If ``fuel_level`` is below 1000 OR ``engine_temperature`` is above 3500
+   e. If ``fuel_level`` is below 1000 OR ``engine_temperature`` is above 3500
       OR ``engine_indicator_light`` is red blinking, print ``"ENGINE FAILURE
       IMMINENT!"``
-   #. Otherwise, print ``"Fuel and engine status pending..."``
+   f. Otherwise, print ``"Fuel and engine status pending..."``
 
-.. admonition:: Try It
+Test Your Fuel Status Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   Run your code several times to make sure it prints the correct phrase for
-   each set of conditions.
+Run your code several times to make sure it prints the correct phrase for
+each set of conditions. The table below gives you some practice values as well
+as the expected output.
 
-   .. list-table::
-      :widths: auto
-      :header-rows: 1
+.. list-table::
+   :widths: auto
+   :header-rows: 1
 
-      * - **fuel_level**
-        - **engine_temperature**
-        - **engine_indicator_light**
-        - **Result**
-      * - Any
-        - Any
-        - ``red blinking``
-        - ``ENGINE FAILURE IMMINENT!``
-      * - 21000
-        - 1200
-        - NOT ``red blinking``
-        - ``Full tank. Engines good.``
-      * - 900
-        - Any
-        - Any
-        - ``ENGINE FAILURE IMMINENT!``
-      * - 5000
-        - 1200
-        - NOT ``red blinking``
-        - ``Check fuel level. Engines running hot.``
-      * - 12000
-        - 2600
-        - NOT ``red blinking``
-        - ``Check fuel level. Engines running hot.``
-      * - 18000
-        - 2500
-        - NOT ``red blinking``
-        - ``Fuel level above 50%. Engines good.``
+   * - **fuel_level**
+     - **engine_temperature**
+     - **engine_indicator_light**
+     - **Result**
+   * - Any
+     - Any
+     - ``red blinking``
+     - ``ENGINE FAILURE IMMINENT!``
+   * - 21000
+     - 1200
+     - NOT ``red blinking``
+     - ``Full tank. Engines good.``
+   * - 900
+     - Any
+     - Any
+     - ``ENGINE FAILURE IMMINENT!``
+   * - 5000
+     - 1200
+     - NOT ``red blinking``
+     - ``Check fuel level. Engines running hot.``
+   * - 12000
+     - 2600
+     - NOT ``red blinking``
+     - ``Check fuel level. Engines running hot.``
+   * - 18000
+     - 2500
+     - NOT ``red blinking``
+     - ``Fuel level above 50%. Engines good.``
 
-6. Final bit of fun!
+A Final Bit of Fun!
+-------------------
 
-   The shuttle should only launch if the fuel tank is full and the engine check
-   is OK. *However*, let's establish an override command to ignore any warnings
-   and send the shuttle into space anyway!
+The spacecraft should only launch if the fuel tank is full and the engine check
+is OK. *However*, let's establish an override command to ignore any warnings
+and send the ship into space anyway!
 
-   #. Create the variable ``commandOverride``, and set it to be ``true`` *or*
-      ``false``.
+#. Create the variable ``command_override``, and set it to be ``True`` *or*
+   ``False``.
 
-      If ``commandOverride`` is ``false``, then the shuttle should only launch
-      if the fuel and engine check are OK.
+   If ``command_override`` is ``False``, then the shuttle should only launch
+   if the fuel and engine check are OK.
 
-      If ``commandOverride`` is ``true``, then the shuttle will launch
-      regardless of the fuel and engine status.
+   If ``command_override`` is ``True``, then the shuttle will launch
+   regardless of the fuel and engine status.
 
-   #. Code the following ``if`` / ``else`` check:
+#. Code the following ``if/else`` check:
 
-      If ``fuel_level`` is above 20000 AND ``engine_indicator_light`` is NOT
-      red blinking OR ``commandOverride`` is true print ``"Cleared to
-      launch!"``
+   If ``fuel_level`` is above 20000 AND ``engine_indicator_light`` is NOT
+   red blinking OR ``command_override`` is true print ``"Cleared to
+   launch!"``
 
-      Else print ``"Launch scrubbed!"``
+   Else print ``"Launch scrubbed!"``
