@@ -7,7 +7,9 @@ there. Otherwise, follow the links to *standard repl.it* (no auto-grader).
 Part A: Basic Selection
 -----------------------
 
-   Repl.it link goes here!
+If you are NOT assigned to a repl.it classroom, follow this link for the
+`part A <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__ starter
+code.
 
 ``if`` Only
 ^^^^^^^^^^^
@@ -65,10 +67,9 @@ The ``in`` keyword can be used as another comparison operator.
 Part B: Logical Operators
 -------------------------
 
-   Repl.it link goes here!
-
 Use the logical ``and``, ``or``, and ``not`` operators in the following
-exercises.
+exercises (`part B <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
+starter code).
 
 #. Given an integer, check to see if the number is even and divisible by 5.
    Print an appropriate message depending on the result.
@@ -106,7 +107,7 @@ exercises.
 Part C: Chained Conditionals
 ----------------------------
 
-   Repl.it link goes here!
+Use this starter code for `parts C and D <https://repl.it/@launchcode/Conditional-Exercises-Parts-C-and-D>`__.
 
 #. For ``if/elif/else`` statements, the *order* of the checks is important.
    The following code should determine if a number is divisible by 2, 3, both
