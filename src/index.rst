@@ -8,6 +8,7 @@ Chapters
 
    chapters/introduction/index
    chapters/booleans-and-conditionals/index
+   chapters/loops/index
 
 .. toctree::
 
