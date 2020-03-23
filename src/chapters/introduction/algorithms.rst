@@ -9,11 +9,15 @@ partner and split the task in half?
 
 Regardless of how you completed the task, you probably followed a *pattern* to
 make the process easier. If you had to repeat the task with a new set of words,
-you could jump right in because you already had a system in place.
+you could jump right and follow the same pattern.
 
 .. index:: ! algorithm
 
-The word **algorithm** is just a fancy name for a pattern or set of steps.
+The word **algorithm** is just a fancy name for a pattern or set of steps that
+solve a specific problem.
+
+Algorithms Are Easy to Find
+---------------------------
 
 Imagine a recipe for baking cookies. After the list of ingredients comes a
 series of step-by-step instructions for making the treats. If you want to cook
@@ -22,15 +26,17 @@ using a different set of ingredients.
 
 An *algorithm* is like a recipe. It is a careful series of steps that, when
 followed, produce a specific result. Programmers create algorithms to solve
-small tasks. By combining the answers from these small tasks, programmers can
-solve much larger problems.
+small tasks. By combining these small answers, programmers can solve much
+larger problems.
 
-Let's take a look at an example of an algorithm---alphabetizing a list of
-words:
+For Example
+^^^^^^^^^^^
+
+Let's take a look at alphabetizing a list of words:
 
 ``apple, pear, zebra, box, rutabaga, fox, banana, socks, foot``
 
-One possible set of steps for solving the task could be:
+Here is one way to complete the task:
 
 #. Arrange the words from a - z based only on the first letter:
 
@@ -56,8 +62,8 @@ words.
 
 Alphabetizing is a process we can teach a computer to do, and the algorithm
 will complete the process much more rapidly than a human. However, unlike the
-alphabet song that many of us still sing in our heads when arranging a list of
-words, programmers must use a different method to train the computer.
+alphabet song that many of us still sing in our heads, programmers must use a
+different method to train the computer.
 
 Check Your Understanding
 -------------------------
