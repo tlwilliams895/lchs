@@ -6,9 +6,5 @@ Introduction to Python Programming
 
    why-learn-to-code
    why-learn-python
-   how-programs-work
-   algorithms
    in-book-practice
-   first-program
-   comments
    exercises

@@ -7,6 +7,8 @@ Chapters
    :name: chapterstoc
 
    chapters/introduction/index
+   chapters/how-programs-work/index
+   chapters/how-to-code/index
    chapters/booleans-and-conditionals/index
 
 .. toctree::
