@@ -1,4 +1,4 @@
-Title
-=====
+The ``print`` Function
+======================
 
 Lorem ipsum...

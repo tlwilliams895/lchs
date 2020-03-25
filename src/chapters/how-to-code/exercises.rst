@@ -1,4 +1,4 @@
-Title
-=====
+Exercises: Writing Code
+=======================
 
 Lorem ipsum...
