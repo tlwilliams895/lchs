@@ -72,10 +72,31 @@ Check Your Understanding
 
    Select ALL of the following that can be solved by using an algorithm:
 
-   a. Answering a math problem.
-   b. Sorting numbers in decreasing order.
-   c. Making a peanut butter and jelly sandwich.
-   d. Assigning guests to tables at a wedding reception.
-   e. Creating a grocery list.
-   f. Suggesting new music for a playlist.
-   g. Making cars self-driving.
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', true)">Answering a math problem.</span></li>
+         <li><span id = "b" onclick="highlight('b', true)">Sorting numbers in decreasing order.</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">Making a peanut butter and jelly sandwich.</span></li>
+         <li><span id = "d" onclick="highlight('d', true)">Assigning guests to tables at a wedding reception.</span></li>
+         <li><span id = "e" onclick="highlight('e', true)">Creating a grocery list.</span></li>
+         <li><span id = "f" onclick="highlight('f', true)">Suggesting new music for a playlist.</span></li>
+         <li><span id = "g" onclick="highlight('g', true)">Making cars self-driving.</span></li>
+      </ol>
+
+.. Answer = all of the above.
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

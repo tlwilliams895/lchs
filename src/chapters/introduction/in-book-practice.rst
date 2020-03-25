@@ -1,15 +1,15 @@
 Using This Book
 ===============
 
-Throughout this book, you will find different types of practice exercises. Each
-one gives you a quick way to review or practice coding. To get the most out of
-the book, try ALL of the tasks.
+Throughout this book, you will find different types of exercises. Each one
+gives you a quick way to review or practice coding. To get the most out of the
+book, try ALL of the tasks.
 
 Concept Checks
 --------------
 
-Many pages end with a *Check Your Understanding*. This section contains a few
-quick questions, and you should use these as a review of what you just read.
+Many pages end with a *Check Your Understanding* section, which contains a few
+quick questions. You should use these as a review of what you just read.
 
 The concept check questions are partially interactive---you can often click on
 your chosen answer(s) to see if you are correct. However, your choices are NOT
@@ -28,6 +28,7 @@ Try It!
       function highlight(id, answer) {
          if (answer) {
             document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = id + ' - Correct!';
          } else {
             document.getElementById(id).innerHTML = id + ' - Nope!';
             document.getElementById(id).style.color = 'red';
@@ -63,7 +64,7 @@ Answer the following practice questions:
 
 .. admonition:: Question
 
-      Multiple Answers: Click ALL that apply (try each of the options below).
+      Multiple Answers: Try clicking each of the options below.
       
       .. raw:: html
       
@@ -100,8 +101,7 @@ encourage you to `sign up for one <https://repl.it/signup>`__.
 
 As you explore the examples in this book, feel free to make changes to
 the code. If you want to save your edits, click the *Fork* button at the top of
-the workspace, and Repl.it will store a copy of the code in your personal
-account.
+the workspace. Repl.it will store a copy of the code in your personal account.
 
 .. figure:: figures/replit-fork.png
    :alt: The fork button saves starter code to your repl.it account.

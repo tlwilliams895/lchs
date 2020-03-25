@@ -7,4 +7,4 @@ How Programs Work
    algorithms
    how-programs-work
    first-program
-   exercises
+   replit

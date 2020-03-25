@@ -7,4 +7,3 @@ Introduction to Python Programming
    why-learn-to-code
    why-learn-python
    in-book-practice
-   replit

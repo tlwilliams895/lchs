@@ -20,7 +20,7 @@ result is the phrase:
    Hello, World!
 
 Try It!
-^^^^^^^
+-------
 
 Type ``print("Hello, World!")`` into the code editor below, then click the
 green *Run* button.
@@ -48,7 +48,7 @@ the ``Hello, World!`` program. By this standard, Python does very well.
    teach you something. Fix any errors and try again.
 
 Now Play
-^^^^^^^^^
+--------
 
 Once you print ``Hello, World!`` successfully, go back and play around with the
 code. Make a change, click *Run*, and see what happens. Try to:
@@ -85,19 +85,56 @@ Check Your Understanding
 
    The print function:
 
-   #. sends information to the printer to be printed on paper.
-   #. displays a value on the screen.
-   #. tells the computer to put the information in print, rather than cursive,
-      font.
-   #. tells the computer to speak the information.
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> sends information to be printed on paper.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> displays a value on the screen.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> tells the computer to put the information in print, rather than cursive, font.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> tells the computer to speak the information.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b.
 
 .. admonition:: Question
 
-   Which of the following correctly prints ``Coding Rocks``? There may be more
-   than one valid option!
+   Which of the following correctly prints ``Coding Rocks``? Select ALL that
+   apply.
 
-   a. ``print(Coding Rocks)``
-   b. ``print"Coding Rocks"``
-   c. ``print('Coding Rocks')``
-   d. ``print("Coding Rocks')``
-   e. ``print("Coding Rocks")``
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', false)">print(Coding Rocks)</span></li>
+         <li><span id = "b" onclick="highlight('b', false)">print"Coding Rocks"</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">print('Coding Rocks')</span></li>
+         <li><span id = "d" onclick="highlight('d', false)">print("Coding Rocks')</span></li>
+         <li><span id = "e" onclick="highlight('e', true)">print("Coding Rocks")</span></li>
+      </ol>
+
+.. Answers = c, e
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
