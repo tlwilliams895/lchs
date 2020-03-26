@@ -16,6 +16,8 @@ When we run the program, Python works behind the scenes to convert ``print()``
 into the 0s and 1s that tell the computer *Show this information in the
 console*.
 
+.. _print-function:
+
 Examples
 ---------
 
