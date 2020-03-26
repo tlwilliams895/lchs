@@ -78,7 +78,6 @@ Check Your Understanding
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A solution to a problem that can be solved by a computer.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A step by step list of instructions that if followed exactly will solve a problem.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A single command run by a programming language.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A </li>
       </ol>
       <p id="Q1"></p>
 

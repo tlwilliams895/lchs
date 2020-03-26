@@ -1,0 +1,4 @@
+Variables
+=========
+
+Lorem ipsum...

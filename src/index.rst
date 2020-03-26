@@ -9,6 +9,7 @@ Chapters
    chapters/introduction/index
    chapters/how-programs-work/index
    chapters/how-to-code/index
+   chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
 
 .. toctree::
