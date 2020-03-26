@@ -19,6 +19,8 @@ result is the phrase:
 
    Hello, World!
 
+.. _hello-world:
+
 Try It!
 -------
 
@@ -32,7 +34,7 @@ green *Run* button.
 
 .. raw:: html
 
-   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Hello-World?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Hello-World?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 The quotation marks inside the parentheses () mark the beginning and end of the
 value to display. They don’t appear in the result.

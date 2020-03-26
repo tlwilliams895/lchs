@@ -1,110 +1,64 @@
-Programming Languages
-=====================
+More About Programs
+===================
 
-   "It'll take a few moments to get the coordinates from the navicomputer."
-   - Han Solo
+A *program* tells a computer how to complete a task, which might be something
+as simple as adding two numbers together or as complex as following voice
+commands.
 
-.. index:: ! program
+The details differ between languages, but each one performs the same basic
+operations:
 
-Given a set of inputs, Han's computer analyzes the data and returns information
-about safely navigating a hyperspace jump. The computer does this by running a
-**program**.
+#. **Input**: Get data from the keyboard, a file, or some other device.
+#. **Output**: Display data on the screen, or send data to a file or other
+   device.
+#. **Math**: Perform basic calculations like addition and multiplication.
+#. **Logic and decision making**: Check for certain conditions and run the
+   correct code statements based on those conditions.
+#. **Repetition**: Quickly perform the same action over and over again.
 
-At the most basic level, a *program* is a set of instructions that tell a
-computer or other machine what to do. These instructions consist of a set of
-commands, calculations, and manipulations that achieve a specific result.
-However, the computer cannot solve the problem on its own. Someone---a
-programmer---had to figure out a series of steps for the computer to follow.
+That’s pretty much all there is to it. Every program you’ve ever used, no
+matter how complicated, is made up of instructions that do these same basic
+tasks.
 
-What Computers Understand
--------------------------
+We can describe programming as the process of breaking a large problem or task
+into smaller and smaller pieces. Once these pieces are small enough, we can
+solve each one with a few of the basic operations listed above. By combining
+the small solutions, our programs complete much bigger tasks.
 
-   "Computer, scan the surface for lifeforms."
+The single most important skill for a programmer is *problem solving*.
+Problem solving means the ability to examine a problem, break it into smaller
+pieces, think creatively about how to solve those pieces, and clearly describe
+those solutions.
 
-   "Hey Siri, what movies are playing nearby?"
+As you learn how to code, you will also develop your problem solving skills.
 
-.. index:: ! binary
+Check Your Understanding
+------------------------
 
-Even though today's tech makes it seem like computers understand our speech,
-the devices do NOT use English, Chinese, Spanish, etc. to do their jobs.
-Instead, computers operate using **binary code**, which consists only of 0s
-and 1s. For example, here is the binary version of the text ``Hello World``:
+.. admonition:: Question
 
-``01001000 01100101 01101100 01101100 01101111 00100000 01010111 01101111
-01110010 01101100 01100100``
+   A program is:
 
-Each set of 8 digits represents one character in the text.
+   .. raw:: html
 
-.. index:: ! hexadecimal
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> a set of instructions for performing a task</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> something you read at a play or concert.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> a calculation.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> the same thing as an algorithm.</li>
+      </ol>
+      <p id="Q1"></p>
 
-To make things a little easier, data may also be written as **hexadecimal**
-values. Here is ``Hello World`` in *hex*:
+.. raw:: html
 
-``48 65 6c 6c 6f 20 57 6f 72 6c 64``
-
-To run an algorithm, all of the steps must be written in binary or hex so the
-computer can understand the instructions.
-
-.. admonition:: Note
-
-   You do NOT need to worry about binary or hexadecimal code to make your
-   programs work!
-
-Languages
----------
-
-Writing code using only 0s and 1s wastes time and energy. To fix this, many
-clever people designed ways to convert the text humans understand into the
-binary or hexadecimal forms needed by machines.
-
-.. index:: ! programming language
-
-A **programming language** is a set of key words and rules for teaching a
-computer how to perform a task. Examples of programming languages include
-Python, JavaScript, Basic, COBOL, C++, C#, Java, and many others.
-
-These *high-level languages* can be written and understood by humans, and each
-one has its own characteristic style and *syntax*.
-
-How Computers Run Programs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. index:: ! compiler
-
-Since computers only understand binary code, every programming language
-includes a **compiler**, which is a special tool that translates a programmer's
-work into the 0s and 1s that the machines need.
-
-If we want to print ``Hello, World!`` on the screen, we would write the
-instructions in our chosen programming language, then select "Run". Our code
-gets sent to the compiler, which converts our typed commands into something the
-computer can use. The instructions are then executed by the machine, and we
-observe the results.
-
-.. figure:: figures/Compiler.png
-   :alt: Visual description for how a compiler works.
-
-In the example above, the *syntax* for printing ``Hello, World!`` varies
-between the Python, JavaScript, and Java languages, but the end result is the
-same.
-
-How Many Programming Languages Are There?
------------------------------------------
-
-Ask Google, "How many programming languages are there?" and many, many results
-appear. Even with all these options, there is no specific answer to the
-question. There are hundreds, if not thousands, of programming languages available.
-
-Arguments occur whenever someone makes a top 10 list for programming languages,
-but regardless of the opinions, one fact remains.
-
-   Once you learn one language, learning the next is much, much easier.
-   
-Once you know two programming languages, adding a third becomes child's play.
-
-The reason for this is that *thinking like a coder* does not change with the
-language. Your logic, reasoning, and problem solving skills apply just as well
-for Python as they do for JavaScript, Swift and C#. To display text on the
-screen in Python, we use ``print()``, for JavaScript we use ``console.log();``,
-for C# the command is ``Console.WriteLine();``. The *syntax* for each language
-varies, but the results are identical.
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

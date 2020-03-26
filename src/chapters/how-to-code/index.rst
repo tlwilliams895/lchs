@@ -9,4 +9,3 @@ How To Write Code
    comments.rst
    print-function
    welcome-coder
-   exercises

@@ -70,6 +70,22 @@ Check Your Understanding
 
 .. admonition:: Question
 
+   An algorithm is:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A solution to a problem that can be solved by a computer.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A step by step list of instructions that if followed exactly will solve a problem.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A single command run by a programming language.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A </li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = all of the above.
+
+.. admonition:: Question
+
    Select ALL of the following that can be solved by using an algorithm:
 
    .. raw:: html
@@ -96,6 +112,16 @@ Check Your Understanding
             document.getElementById(id).innerHTML = text + ' - Correct!';
          } else {
             document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
             document.getElementById(id).style.color = 'red';
          }
       }

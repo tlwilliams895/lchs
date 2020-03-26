@@ -5,6 +5,7 @@ How Programs Work
    :maxdepth: 3
 
    algorithms
+   programming-languages
    how-programs-work
    first-program
    replit
