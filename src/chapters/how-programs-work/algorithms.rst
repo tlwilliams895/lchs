@@ -81,7 +81,7 @@ Check Your Understanding
       </ol>
       <p id="Q1"></p>
 
-.. Answer = all of the above.
+.. Answer = b.
 
 .. admonition:: Question
 

@@ -12,7 +12,7 @@ Let's start by looking at **data**, which is any piece of information stored in
 a program. The most basic unit of data is called a *value*.
 
 A **value** is a specific piece of data, such as a word or a number. Some
-examples are ``5``, ``5.2``, and ``"Hello, World!"``.
+examples are ``5``, ``"Hello, World!"``, and ``11.333``.
 
 .. index:: ! data type, ! int, ! string, ! float
 
@@ -21,7 +21,7 @@ types in this course, but here are your first three:
 
 #. **string** - One or more characters enclosed in quotes, such as
    ``"Hello, World!"`` In Python, strings can be enclosed in single quotes or
-   double quotes, so ``'A'`` and ``"B"`` are both strings.
+   double quotes, so ``'A'`` and ``"B"`` both count as strings.
 #. **int** - Stands for *integer*, which is a whole number like ``4``, ``-23``,
    and ``42``.
 #. **float** - Any number with a decimal like ``3.14159``, ``-0.01``, and
@@ -53,50 +53,47 @@ Not surprisingly, Python reports that the data type of ``"Hello, World!"`` is
 ``str``, which stands for ``string``. The data types for ``17`` and ``3.14``
 are ``int`` and ``float``, respectively.
 
-There are data types other than ``string``, ``int``, and ``float``, and we will
-learn about those in later chapters.
+We will learn about other data types in later chapters.
 
 More On Strings
 ---------------
 
-What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they
-are in quotation marks like strings.
+#. What about values like ``"17"`` and ``"3.2"``? They look like numbers, but
+   they are in quotation marks like strings.
 
-Run the following code to find out.
+   Run the following code to find out.
 
-.. admonition:: Try It!
+   .. admonition:: Try It!
 
-   .. raw:: html
+      .. raw:: html
 
-      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-type-function?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+         <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-type-function?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
-   What is the data type of the values ``"17"`` and ``"3.2"``?
+      What is the data type of the values ``"17"`` and ``"3.2"``?
 
-In Python we can use either single quotes (``'``) or double quotes (``"``) for
-strings. *Triple* quotes (``'''`` or ``"""``) can be used for multi-line
-strings.
+#. In Python we can use either single quotes (``'``) or double quotes (``"``) for
+   strings. *Triple* quotes (``'''`` or ``"""``) can be used for multi-line
+   strings.
 
-.. admonition:: Example
+   .. admonition:: Example
 
-   Add the following lines to the code editor above, then run the code.
+      Add the following lines to the code editor above, then run the program again.
 
-   .. sourcecode:: js
-      :lineno-start: 3
+      .. sourcecode:: js
+         :lineno-start: 3
 
-      print(type('This is a string'))
-      print(type("And so is this"))
-      print('''Rutabagas
-      in the
-      spring''')
+         print(type('This is a string'))
+         print(type("And so is this"))
+         print('''Rutabagas
+         in the
+         spring''')
 
-Double-quoted strings can contain single quotes inside them, like
-``"Bruce's beard"``.
-
-Single quoted strings can have double quotes inside them, like
-``'The knights who say "Ni!"'``.
-
-Python doesn't care whether you use single or double quotes around strings,
-since the quote marks are not stored as part of the value.
+#. Double-quoted strings can contain single quotes inside them, like
+   ``"Bruce's beard"``.
+#. Single-quoted strings can have double quotes inside them, like
+   ``'The knights who say "Ni!"'``.
+#. Python doesn't care whether you use single or double quotes around strings,
+   since the quote marks are not stored as part of the value.
 
 .. admonition:: Warning 
 
@@ -105,7 +102,7 @@ since the quote marks are not stored as part of the value.
 
    Try running the following piece of code:
 
-   .. sourcecode:: python
+   ::
 
       print('Bruce's beard')
 
@@ -113,8 +110,8 @@ More On Numbers
 ---------------
 
 When you type a large number, you might be tempted to use commas, as in
-``42,000``. This is NOT allowed for the ``int`` and ``float`` data types in
-Python. However, the comma DOES mean something else:
+``42,000``. However, this is NOT allowed for the ``int`` and ``float`` data
+types in Python.
 
 .. admonition:: Example
 
@@ -131,10 +128,10 @@ Python. However, the comma DOES mean something else:
       42000
       42 0
 
-Well, that's not what we expected at all! Because of the comma, Python chose to
-treat ``42,000`` as a *pair* of values separated by a space. As we saw in the
-:ref:`print function <print-function>` section ``print`` can display any number of
-values as long as you separate them by commas.
+Well, that's not what we expected at all! Because of the comma, Python treats
+``42,000`` as a *pair* of values. As we saw in the
+:ref:`print function <print-function>` section, ``print`` can display any
+number of values as long as you separate them by commas.
 
 .. admonition:: Example
 
@@ -154,8 +151,8 @@ values as long as you separate them by commas.
 Remember not to put commas or spaces in your numbers!
 
 Also, remember that Python and other programming languages are strict about
-*syntax*. Even the smallest change might mean something quite different
-from what you intended.
+*syntax*. Even the smallest change can make your program do something you did
+not intend.
 
 Check Your Understanding
 ------------------------
