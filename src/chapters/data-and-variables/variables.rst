@@ -11,9 +11,9 @@ You can think of a variable as a label that *points to* a piece of data.
 
    INSERT FIGURE HERE
 
-Caption: The label my_word points to a the string value "Python"
+Alternate: The label my_word points to a the string value "Python"
 
-   The variable my_word points to the value "Python".
+   The variable my_word points to the string value "Python".
 
 With this picture in mind, let's learn how to create and use variables in
 Python.
@@ -113,71 +113,83 @@ Try This
 
 Do variables have data types? Run the following code to find out.
 
-   INSERT REPL BOX HERE
+.. raw:: html
+
+   <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Variable-Types?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 The type of a variable is same as the data type of its current value.
 
 Reassigning Variables
 ---------------------
 
-We use variables in a program to "remember" things, like the current score at the football game. As their name implies, variables can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.
+We use variables in a program to "remember" things, like the current score at
+a football game. Just like a score, variables can change over time.
 
-To see this, read and then run the following program in a code editor. You'll notice that we change the value of ``day`` three times, and on the third assignment we even give it a value that is of a different data type.
+To see this, read and then run the following program. Notice how we change the
+value of ``day`` three times. We even give it a value of a different data type.
 
-.. sourcecode:: js
-   :linenos:
+.. raw:: html
 
-    let day = "Thursday";
-    console.log(day);
+   <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Reassign-Variables?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-    day = "Friday";
-    console.log(day);
-
-    day = 21;
-    console.log(day);
-
-A great deal of programming involves asking the computer to remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
-
-.. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do NOT use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
+A great deal of programming involves asking the computer to remember things.
+For example, we might want to keep track of the number of missed calls on our
+phones. Each time we miss another call, we can update a variable to reflect the
+new total.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   What is printed when the following code executes?
+   What is printed when the following code runs?
 
    .. sourcecode:: js
       :linenos:
 
-       let day = "Thursday";
-       day = 32.5;
-       day = 19;
-       console.log(day);
+      day = "Thursday"
+      day = 32.5
+      day = 19
+      print(day)
 
-   1. Nothing is printed. A runtime error occurs.
-   2. ``Thursday``
-   3. ``32.5``
-   4. ``19``
+   .. raw:: html
 
-    
-.. admonition:: Question
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Thursday</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 32.5</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 19</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Thursday 32.5 19</li>
+      </ol>
+      <p id="Q1"></p>
 
-   How can you determine the type of a variable?
-
-   1. Print out the value and determine the data type based on the value printed.
-   2. Use ``typeof``.
-   3. Use it in a known equation and print the result.
-   4. Look at the declaration of the variable. 
+.. Answer = c
 
 .. admonition:: Question
 
-   Which line is an example of variable initialization? (*Note: only one line is such an example.*)
+   How can you determine the data type of a variable?
 
-   .. sourcecode:: js
-      :linenos:
-      
-      let a;
-      a = 42;
-      a = a + 3;
+   .. raw:: html
 
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Print out the value of the variable.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Use ``type()``.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use it in a known equation and print the result.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Look at the assignment of the variable in the code.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
