@@ -194,3 +194,74 @@ find yourself using ``%`` more than you expect.
 
    The value returned by ``a % b`` will be from ``0`` to ``b`` (not including
    ``b``).
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What value is printed when the following statement runs?
+
+   .. sourcecode:: Python
+
+      print(18 / 4)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 4.5</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. admonition:: Question
+
+   What value is printed when the following statement runs?
+
+   .. sourcecode:: Python
+
+      print(18 // 4)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 4.5</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 4</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. admonition:: Question
+
+   What value is printed when the following statement runs?
+
+   .. sourcecode:: Python
+
+      print(18 % 4)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 4.5</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 2</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
