@@ -144,7 +144,7 @@ Check Your Understanding
 
    What is printed when the following code runs?
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
       day = "Thursday"

@@ -12,6 +12,7 @@ Data and Variables
    more-on-variables
    expressions-and-statements
    operators
+   order-of-operations
    other-operations
    input
    exercises
