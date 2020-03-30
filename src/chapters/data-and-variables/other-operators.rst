@@ -1,4 +1,0 @@
-Other Operators
-===============
-
-Lorem ipsum...

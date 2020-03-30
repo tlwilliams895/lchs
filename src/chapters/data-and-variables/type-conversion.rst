@@ -1,3 +1,5 @@
+.. _type-conversion:
+
 Type Conversion
 ===============
 

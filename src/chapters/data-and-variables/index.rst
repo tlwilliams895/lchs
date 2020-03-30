@@ -12,7 +12,7 @@ Data and Variables
    more-on-variables
    expressions-and-statements
    operators
-   other-operators
+   other-operations
    input
    exercises
    project

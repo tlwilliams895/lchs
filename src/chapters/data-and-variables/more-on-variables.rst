@@ -40,7 +40,7 @@ Consider this example of weak vs. strong variable names:
 
 .. admonition:: Example
 
-   We have not learned about what ``*`` and ``**`` do, but understanding the
+   We have not learned what ``*`` and ``**`` do, but understanding these
    symbols is not the point right now.
 
    **Weak names**:
@@ -65,7 +65,7 @@ Consider this example of weak vs. strong variable names:
 
       radius_of_circle = 5
       PI = 3.14
-      area_of_circle = pi * radiusOfCircle ** 2
+      area_of_circle = pi * radius_of_circle ** 2
       print(area_of_circle)
       
    With improved variable names, it becomes clear that the program is
