@@ -92,8 +92,11 @@ OK. Read this section title again.
 
 Python automatically applies the order of operations for you!
 
-However, if you ever notice that your program is not calculating the
-answers you expect, you probably have an order of operations issue.
+However, if you ever notice that your program is not calculating the answers
+you expect, you and Python probably disagree on how to apply the order of
+operations.
+
+(Hint - Python's not wrong).
 
 Check Your Understanding
 ------------------------
