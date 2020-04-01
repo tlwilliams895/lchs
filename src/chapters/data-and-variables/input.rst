@@ -164,9 +164,44 @@ Check Your Understanding
 
       print(type(user_age))
 
-   #. ``<class 'str'>``
-   #. ``<class 'int'>``
-   #. ``user_age``
-   #. ``25``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"><strong style="color:#419f6a"> &lt;class 'str'&gt;</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> &lt;class 'int'&gt;</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> user_age</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> 25</strong></li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a
+
+.. admonition:: Question
+
+   Assume you want the user to enter a decimal value, like ``4.33``. Which of
+   the following statements would throw an error after the user taps *Return*?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> input('Enter a decimal value: ')</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> float(input('Enter a decimal value: '))</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"><strong style="color:#419f6a"> int(input('Enter a decimal value: '))</strong></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
