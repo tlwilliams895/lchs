@@ -53,18 +53,18 @@ program is compared to the one above!
 
 .. admonition:: Note
 
-   It may seem odd to you that this loop uses the integer 51, but only prints
-   up to 50. Why this is the case will become clear in the next section.
+   It may seem odd that this loop uses the integer 51, but only prints up to
+   50. Why this is the case will become clear in the next section.
 
 Don't Repeat Yourself
 ---------------------
 
 .. index:: ! DRY
 
-Learning about iteration using loops is also an opportunity to introduce one of
-the most popular phrases in programming: *Don't Repeat Yourself*, or **DRY**. A
+Learning about iteration and loops gives us the chance to introduce one of the
+most popular phrases in programming: *Don't Repeat Yourself*, or **DRY**. A
 common piece of advice from instructors and experienced programmers is that you
-should "keep your code DRY."
+should "Keep your code DRY."
 
 Anytime you find yourself typing the same set of statements over and over
 again in a program, little alarm bells should start going off in your head.
