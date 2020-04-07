@@ -56,11 +56,17 @@ program is compared to the one above!
    It may seem odd to you that this loop uses the integer 51, but only prints
    up to 50. Why this is the case will become clear in the next section.
 
-.. _dry-code:
+Don't Repeat Yourself
+---------------------
 
 .. index:: ! DRY
 
 Learning about iteration using loops is also an opportunity to introduce one of
-the most widely-known mnemonic devices in programming: *Don't Repeat Yourself*,
-or **DRY**. A common piece of advice from instructors and experienced
-programmers is that you should "keep your code DRY." Let's learn how.
+the most popular phrases in programming: *Don't Repeat Yourself*, or **DRY**. A
+common piece of advice from instructors and experienced programmers is that you
+should "keep your code DRY."
+
+Anytime you find yourself typing the same set of statements over and over
+again in a program, little alarm bells should start going off in your head.
+Instead of all that typing, consider how you could structure the process so
+you only need to write the statements *once*.

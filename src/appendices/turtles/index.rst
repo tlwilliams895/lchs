@@ -1,3 +1,5 @@
+.. _turtle-guide:
+
 Python Turtles
 ==============
 
