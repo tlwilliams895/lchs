@@ -35,6 +35,9 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+   appendices/turtles/index
+   appendices/about-this-book
+
 .. toctree::
    :hidden:
 
