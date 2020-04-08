@@ -111,19 +111,33 @@ Let's modify the code just a little to follow the operation of a ``for`` loop.
 
 #. The first time Python executes the ``for`` statement in line 1, ``num`` is
    assigned a value of ``0``.
-#. Line 2 executes, printing the current value of ``num``.
-#. Line 3 executes, printing the string ``Hello`` zero times.
-#. Python reaches the end of the loop body (the indented lines) and then MOVES
-   BACK TO THE ``for`` STATEMENT (line 1).
-#. Since the current value of ``num`` has not reached the end of the specified
-   ``range``, ``num`` gets reassigned to the next higher value (``1``).
-#. Lines 2 and 3 execute again, using the new value of ``num``. ``1`` and
-   ``Hello`` get printed.
-#. Python again reaches the end of the loop body and moves back up to the
-   ``for`` statement. ``num`` gets reassigned a value of ``2``.
+#. Next, Python checks if the value of ``num`` is less than the value inside
+   ``range``. Since ``num < 4`` evaluates to ``True``, the loop body executes.
+#. Line 2 runs, printing the current value of ``num``.
+#. Line 3 runs, printing the string ``Hello`` zero times.
+#. Python reaches the end of the loop body (the indented lines). At this point,
+   it increases the value of ``num`` by 1 and then MOVES BACK TO THE ``for``
+   STATEMENT (line 1).
+#. The new value of ``num`` (``1``) gets compared to the ``range`` value.
+   Since ``num < 4`` still returns ``True``, the loop body executes again.
+#. Lines 2 and 3 run with the new value of ``num``, so we see ``1`` and
+   ``Hello`` printed to the console.
+#. Python again reaches the end of the loop body, increases the value of
+   ``num`` and moves back up to the ``for`` statement.
 #. This process continues until the value of ``num`` reaches the end of the
-   specified ``range``.
-#. Once the loop finishes, Python proceeds to line 5.
+   specified ``range``. Once the comparison ``num < 4`` returns ``False``, the
+   loop ends. Since Python adds 1 after each iteration, this occurs when
+   ``num`` is 4 (so ``4 < 4`` is ``False``). At that point, the loop body will
+   have run exactly 4 times, with ``num`` taking the values 0, 1, 2, and 3.
+#. Once the loop finishes, Python proceeds to line 5 and prints ``Done!`` one
+   time.
+
+We can use a picture to show the *flow of execution* of this ``for`` loop:
+
+.. figure:: figures/for-loop-diagram.png
+   :alt: Diagram showing the flow of a program with a loop.
+
+   Flow of execution of a ``for`` loop
 
 Notice that even though line 1 uses ``range(4)``, the value ``4`` is NOT
 included in the output. Why?
@@ -134,8 +148,8 @@ Begin Counting at 0
 .. index:: ! zero-based indexing
 
 Iterating a certain number of times is a very common thing to do, and Python
-gives us a special built-in ``range`` keyword that provides a sequence of
-values for the for loop variable to use.
+gives us the built-in ``range`` keyword to provide a set of values for the loop
+variable to use.
 
 The sequence provided by ``range`` always starts with ``0``. If you ask for
 ``range(4)``, then you will get 4 values starting with 0. In other words, 0, 1,
@@ -151,8 +165,8 @@ computer programming.
    For ``range(n)``, the loop variable will take each integer value from 0 up
    to BUT NOT INCLUDING ``n``.
 
-Try It!
--------
+Iteration Improves the Turtle Program
+-------------------------------------
 
 Take a look at the turtle code at the top of this page. Which statements are
 repeated? How many times?
@@ -163,4 +177,57 @@ turtle draw a square. Don't forget to indent!
 
 .. raw:: html
 
-   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Square?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+   <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Square?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   How does python know what lines are contained in the loop body? 
+   
+   #. They are indented by the same amount from the ``for`` statement.
+   #. There is always exactly one line in the loop body.
+   #. The loop body ends with an empty line.
+
+.. Answer = a.
+
+.. admonition:: Question
+
+   How many lines does the following code print?
+
+   .. sourcecode:: python
+      :linenos:
+
+      for number in range(10):
+         print("I have", 12 - number, "cookies. I'm going to eat one!")
+   
+   #. 1
+   #. 9
+   #. 10
+   #. 12
+
+.. Answer = c.
+
+.. admonition:: Question
+
+   For the code above, what is the value of ``number`` the *third* time Python
+   executes the loop?
+   
+   #. 1
+   #. 2
+   #. 3
+   #. 4
+
+.. Answer = b.
+
+.. admonition:: Question
+
+   For the same code, what is the LAST line printed by the program?
+   
+   #. ``I have 2 cookies. I'm going to eat one!``
+   #. ``I have 3 cookies. I'm going to eat one!``
+   #. ``I have 10 cookies. I'm going to eat one!``
+   #. ``I have 12 cookies. I'm going to eat one!``
+
+.. Answer = b.

@@ -6,8 +6,8 @@ Repeating Things With Loops
 
    iteration
    for-loops
+   range-options
    iterating-over-collections
-   for-statement-breakdown
    accumulator-pattern
    while-loops
    terminating-loops
