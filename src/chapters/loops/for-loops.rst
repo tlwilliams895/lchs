@@ -165,20 +165,6 @@ computer programming.
    For ``range(n)``, the loop variable will take each integer value from 0 up
    to BUT NOT INCLUDING ``n``.
 
-Iteration Improves the Turtle Program
--------------------------------------
-
-Take a look at the turtle code at the top of this page. Which statements are
-repeated? How many times?
-
-Complete the code below by entering a value into ``range``. Next, copy and
-paste the SMALLEST number of statements into the loop body that will make the
-turtle draw a square. Don't forget to indent!
-
-.. raw:: html
-
-   <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Square?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
-
 Check Your Understanding
 ------------------------
 
