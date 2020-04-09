@@ -164,4 +164,65 @@ included in the loop.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
+
+.. admonition:: Question
+
+   In the command ``range(3, 10, 2)``, the second argument (``10``) specifies that
+   ``range`` should:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> generate a set of values that stops at 9 (including 9).</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> generate a set of values that starts at 10 (including 10).</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> generate a set of values starting at 3 that stops at 10 (including 10).</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> generate a set of values using every 10th number between 3 and 10.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = a.
+
+.. admonition:: Question
+
+   What command correctly generates the values ``2, 5, 8``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">range(2, 5, 8)</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">range(2, 8, 3)</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">range(2, 10, 3)</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">range(8, 1, -3)</strong></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   What happens if you give range only one argument, like ``range(14)``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It will generate a set of values starting at 1 and ending with the number in the ().</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It will generate a set of values starting at 1 up to but NOT including the number in the ().</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It will generate a set of values starting at 0 and ending with the number in the ().</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> It will generate a set of values starting at 0 up to but NOT including the number in the ().</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = d

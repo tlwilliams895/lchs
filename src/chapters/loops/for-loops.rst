@@ -170,11 +170,17 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   How does python know what lines are contained in the loop body? 
-   
-   #. They are indented by the same amount from the ``for`` statement.
-   #. There is always exactly one line in the loop body.
-   #. The loop body ends with an empty line.
+   How does python know what lines are contained in the loop body?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The lines are indented by the same amount from the <strong style="color:#419f6a">for</strong> statement.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> There is always exactly one line in the loop body.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The loop body ends with an empty line.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The loop body ends at the next <strong style="color:#419f6a">for</strong> statement.</li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a.
 
@@ -188,10 +194,15 @@ Check Your Understanding
       for number in range(10):
          print("I have", 12 - number, "cookies. I'm going to eat one!")
    
-   #. 1
-   #. 9
-   #. 10
-   #. 12
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 9</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 10</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 12</li>
+      </ol>
+      <p id="Q2"></p>
 
 .. Answer = c.
 
@@ -200,10 +211,15 @@ Check Your Understanding
    For the code above, what is the value of ``number`` the *third* time Python
    executes the loop?
    
-   #. 1
-   #. 2
-   #. 3
-   #. 4
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 1</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 2</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 3</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+      </ol>
+      <p id="Q3"></p>
 
 .. Answer = b.
 
@@ -211,9 +227,28 @@ Check Your Understanding
 
    For the same code, what is the LAST line printed by the program?
    
-   #. ``I have 2 cookies. I'm going to eat one!``
-   #. ``I have 3 cookies. I'm going to eat one!``
-   #. ``I have 10 cookies. I'm going to eat one!``
-   #. ``I have 12 cookies. I'm going to eat one!``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 2 cookies. I'm going to eat one!</strong></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">I have 3 cookies. I'm going to eat one!</strong></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 10 cookies. I'm going to eat one!</strong></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 12 cookies. I'm going to eat one!</strong></li>
+      </ol>
+      <p id="Q4"></p>
 
 .. Answer = b.
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
