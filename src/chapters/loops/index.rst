@@ -9,6 +9,7 @@ Repeating Things With Loops
    range-options
    turtle-iteration
    iterating-over-collections
+   conditional-loops
    accumulator-pattern
    while-loops
    terminating-loops
