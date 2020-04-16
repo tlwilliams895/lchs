@@ -12,7 +12,8 @@ Repeating Things With Loops
    conditional-loops
    accumulator-pattern
    while-loops
-   terminating-loops
+   infinite-loops
    choosing-loops
+   terminating-loops
    exercises
    project
