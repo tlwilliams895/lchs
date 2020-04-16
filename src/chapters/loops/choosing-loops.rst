@@ -28,10 +28,9 @@ as long as it has to.
 **Indefinite iteration** refers to the case where we do not know how many times
 a loop needs to repeat.
 
-So which type of loop should we use in our code?
-
-``for`` vs. ``while``
----------------------
+So which type of loop should we use in our code? ``for`` loops do better when
+iterating over a collection or a fixed number of times. For the cases when
+``for`` loops do not work, ``while`` loops get the job done.
 
 Here are some points of comparison between the two types of loops.
 
