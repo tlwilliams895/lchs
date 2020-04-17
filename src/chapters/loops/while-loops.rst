@@ -215,15 +215,30 @@ Check Your Understanding
       while len(username) <= 5:
          username = input("Enter a username: ")
 
-   #. "Bob3"
-   #. "Anaconda"
-   #. "Willmore Crane Hastings III"
-   #. "Kathy"
-   #. "LaunchCode"
+   .. raw:: html
+      
+         <ol type="a">
+            <li><span id = "Option a" onclick="highlight('Option a', false)">"Bob3"</span></li>
+            <li><span id = "Option b" onclick="highlight('Option b', true)">"Anaconda"</span></li>
+            <li><span id = "Option c" onclick="highlight('Option c', true)">"Willmore Crane Hastings III"</span></li>
+            <li><span id = "Option d" onclick="highlight('Option d', false)">"Sally"</span></li>
+            <li><span id = "Option e" onclick="highlight('Option e', true)">"LaunchCode"</span></li>
+         </ol>
 
 .. raw:: html
 
    <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
       function evaluateMC(id, correct) {
          if (correct) {
             document.getElementById(id).innerHTML = 'Yep!';
