@@ -26,11 +26,12 @@ Try It!
 
    <script type="text/JavaScript">
       function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
          if (answer) {
             document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = id + ' - Correct!';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
          } else {
-            document.getElementById(id).innerHTML = id + ' - Nope!';
+            document.getElementById(id).innerHTML = text + ' - Nope!';
             document.getElementById(id).style.color = 'red';
          }
       }
