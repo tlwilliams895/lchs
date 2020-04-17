@@ -4,60 +4,60 @@ Ending a Loop With ``break``
 .. index:: ! break
 
 Python, like most programming languages, provides a way to stop a loop before it
-would normally finish. The ``break`` keyword, when placed within a loop,
-immediately stops the execution of the loop. Program flow then continues with
-the next line of code below the loop.
+would normally finish. The ``break`` keyword immediately stops the execution of
+the loop. Program flow then continues with the next line of code below the loop.
 
 .. admonition:: Example
-
-   Line 3 repeats 12 times with values of ``iteration`` from 0 to 11. During the
-   twelfth iteration, ``iteration`` is 11 and the condition ``num > 10``
-   evaluates to ``True`` for the first time. As a result, the program flow
-   reaches the ``break`` statement. The loop immediately stops, even though
-   ``range(42)`` would normally keep the loop going.
 
    .. sourcecode:: python
       :linenos:
 
       for iteration in range(42):
-         
          print('This is iteration number:', iteration+1).
 
-         if iteration > 10:
+         if iteration > 4:
             break
 
-Why would we need to use ``break``? After all, we tell Python how many times
-the loop should repeat in the ``for`` statement?
+      print("The loop is done!")
 
-Consider a
-situation where we are searching for a particular word in the dictionary.
+   **Console Output**
+
+   ::
+
+      This is iteration number: 1
+      This is iteration number: 2
+      This is iteration number: 3
+      This is iteration number: 4
+      This is iteration number: 5
+      This is iteration number: 6
+      The loop is done!
+   
+   #. Line 2 repeats 6 times with values of ``iteration`` from 0 to 5.
+   #. The sixth time through the loop, ``iteration`` is 5 and the condition in
+      line 4 (``iteration > 4``) evaluates to ``True`` for the first time.
+   #. As a result, the program flow reaches the ``break`` statement. The loop
+      immediately stops, even though ``range(42)`` would normally keep the loop
+      going.
+   #. Control moves to the first line of code after the loop.
+
+Why would we need to use ``break``? After all, we tell Python how many times
+the loop should repeat in the ``for`` statement.
+
+In some cases, you may want to provide a *second* ending condition. For
+example, let's say you need to search through 100,000 items, and you find the
+one you want after 5 iterations. In this case, there is no need to wait for the
+loop to finish on its own. Adding a ``break`` statement will speed up your
+program, especially if you need to use that large range multiple times.
 
 The ``break`` statement can also be used within a ``while`` loop. 
 
-We can use a ``while`` loop to say, *while we have not reached the end of the array, continue iterating*. We can then include a ``break`` within a conditional check to say, *when we have found the element we are searching for, exit the loop*.
+.. index:: ! continue
 
-.. admonition:: Example
+.. admonition:: Note
 
-   A ``while`` loop can be used with ``break`` to search for an element in an array. 
-
-   .. sourcecode:: js
-      :linenos:
-
-      let numbers = [ /* some numbers */ ];
-      let searchVal = 42;
-      let i = 0;
-
-      while (i < numbers.length) {
-         if (numbers[i] === searchVal) {
-            break;
-         }
-         i++;
-      }
-
-      if (i < numbers.length) {
-         console.log("The value", searchVal, "was located at index", i);
-      } else {
-         console.log("The value", searchVal, "is not in the array.");
-      }
-
-Notice that we use a ``while`` loop in this example, rather than a ``for`` loop. This is because our loop variable, ``i``, is used outside the loop. When we use a ``for`` loop in the way we have been, the loop variable exists only within the loop.
+   There is another command that interrupts a single iteration of a loop but
+   does not end the loop completely. This is the ``continue`` statement.
+   
+   However, ``continue`` is rarely used, and we will not discuss it in detail
+   here. If you are curious, you can find more information at
+   `Tutorials Point <https://www.tutorialspoint.com/python/python_loop_control.htm>`__.

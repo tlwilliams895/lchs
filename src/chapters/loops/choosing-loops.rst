@@ -65,8 +65,13 @@ Check Your Understanding
    If you know the maximum number of times you need a loop to repeat, either
    ``for`` or ``while`` will work, but which option is the *better* choice?
 
-   #. ``while``
-   #. ``for``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">while</strong> loop</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">for</strong> loop</li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = b
 
@@ -79,8 +84,13 @@ Check Your Understanding
 
    Which type of loop should you use to write the program?
 
-   #. ``while`` loop
-   #. ``for`` loop
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">while</strong> loop</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">for</strong> loop</li>
+      </ol>
+      <p id="Q2"></p>
 
 .. Answer = a
 
@@ -92,7 +102,26 @@ Check Your Understanding
 
    Which type of loop should you use to write the program?
 
-   #. ``while`` loop
-   #. ``for`` loop
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">while</strong> loop</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">for</strong>loop</li>
+      </ol>
+      <p id="Q3"></p>
 
 .. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
