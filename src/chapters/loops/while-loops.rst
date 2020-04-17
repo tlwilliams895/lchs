@@ -52,7 +52,8 @@ Control Flow
 
 We can visualize the program flow of a ``while`` loop as follows.
 
-   INSERT FIGURE HERE!!!!
+.. figure:: figures/while-loop-flow.png
+   :alt: Diagram showing the control flow through a while loop.
 
    Flow of execution of a ``while`` loop
 
@@ -106,9 +107,38 @@ approaches might sound something like:
 Try It!
 ^^^^^^^
 
-Convert for loop into the equivalent while...
+Let's convert this ``for`` loop into the equivalent ``while``.
 
-   INSERT REPL HERE!!!!
+.. sourcecode:: python
+   :linenos:
+
+   letters = 'abcdefghijklmnopqrstuvwxyz'
+   for_string = ''
+   num_letters = 8
+
+   for index in range(num_letters):
+      for_string += letters[index]
+
+   print(for_string)  # Displays 'abcdefgh'
+
+Do the following in the editor below:
+
+#. On line 5, define a counter variable called ``index``. Assign it a value of
+   ``0``.
+#. Next, code the ``while`` statement. Here are two possibilities:
+
+   - ``while index < num_letters:``
+   - ``while len(while_string) < num_letters:``
+
+#. Inside the loop, update ``while_string``. Look at line 6 in the ``for`` loop
+   for a hint about how to do this.
+#. Also inside the loop, increase the value of ``index`` by 1.
+#. Run the program to verify that it prints ``abcdefgh`` when
+   ``num_letters = 8``.
+
+.. raw:: html
+
+   <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Rewrite-for-as-while?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Input Validation
 ----------------
@@ -123,23 +153,17 @@ this.
 
 .. index:: ! input validation
 
-This program is an example of **input validation**. It prompts the user to
-enter a positive number. If the user enters ``0`` or any negative number, then
-they see an error message and are prompted again within the body of the loop.
-If the user keeps entering invalid numbers, the loop continues to iterate. As
-soon as the user chooses a valid number, the loop ends.
+.. admonition:: Try It!
 
-   INSERT REPL HERE!!!
+   This program is an example of **input validation**. It prompts the user to
+   enter a positive number. If the user enters ``0`` or any negative number,
+   then they see an error message and are prompted again within the body of the
+   loop. If the user keeps entering invalid numbers, the loop continues to
+   iterate. As soon as the user chooses a valid number, the loop ends.
 
-.. sourcecode:: python
-   :linenos:
+   .. raw:: html
 
-   num_choice = 0
-
-   while num_choice <= 0:
-      num_choice = int(input('Choose a positive number: '))
-      if num_choice <= 0:
-         print('Invalid number')
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-While-Input-Validation?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
 
 This example shows the additional flexibility provided by ``while`` loops.
 ``for`` loops iterate a specific number of times, but in this case we have no
@@ -150,4 +174,63 @@ going until the condition returns ``False``.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   You can rewrite any ``for`` loop as a ``while`` loop.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = True
+
+.. admonition:: Question
+
+   You can rewrite any ``while`` loop as a ``for`` loop.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = False
+
+.. admonition:: Question
+
+   Which of the following will cause this ``while`` loop end? Select ALL that
+   apply.
+
+   .. sourcecode:: python
+      :linenos:
+
+      username = ''
+
+      while len(username) <= 5:
+         username = input("Enter a username: ")
+
+   #. "Bob3"
+   #. "Anaconda"
+   #. "Willmore Crane Hastings III"
+   #. "Kathy"
+   #. "LaunchCode"
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

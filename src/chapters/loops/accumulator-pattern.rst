@@ -133,16 +133,14 @@ in a different string.
 
    Follow the given steps to build the program!
 
-   INSERT REPL HERE!!! (``some_text = "bookkeeper anteater"``)
-
-   #. On line 2, define a variable called ``only_vowels`` and assign it the empty
+   #. On line 3, define a variable called ``only_vowels`` and assign it the empty
       string, ``''``. This will be the *accumulator*, and it will get larger as
       the loop runs.
-   #. On line 4, set up a ``for`` statement to loop through the characters in
+   #. On line 5, set up a ``for`` statement to loop through the characters in
       ``some_text``.
 
       .. sourcecode:: python
-         :lineno-start: 4
+         :lineno-start: 5
 
          for char in some_text:
 
@@ -151,15 +149,19 @@ in a different string.
       Paste this code into the loop. Remember to indent!
 
       .. sourcecode:: python
-         :lineno-start: 5
+         :lineno-start: 6
 
-         if char in 'aeiou':     # Check if char is a vowel.
+         if char in 'aeiou':     # Check if char is a lowercase vowel.
             only_vowels += char  # If True, add char to only_vowels.
          
          print(only_vowels)
 
    #. The ``print`` statement displays the value of ``only_vowels`` each
       iteration, and this allows us to see how it changes as the loop repeats.
+
+   .. raw:: html
+
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Accumulator-Practice-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Properly done, the program should build up ``only_vowels`` as follows:
 
@@ -175,26 +177,29 @@ Properly done, the program should build up ``only_vowels`` as follows:
    ooeeeaea
    ooeeeaeae
 
-Line 6 updates ``only_vowels`` with the ``+=`` operator. Each time the
-statement runs, it adds a new character to the end of
-the string stored in the variable.
+Line 7 updates ``only_vowels`` with the ``+=`` operator. Each time the
+statement runs, it adds a new character to the end of the string stored in the
+variable.
 
 Recall that ``only_vowels += char`` is a shortcut fo the longer expression
 ``only_vowels = only_vowels + char``. Is the order here important?
 
+.. admonition:: Try It!
+
+   Replace line 7 with ``only_vowels = char + only_vowels`` and run the program
+   again. What happened?
+
+   By changing how we reassign the accumulator variable, we get different
+   results.
+
 Reversing a String
 ------------------
-
-Replace line 6 with ``only_vowels = char + only_vowels`` and run the program
-again. What happened?
-
-By changing how we reassign the accumulator variable, we get different results.
 
 Let's look at another program that takes any string, reverses the characters,
 and stores the new result in another variable.
 
 Start by defining two variables---the string we want to reverse and a variable
-to store the reverse of the first string.
+to store the new string.
 
 .. admonition:: Example
 
@@ -262,18 +267,9 @@ total.
    Run the program below several times using different values for ``total`` and
    ``decrease_by``
 
-      INSERT REPL HERE!!!!!
+   .. raw:: html
 
-   .. sourcecode:: python
-      :linenos:
-
-      total = 1000
-      decrease_by = 25
-
-      for step in range(10):
-         total -= decrease_by
-      
-      print(total)
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Accumulator-Practice-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 .. admonition:: Tip
 

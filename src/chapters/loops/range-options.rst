@@ -39,7 +39,9 @@ the loop variable ``num`` would take values of 1, 2, 3, and 4.
       HelloHelloHello
       HelloHelloHelloHello
    
-   INSERT REPL HERE!!!!!
+   .. raw:: html
+
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Range-Start-and-Stop?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Cool. ``range(start, stop)`` allows us to count upwards from any number we
 want.
@@ -51,7 +53,7 @@ Set a Step Value
 ----------------
 
 Suppose we want our loop variable to only be a set of even numbers (e.g. 0, 2,
-4, 6,...). We want to begin counting at 0 and then increase the loop variable
+4, 6...). We want to begin counting at 0 and then increase the loop variable
 by 2 units instead of 1.
 
 To make this happen, we need to add one more value inside ``range``. This is
@@ -88,21 +90,23 @@ Try It!
 In the editor below, change the values inside of ``range`` to accomplish the
 following:
 
-#. Print the numbers 0 - 15.
+#. Print the numbers 0 - 5.
 #. Print the numbers 33 - 45, including 45.
 #. Print only the *odd* numbers from 0 - 20.
 #. Print the numbers 25, 35, 45...95.
 #. Print the numbers from -3 to -10.
 #. Print by 3's from 15 to -21.
 
-   INSERT REPL HERE!!!!
+.. raw:: html
+
+   <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Range-Step?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Use Variables in ``range``
 --------------------------
 
 To make a ``for`` loop run, we must tell Python exactly how many times we want
-the loop body to repeat. However, sometimes we do not know this answer ahead of
-time. Variables to the rescue!
+the loop body to repeat. However, sometimes this number changes each time the
+program runs. Variables to the rescue!
 
 .. admonition:: Tip
 
@@ -115,9 +119,9 @@ variable names in ``range``:
 .. sourcecode:: Python
    :linenos:
 
-   start_value = int(input("Enter the FIRST number to print: ")
-   end_value = int(input("Enter the LAST number to print: ")
-   step_value = int(input("Enter the step value for the loop: ")
+   start_value = int(input("Enter the FIRST number to print: "))
+   end_value = int(input("Enter the LAST number to print: "))
+   step_value = int(input("Enter the step value for the loop: "))
 
 Repeat each of the *Try It* enter the start, stop, and step values to print the
 desired output.
@@ -128,7 +132,7 @@ desired output.
    ``range`` is NOT assigned to the loop variable at any time.
 
 After you pasted in the ``input`` statements and ran the program, did you have
-to type ``0, 16, 1`` to get the numbers 0 - 15 to show in the console? The
+to type ``0, 6, 1`` to get the numbers 0 - 5 to show in the console? The
 ``input`` statement implies that we want our typed end value to show up, but
 using the variable in ``range`` skips that number.
 
@@ -147,15 +151,18 @@ For the program above, replace the ``for`` statement with this:
 
    for num in range(start_value, end_value+1, step_value):
 
-The expression ``end_value + 1`` makes sure that the value we type will be
-included in the loop.
+For tasks 1 - 4, the expression ``end_value + 1`` makes sure that the value we
+type will be included in the loop. With the negative stop values in tasks 5 and
+6, we need to use ``end_value - 1``.
 
 .. admonition:: Try It
 
    Run the following program. Enter different words to see how the behavior
    changes.
 
-      ENTER REPL HERE!!!! (Prints a word len(word) times).
+   .. raw:: html
+
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Range-Expressions?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
    
    When Python executes the ``for`` statement, the expression ``len(word)``
    returns the length of the string. So if ``word = "Hi"``, then

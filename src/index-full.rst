@@ -2,7 +2,7 @@ Chapters
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :name: fulltoc
 
    chapters/introduction/index

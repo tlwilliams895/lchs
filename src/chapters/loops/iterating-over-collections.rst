@@ -57,44 +57,98 @@ Take a look at the following code and its output:
       y
       n
 
-Notice how lines 4 - 6 each print a single character from the string. Instead
-of displaying the entire string, ``word[0]`` produces the first letter, ``P``.
-``word[1]`` gives us the second character, and ``word[5]`` gives us the last.
+Notice how lines 4 - 6 each print a single character from the string.
+``print(word[0])`` displays only the first letter (``P``). ``word[1]`` prints
+the second character, and ``word[5]`` prints the last.
+
+.. index:: index
 
 We will explore strings in more detail in a later chapter. For now, we just
 need to recognize that every character in a string has an *index*. An index
 is a number that tells us the location of a character in the string.
 
-Just like ``range``, the index values of a string begin counting at ``0``.
+Like ``range``, the index values of a string start counting at ``0``.
 
-   INSERT DIAGRAM HERE.
+.. figure:: figures/string-index.png
+   :alt: Diagram showing the index values of a string.
+
+   The index values of a string.
 
 Indexes provide a different way to loop through a string:
 
-   INSERT REPL HERE!!!!
+.. admonition:: Example
 
-.. sourcecode:: Python
-   :linenos:
+   .. raw:: html
 
-   word = 'Python'
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Loop-Through-String-Indexes?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 
-   for index in range(6):
-      print(word[index])
+   Some items to note:
 
-Some items to note:
+   #. By using ``range(6)``, the ``index`` variable takes values from 0 - 5.
+   #. ``word[index]`` refers to the character in the string at position ``index``.
+   #. As written, the loop only displays characters up to index 5.
+      
+      - Try replacing the string with a longer one.
 
-#. By using ``range``, the ``index`` variable will take values from 0 - 5.
-#. ``word[index]`` refers to the character in the string at position ``index``.
-#. As written, the loop only displays characters up to index 5. TRY IT---Replace
-   the string with a longer one.
-#. If we replace the string with a shorter one, we get an error! For
-   ``word[5]`` to work, there must be a character at index 5.
-#. To prevent "index out of range" errors in this loop, we should NOT use
-   a specific number inside ``range``. TRY IT---Replace ``range(6)`` with
-   ``range(len(word))``. ``len(word)`` always returns the length of the current
-   string, so changing that string will not break the loop.
+   #. If we replace the string with a shorter one, we get an error! For
+      ``word[5]`` to work, there must be a character at index 5.
+   #. To prevent "index out of range" errors in this loop, we should NOT use
+      a specific number inside ``range``.
+   #. Replace ``range(6)`` with ``range(len(word))``. ``len(word)`` always returns
+      the length of the current string, so changing that string will not break the
+      loop.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   If ``phrase = 'Code for fun'``, then ``phrase[2]`` evaluates to:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"o"</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">"d"</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"for"</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"fun"</strong></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   What will be printed in the THIRD iteration of the loop:
+
+   .. sourcecode:: Python
+      :linenos:
+
+      for char in 'ABCDEFGHIJ':
+         print(char)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"ABC"</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"B"</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">"C"</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"D"</strong></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = C
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

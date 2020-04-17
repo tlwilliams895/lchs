@@ -1,7 +1,7 @@
 Iteration Improves the Turtle Program
 =====================================
 
-Take a look at the turtle code from the previous page. Which statements are
+Take another look at the turtle code for drawing a square. Which statements are
 repeated? How many times?
 
 .. admonition:: Example
