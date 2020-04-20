@@ -51,12 +51,15 @@ Loops simplify repetitive tasks!
    *Hint*: How can you make Python figure out the ``stop`` value so you won't
    have to count the characters in ``gibberish`` yourself?
 
-#. **Bonus:** Repeat the previous problem, but:
+Bonus
+^^^^^
 
-   a. Replace ``range(start, stop, step)`` with ``range(len(gibberish))``.
-   b. Use an ``if`` statement and the modulus (``%``) operator to check if the
-      index is divisible by 5. If ``True``, print the character. If ``False``,
-      do not print the character.
+Repeat the previous problem, but:
+
+a. Replace ``range(start, stop, step)`` with ``range(len(gibberish))``.
+b. Use an ``if`` statement and the modulus (``%``) operator to check if the
+   index is divisible by 5. If ``True``, print the character. If ``False``,
+   do not print the character.
 
 ``while`` Practice
 -------------------
@@ -85,10 +88,50 @@ spacecraft reaches.
 #. After the loops complete, print the result with the phrase, ``The spacecraft
    gained an altitude of ___ km and has ___ kg of fuel left.``
 
-#. **Bonus:** If the altitude is 2000 km or higher, add "Orbit achieved!" to
-   the output. Otherwise add, "Failed to reach orbit."
+Bonus
+^^^^^
+
+If the altitude is 2000 km or higher, add "Orbit achieved!" to the output.
+Otherwise add, "Failed to reach orbit."
 
 The Accumulator Pattern
 -----------------------
 
-Lorem ipsum...
+   INSERT REPL.IT LINK HERE!!!
+
+Use two ``input`` statements to prompt the user for a ``start_value`` and an
+``end_value``. Both inputs should be integers.
+
+7. Use a loop to add up all of the numbers from ``start_value`` to
+   ``end_value``. Store the result in the variable ``total``. Print "The sum of
+   the numbers from ___ to ___ is ___." Fill in the blanks with the values for
+   ``start_value``, ``end_value``, and ``total``.
+
+#. Define a variable to hold the string ``'It was a bright cold day in April,
+   and the clocks were striking thirteen.'`` Use the accumulator pattern to
+   build a new string. It should contain all of the characters in the original
+   string, but without any vowels.  For this task, y does NOT count as a vowel.
+   Print the new string.
+
+Challenge
+---------
+
+If our spacecraft gets hijacked by space pirates, the astronauts can activate
+a self-destruct sequence to provide some drama for the viewers at home.
+
+In order to prevent a rogue astronaut from activating the code, it takes *two*
+crew members to begin the countdown. Each person must enter a different code,
+after which the computer will "zip" them together before overloading the
+engines.
+
+Construct a loop that combines two strings together, alternating the characters
+from each source.
+
+.. admonition:: Examples
+
+   #. If ``string = "1234"`` and ``otherString = "5678"``, then the output will
+      be ``"15263748"``.
+   #. If ``code1 = "ABCDEF"`` and ``code2 = "notyet"``, then the output will be
+      ``"AnBoCtDyEeFt"``.
+   #. If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be
+      ``"LookOut!"``.
