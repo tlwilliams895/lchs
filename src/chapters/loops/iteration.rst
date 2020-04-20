@@ -31,10 +31,6 @@ to update a large number of lines.
 Programming languages provide tools that allow us to repeat a sequence of
 statements in a much simpler way.
 
-.. index::
-   single: loop for
-   single: loop while
-
 Repeating the same set of statements again and again and again is called
 **iteration**. This chapter explores two ways Python makes iteration simple and
 flexible---the ``for`` and ``while`` loops.
