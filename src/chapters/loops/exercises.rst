@@ -25,9 +25,17 @@ Loops simplify repetitive tasks!
 ``for`` Practice
 -----------------
 
-   INSERT REPL.IT LINK HERE!!!
+.. admonition:: Note
 
-#. Construct ``for`` loops that accomplish the following tasks:
+   If your teacher uses repl.it *classroom*, follow these instructions to access
+   this assignment.
+
+   .. todo:: Insert textbook link here!
+
+   If your teacher has NOT set up a repl.it classroom, click each problem link
+   to access the different sets of starter code.
+
+#. Construct ``for`` loops that accomplish the `following tasks <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-1>`__:
 
    a. Print the numbers 0 - 20, one number per line.
    b. Print only the ODD values from 3 - 29, one number per line.
@@ -36,8 +44,8 @@ Loops simplify repetitive tasks!
    d. Print the numbers 50 down to 20 in descending order, but only
       if the numbers are multiples of 3.
 
-#. Given the string ``'LaunchCode'``, code two ``for`` loops to do the
-   following:
+#. `Given the string <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-2>`__
+   ``'LaunchCode'``, code two ``for`` loops to do the following:
 
    a. Print each character of the string, one letter per line.
    b. Using ``index`` values, print each character of the string---in reverse
@@ -129,9 +137,9 @@ from each source.
 
 .. admonition:: Examples
 
-   #. If ``string = "1234"`` and ``otherString = "5678"``, then the output will
+   #. If ``string = "1234"`` and ``other_string = "5678"``, then the output will
       be ``"15263748"``.
-   #. If ``code1 = "ABCDEF"`` and ``code2 = "notyet"``, then the output will be
+   #. If ``code_1 = "ABCDEF"`` and ``code_2 = "notyet"``, then the output will be
       ``"AnBoCtDyEeFt"``.
    #. If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be
       ``"LookOut!"``.
