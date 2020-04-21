@@ -37,3 +37,8 @@ Appendices
 
    appendices/turtles/index
    appendices/about-this-book
+
+.. toctree::
+   :hidden:
+
+   todos

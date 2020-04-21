@@ -1,5 +1,5 @@
-Project: Loops
-==============
+Project: Turtle Loops
+=====================
 
 Let's use Python turtles to practice writing loops!
 
@@ -24,9 +24,10 @@ In the chapter, you coded a program to make a turtle draw a *regular polygon*
       bob.forward(50)
       bob.left(turn_angle)
 
-#. Modify the program to prompt the user to enter the number of sides for the
-   polygon.
-#. Modify the program to ask the user to enter the length for each side.
+#. Modify the program to prompt the user to enter the following:
+
+   a. The number of sides for the polygon,
+   b. The length for each side.
 
    .. admonition:: Tip
 
@@ -36,35 +37,39 @@ In the chapter, you coded a program to make a turtle draw a *regular polygon*
       You can also fill the polygon with a color. Refer to the Turtle Appendix
       for details.
 
-         INSERT INTERNAL LINK HERE!!!!!
+      .. todo:: Insert internal link to the Turtle Appendix.
 
-.. TODO: Insert internal link here.
+#. A *sprite* is a simple spider shaped thing with a certain number of legs
+   coming out from a center point.
 
-A *sprite* is a simple spider shaped thing with a certain number of legs coming
-out from a center point.
+   .. figure:: figures/sprite-example.gif
+      :alt: Gif showing sprites with 3, 5, and 8 legs.
 
-   INSERT SPRITE IMAGES AND GIF HERE!!!
+      Sprites with 3, 5, and 8 legs.
 
-3. Write a program to draw a sprite, where the number of legs is provided by
-   the user. You will need to use a variable to hold the turn angle for the
-   turtle.
+   Write a program to draw a sprite, where the number of legs is provided by
+   the user. The same ``turn_angle`` calculation applies for both sprites and
+   polygons.
 
 Part B - Clock Face
 -------------------
 
 Entering a value of ``12`` for your sprite draws something like a clock face:
 
-   INSERT IMAGE HERE!!!!
+.. figure:: figures/sprite-12-legs.png
+   :alt: Image showing a 12-legged sprite.
 
-#. Use the ``.penup()`` and ``.pendown()`` methods in your loop to make the
+#. Add the ``.penup()`` and ``.pendown()`` methods to your code to make the
    drawing look like this:
 
-      INSERT IMAGE HERE!!!!
+   .. figure:: figures/sprite-clock-dashes.png
+      :alt: Image showing a dashed clock face.
 
 #. Finally use the ``.stamp()`` method to make a mark at the end of each line.
-   Your final output should look like this:
+   Your final output should look something like this:
 
-      INSERT IMAGE HERE!!!!
+   .. figure:: figures/sprite-turtle-clock.png
+      :alt: Image showing a clock face with dashes and turtle stamps.
 
 Part C - Nested Loops
 ---------------------
@@ -80,38 +85,76 @@ iterations.
 
 .. admonition:: Example
 
-   INSERT REPL HERE!!!!
+   Run the program below and examine the output. Which ``print`` statements
+   belong to each loop?
 
-   .. sourcecode:: Python
-      :linenos:
+   .. raw:: html
 
-      for step in range(3):
-         print("Iteration", step+1, "of the outer loop.")
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Nested-Loop-Example?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-         for turn in range(3):
-            print("Iteration", turn+1, "of the inner loop.")
-         
-         print("---")
+Use a nested loop to draw three sprites in a row. The *outer* loop controls the
+number and position of the sprites. The *inner* loop draws each sprite.
 
-Let's use a nested loop to draw three sprites in a row.
+.. figure:: figures/triple-sprite.png
+   :alt: Image showing three six-legged sprites in a row.
 
-#. Modify your sprite code to make it the an inner loop. The outer loop should
-   look something like:
+#. Add the following outer loop code to your sprite program. The outer loop
+   should come after your turtle setup and user input statements.
 
    .. sourcecode:: Python
       :linenos:
 
       for sprite in range(3):
          turtle_name.penup()
-         turtle_name.forward(100)  # Feel free to change this length.
-         turtle_name.pendown()
+         if sprite != 0:                        # If not the first sprite, move the turtle sideways.
+            turtle_name.forward(leg_length*2.5) # Prevents sprite legs from overlapping.
 
-         # Your sprite loop here.
+         # Your sprite drawing loop here.
 
+#. For the inner loop, use your old sprite drawing code. Be sure to indent the
+   correct amount!
 #. Modify your program to prompt the user to enter the number of sprites to
-   draw.
+   draw. For an extra touch, stamp the turtle shape in the center of each
+   sprite.
 
-Part D - Bring it Together
---------------------------
+.. figure:: figures/sprite-row.gif
+   :alt: Gif showing 5, 5-legged sprites drawn in a row.
 
-Lorem ipsum...
+Part D - Polygons With Sprites
+------------------------------
+
+Use what you learned in parts A - C to draw a polygon with sprites at each
+corner (vertex). Prompt the user to enter both the number of sides for the
+polygon and the number of legs for each sprite (these do NOT have to be the
+same value).
+
+For example, here is a square with 8-legged sprites:
+
+.. figure:: figures/square-with-sprites.png
+   :alt: Image showing a square with 8-legged sprites at each vertex.
+
+Feel free to experiment with the colors of the lines.
+
+.. figure:: figures/octagon-with-sprites.png
+   :alt: Image showing a blue octagon with red 3-legged sprites at each vertex.
+   :scale: 80%
+
+Part E - Draw Something New
+---------------------------
+
+Your polygon code used the same turn angle each iteration. Experiment by
+changing the value (or formula) for this angle. See what interesting shapes
+you can create.
+
+Be sure to add comments to your code so others will understand how your
+program works!
+
+.. list-table:: Try It!
+   :widths: auto
+
+   * - .. figure:: figures/spirograph-1.png
+          :alt: Image showing one spirograph option (30 lines, 132° turn angle).
+     - .. figure:: figures/spirograph-2.png
+          :alt: Image showing one spirograph option (20 lines, 198° turn angle).
+     - .. figure:: figures/spirograph-3.png
+          :alt: Image showing one spirograph option (30 lines, 121° turn angle).

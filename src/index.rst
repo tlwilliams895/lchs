@@ -41,4 +41,5 @@ Appendices
 .. toctree::
    :hidden:
 
+   todos
    index-full
