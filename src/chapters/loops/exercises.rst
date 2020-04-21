@@ -52,9 +52,9 @@ Loops simplify repetitive tasks!
       order---to a new line.
 
 #. Given the string ``gibberish =
-   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, print the first character
-   and every 5th character after that. Use index values and
-   ``range(start, stop, step)``.
+   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, `print the first character
+   <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__ and every 5th
+   character after that. Use index values and ``range(start, stop, step)``.
 
    *Hint*: How can you make Python figure out the ``stop`` value so you won't
    have to count the characters in ``gibberish`` yourself?
@@ -72,29 +72,30 @@ b. Use an ``if`` statement and the modulus (``%``) operator to check if the
 ``while`` Practice
 -------------------
 
-   INSERT REPL.IT LINK HERE!!!
-
 Define three variables for a spacecraft---one for the starting fuel level,
 another for the number of astronauts aboard, and the third for the altitude the
 spacecraft reaches.
 
+`While loop starter code <https://repl.it/@launchcode/LCHS-While-Loop-Exercises>`__.
+
 4. Construct ``while`` loops to do the following:
 
-   #. Prompt the user to enter the starting fuel level. The loop should continue until
+   #. Ask the user for the starting fuel level. The loop should continue until
       the user enters a positive value greater than 5000 but less than 30000.
-   #. Use a second loop to query the user for the number of astronauts
+   #. Use a second loop to prompt the user for the number of astronauts
       (up to a maximum of 7). Validate the entry by having the loop continue
       until the user enters an integer from 1 - 7.
 
-#. Use a third ``while`` loop to update the fuel status and the altitude of the
+#. Use a third ``while`` loop to update the fuel and the altitude of the
    spacecraft. Each iteration, decrease the fuel level by 100 units for each
    astronaut aboard. Also, increase the altitude by 50 kilometers.
    
    *Hint*: The loop should end when there is not enough fuel to boost the crew
    another 50 km, so the fuel level might not reach 0.
 
-#. After the loops complete, print the result with the phrase, ``The spacecraft
-   gained an altitude of ___ km and has ___ kg of fuel left.``
+#. After the loops finish, print the result using the phrase, ``The spacecraft
+   gained an altitude of ___ km and has ___ kg of fuel left.`` Fill in the
+   blanks with the altitude and fuel level values.
 
 Bonus
 ^^^^^
@@ -105,7 +106,7 @@ Otherwise add, "Failed to reach orbit."
 The Accumulator Pattern
 -----------------------
 
-   INSERT REPL.IT LINK HERE!!!
+`Accumulator starter code <https://repl.it/@launchcode/LCHS-Accumulator-Exercises>`__.
 
 Use two ``input`` statements to prompt the user for a ``start_value`` and an
 ``end_value``. Both inputs should be integers.
@@ -132,8 +133,9 @@ crew members to begin the countdown. Each person must enter a different code,
 after which the computer will "zip" them together before overloading the
 engines.
 
-Construct a loop that combines two strings together, alternating the characters
-from each source.
+In a new code file, construct a loop that combines two strings together,
+alternating the characters from each source. For now, be careful to make both
+strings the same length.
 
 .. admonition:: Examples
 
