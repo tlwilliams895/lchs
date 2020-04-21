@@ -7,9 +7,11 @@ Part A - Polygons and Sprites
 -----------------------------
 
 In the chapter, you coded a program to make a turtle draw a *regular polygon*
-(a shape with all the sides the same length and all the angles the same).
+(a shape with all the sides the same length and all the angles the same). Click
+on the link below to open up the starter code in repl.it.
 
-.. sourcecode:: Python
+.. replit:: Python
+   :slug: LCHS-Turtle-Loops-Project-polygons
    :linenos:
 
    import turtle
@@ -39,8 +41,8 @@ In the chapter, you coded a program to make a turtle draw a *regular polygon*
 
       .. todo:: Insert internal link to the Turtle Appendix.
 
-#. A *sprite* is a simple spider shaped thing with a certain number of legs
-   coming out from a center point.
+#. A *sprite* is a spider shaped thing with a certain number of legs coming out
+   from a center point.
 
    .. figure:: figures/sprite-example.gif
       :alt: Gif showing sprites with 3, 5, and 8 legs.
@@ -51,22 +53,25 @@ In the chapter, you coded a program to make a turtle draw a *regular polygon*
    the user. The same ``turn_angle`` calculation applies for both sprites and
    polygons.
 
+   Follow this link to the `starter code <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-sprites>`__.
+
 Part B - Clock Face
 -------------------
 
-Entering a value of ``12`` for your sprite draws something like a clock face:
+Entering a value of ``12`` for the number of sprite legs draws something that
+looks a little bit like a clock face:
 
 .. figure:: figures/sprite-12-legs.png
    :alt: Image showing a 12-legged sprite.
 
-#. Add the ``.penup()`` and ``.pendown()`` methods to your code to make the
-   drawing look like this:
+#. Add the ``.penup()`` and ``.pendown()`` methods to your sprite loop to make
+   the drawing look like this:
 
    .. figure:: figures/sprite-clock-dashes.png
       :alt: Image showing a dashed clock face.
 
-#. Finally use the ``.stamp()`` method to make a mark at the end of each line.
-   Your final output should look something like this:
+#. Finally, use the ``.stamp()`` method to make a mark at the end of each line.
+   Your drawing should look something like this:
 
    .. figure:: figures/sprite-turtle-clock.png
       :alt: Image showing a clock face with dashes and turtle stamps.
@@ -83,7 +88,7 @@ Part C - Nested Loops
 iteration of the *outer loop*, the *inner loop* completes ALL of its
 iterations.
 
-.. admonition:: Example
+.. admonition:: Try It!
 
    Run the program below and examine the output. Which ``print`` statements
    belong to each loop?
@@ -91,6 +96,8 @@ iterations.
    .. raw:: html
 
       <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Nested-Loop-Example?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+
+   What happens if you add a third loop inside the second?
 
 Use a nested loop to draw three sprites in a row. The *outer* loop controls the
 number and position of the sprites. The *inner* loop draws each sprite.
@@ -109,12 +116,14 @@ number and position of the sprites. The *inner* loop draws each sprite.
          if sprite != 0:                        # If not the first sprite, move the turtle sideways.
             turtle_name.forward(leg_length*2.5) # Prevents sprite legs from overlapping.
 
-         # Your sprite drawing loop here.
+         # Inner loop here.
 
 #. For the inner loop, use your old sprite drawing code. Be sure to indent the
    correct amount!
-#. Modify your program to prompt the user to enter the number of sprites to
-   draw. For an extra touch, stamp the turtle shape in the center of each
+#. Run your program to make sure it correctly draws 3 sprites in a row, each
+   with the user selected number of legs.
+#. Modify your program to prompt the user for the number of sprites to draw. As
+   an extra touch, stamp the turtle shape in the center of each
    sprite.
 
 .. figure:: figures/sprite-row.gif
@@ -124,30 +133,36 @@ Part D - Polygons With Sprites
 ------------------------------
 
 Use what you learned in parts A - C to draw a polygon with sprites at each
-corner (vertex). Prompt the user to enter both the number of sides for the
-polygon and the number of legs for each sprite (these do NOT have to be the
-same value).
+corner (called a *vertex*). Prompt the user to enter both the number of sides
+for the polygon and the number of legs for each sprite (these do NOT have to be
+the same value).
 
-For example, here is a square with 8-legged sprites:
+Fork the starter code `here <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-part-D>`__.
 
-.. figure:: figures/square-with-sprites.png
-   :alt: Image showing a square with 8-legged sprites at each vertex.
+.. admonition:: Examples
 
-Feel free to experiment with the colors of the lines.
+   Here is a square with 8-leg sprites:
 
-.. figure:: figures/octagon-with-sprites.png
-   :alt: Image showing a blue octagon with red 3-legged sprites at each vertex.
-   :scale: 80%
+   .. figure:: figures/square-with-sprites.png
+      :alt: Image showing a square with 8-leg sprites at each vertex.
+
+   Feel free to experiment with the colors of the lines.
+
+   .. figure:: figures/octagon-with-sprites.png
+      :alt: Image showing a blue octagon with red 3-leg sprites at each vertex.
+      :scale: 80%
 
 Part E - Draw Something New
 ---------------------------
 
-Your polygon code used the same turn angle each iteration. Experiment by
-changing the value (or formula) for this angle. See what interesting shapes
-you can create.
+Your polygon code used the same turn angle each iteration.
 
-Be sure to add comments to your code so others will understand how your
-program works!
+Open a new file and paste in the original polygon loop code. Experiment with
+changing the number of sides and/or the value (or formula) for the turn angle.
+See what interesting shapes you can create.
+
+Add comments to your code so your teacher and classmates can understand how
+your program works!
 
 .. list-table:: Try It!
    :widths: auto
@@ -158,3 +173,8 @@ program works!
           :alt: Image showing one spirograph option (20 lines, 198° turn angle).
      - .. figure:: figures/spirograph-3.png
           :alt: Image showing one spirograph option (30 lines, 121° turn angle).
+
+.. admonition:: Note
+
+   You do NOT have to draw the shapes shown above. The goal in this part is
+   for you to be creative and discover what you can make on your own!
