@@ -47,17 +47,22 @@ Loops simplify repetitive tasks!
 #. `Given the string <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-2>`__
    ``'LaunchCode'``, code two ``for`` loops to do the following:
 
-   a. Print each character of the string, one letter per line.
-   b. Using ``index`` values, print each character of the string---in reverse
-      order---to a new line.
+   a. Print out each character of the string, one letter per line. Do this
+      WITHOUT using index values.
+   b. Now use index values to print each character of the string---in reverse
+      order---to a new line. Recall that you can access a single character from
+      a string with the syntax ``var_name[index]``, where ``index`` is an
+      integer value, and ``var_name`` is the variable used to store the string.
 
 #. Given the string ``gibberish =
-   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, `print the first character
-   <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__ and every 5th
-   character after that. Use index values and ``range(start, stop, step)``.
+   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, `print every fifth
+   character <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__,
+   including the first character. Use index values and
+   ``range(start, stop, step)``.
 
-   *Hint*: How can you make Python figure out the ``stop`` value so you won't
-   have to count the characters in ``gibberish`` yourself?
+   *Hint*: Instead of figuring out the ``stop`` value by counting all of the
+   characters in ``gibberish`` yourself, make Python do it for you! Recall that
+   ``len(gibberish)`` returns the length of the string stored in the variable.
 
 Bonus
 ^^^^^
@@ -66,25 +71,28 @@ Repeat the previous problem, but:
 
 a. Replace ``range(start, stop, step)`` with ``range(len(gibberish))``.
 b. Use an ``if`` statement and the modulus (``%``) operator to check if the
-   index is divisible by 5. If ``True``, print the character. If ``False``,
-   do not print the character.
+   index is divisible by 5.
+c. If ``True``, print the character. If ``False``, do not print the character.
+d. The output should be the same as before.
 
 ``while`` Practice
 -------------------
 
 Define three variables for a spacecraft---one for the starting fuel level,
 another for the number of astronauts aboard, and the third for the altitude the
-spacecraft reaches.
+spacecraft reaches. Assign each variable an initial value of 0.
 
 `While loop starter code <https://repl.it/@launchcode/LCHS-While-Loop-Exercises>`__.
 
 4. Construct ``while`` loops to do the following:
 
    #. Ask the user for the starting fuel level. The loop should continue until
-      the user enters a positive value greater than 5000 but less than 30000.
+      the user enters a value between 5000 and 30000. If the user submits a
+      number outside of the range, print ``"Invalid entry."``
    #. Use a second loop to prompt the user for the number of astronauts
       (up to a maximum of 7). Validate the entry by having the loop continue
-      until the user enters an integer from 1 - 7.
+      until the user enters an integer from 1 - 7. For numbers outside of the
+      range, print ``"Invalid entry."``
 
 #. Use a third ``while`` loop to update the fuel and the altitude of the
    spacecraft. Each iteration, decrease the fuel level by 100 units for each
@@ -96,12 +104,16 @@ spacecraft reaches.
 #. After the loops finish, print the result using the phrase, ``The spacecraft
    gained an altitude of ___ km and has ___ kg of fuel left.`` Fill in the
    blanks with the altitude and fuel level values.
+#. If the altitude is 2000 km or higher, add ``"Orbit achieved!"`` to the
+   output. Otherwise add, ``"Failed to reach orbit."``
 
-Bonus
-^^^^^
+**Sample Output**
 
-If the altitude is 2000 km or higher, add "Orbit achieved!" to the output.
-Otherwise add, "Failed to reach orbit."
+::
+
+   Enter starting fuel level (5000 - 30000):  22000
+   Enter the number of astronauts (1 - 7):  3
+   The spacecraft gained an altitude of 3650 km and has 100 kg of fuel left. Orbit achieved! 
 
 The Accumulator Pattern
 -----------------------
@@ -111,10 +123,10 @@ The Accumulator Pattern
 Use two ``input`` statements to prompt the user for a ``start_value`` and an
 ``end_value``. Both inputs should be integers.
 
-7. Use a loop to add up all of the numbers from ``start_value`` to
-   ``end_value``. Store the result in the variable ``total``. Print "The sum of
-   the numbers from ___ to ___ is ___." Fill in the blanks with the values for
-   ``start_value``, ``end_value``, and ``total``.
+8. Use a loop to add up all of the numbers from ``start_value`` to
+   ``end_value``. Use the variable ``total`` as the accumulator. Print ``"The
+   sum of the numbers from ___ to ___ is ___."`` Fill in the blanks with the
+   values for ``start_value``, ``end_value``, and ``total``.
 
 #. Define a variable to hold the string ``'It was a bright cold day in April,
    and the clocks were striking thirteen.'`` Use the accumulator pattern to
