@@ -169,12 +169,16 @@ Next Steps
 You might be wondering, *Why do we call these objects "turtles"? They don't
 LOOK like turtles!*
 
-   INSERT FIGURE HERE!!!!
+.. figure:: ./figures/not-a-turtle.png
+   :alt: Image showing the default Python turtle shape.
+
+   Default turtle shape.
 
 True. The default shape for a turtle object is set as an arrow. However, in
 addition to the movement methods, the turtle module also includes methods that
 change the look of what appears on the screen.
 
-We will take a closer look at these on the next page.
+We will explore some of these on the next page.
 
-   INSERT FIGURE HERE!!!!
+.. figure:: ./figures/LC-color-pair.png
+   :alt: Turtle drawing of a circle filled with two LaunchCode colors.
