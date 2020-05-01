@@ -27,9 +27,9 @@ Rotating Turtles
 ----------------
 
 To make ``bob`` turn, we need to provide two things---a direction and an
-amount. The methods ``.right()`` and ``.left()`` rotate a turtle either
-clockwise (right) or counterclockwise (left). To specify how much ``bob``
-should turn, add a number inside the parentheses.
+amount. The methods ``right()`` and ``left()`` rotate a turtle either clockwise
+(right) or counterclockwise (left). Inside the parentheses, we must include a
+number to specify how much ``bob`` should turn.
 
 Try It!
 ^^^^^^^
@@ -119,7 +119,7 @@ Experiment with drawing curved lines.
    #. Change line 4 to ``bob.circle(50, 180)``.
    #. Replace ``180`` with different numbers to see how the drawing changes.
 
-Combining lines, turns, and curves, we can begin making more interesting
+Combining lines, turns, and circles, we can begin making more interesting
 shapes!
 
 .. figure:: ./figures/turtle-ice-cream.png
@@ -128,12 +128,53 @@ shapes!
 Multiple Turtles
 ----------------
 
-Lorem ipsum...
+In the previous examples, we used a single turtle to do all of the drawing, but
+there is no reason to limit ourselves to just one drawing pet!
 
-#. Create a new turtle and try to make it draw an "L" shape.
+.. admonition:: Example
 
-What "Basic" Can Accomplish
----------------------------
+   Run the following program to see two turtles draw a rectangle.
 
-Lorem ipsum...
+   .. todo:: Insert fourth turtle appendix repl here.
 
+   .. sourcecode:: Python
+      :linenos:
+
+      import turtle
+
+      bob = turtle.Turtle()   # Create a turtle named bob.
+      mae = turtle.Turtle()   # Create a turtle named mae.
+      mae.color('green')      # Wow! We can change the line color.
+
+      bob.forward(50)         # bob draws one part of the picture.
+      bob.left(90)
+      bob.forward(100)
+
+      mae.left(90)            # mae draws the other part of the picture.
+      mae.forward(100)
+      mae.right(90)
+      mae.forward(50)
+   
+   #. Play around by changing any of the code to make the pair of turtles draw
+      different shapes.
+   #. Currently, ``bob`` finishes one part of the drawing before ``mae`` starts.
+      Try rearranging the order of the statements to make ``mae`` and ``bob``
+      take turns drawing their lines. Instead of ``bob, bob, bob, mae, mae,
+      mae, mae``, try ``mae, bob, mae, bob, mae, bob, mae``.
+   #. Add a third turtle and make it add something new to the picture.
+
+Next Steps
+----------
+
+You might be wondering, *Why do we call these objects "turtles"? They don't
+LOOK like turtles!*
+
+   INSERT FIGURE HERE!!!!
+
+True. The default shape for a turtle object is set as an arrow. However, in
+addition to the movement methods, the turtle module also includes methods that
+change the look of what appears on the screen.
+
+We will take a closer look at these on the next page.
+
+   INSERT FIGURE HERE!!!!
