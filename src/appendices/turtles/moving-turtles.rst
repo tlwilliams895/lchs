@@ -119,6 +119,12 @@ Experiment with drawing curved lines.
    #. Change line 4 to ``bob.circle(50, 180)``.
    #. Replace ``180`` with different numbers to see how the drawing changes.
 
+Combining lines, turns, and curves, we can begin making more interesting
+shapes!
+
+.. figure:: ./figures/turtle-ice-cream.png
+   :alt: Turtle drawing of an ice cream cone!
+
 Multiple Turtles
 ----------------
 
