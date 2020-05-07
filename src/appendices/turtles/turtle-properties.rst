@@ -50,6 +50,9 @@ Feel free to experiment with the methods in the three editors below:
 :ref:`drawing <draw-try>`, :ref:`pen control <pen-try>`,
 :ref:`screen control <screen-try>`.
 
+You can find links to a full list of turtle methods in :ref:`the last section of this
+appendix <turtle-links>`.
+
 Drawing Methods
 ---------------
 
@@ -248,7 +251,7 @@ Focus should be on turtle appearance.
 Pen Control
 -----------
 
-Other methods determine when a turtle draws lines or leaves other marks on the
+Other methods determine how a turtle draws lines or leaves other marks on the
 screen.
 
 .. _pen-size:
@@ -284,14 +287,33 @@ commands that follow will reposition the turtle but NOT draw any lines.
 
 The ``pendown()`` method does the opposite, drawing lines behind the turtle as
 it moves. The ``pendown`` state is the default whenever a new turtle is
-defined.
+created.
 
 .. _pen-clear-reset:
 
 Clear and Reset
 ^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+To erase a turtle’s drawings from the screen, use the syntax:
+
+.. sourcecode:: python
+
+   turtle_name.clear()
+   # OR
+   turtle_name.reset()
+
+Both methods remove only the drawings made by the selected turtle. ``clear()``
+keeps settings like color, line thickness, and position the same. ``reset()``
+re-centers the turtle on the page and returns most of its properties to their
+default values.
+
+.. admonition:: Example
+
+   Watch below as ``clear`` and ``reset`` are applied to two of the turtles.
+
+      [INSERT GIF HERE!!!!]
+   
+   Which turtle uses ``clear()``, and which one uses ``reset()``?
 
 .. _pen-try:
 
@@ -306,35 +328,85 @@ increasing lines, etc.
 Screen Control
 --------------
 
-Lorem ipsum...
+Several methods adjust the drawing space. To use these methods, we must first
+define a screen variable.
+
+Just like we defined ``bob`` as a turtle object, we can define the ``screen``
+variable to control the drawing space.
+
+.. sourcecode:: python
+   :linenos:
+
+   import turtle
+
+   screen = turtle.Screen()
 
 .. _screen-setup:
 
 Set Up
 ^^^^^^
 
-Lorem ipsum...
+To set the width and height of the drawing space, use the syntax:
+
+.. sourcecode:: python
+
+   screen_name.setup(width, height)
+
+Both ``width`` and ``height`` must be integers, and they each represent a
+number of pixels.
+
+Sometimes ``width`` or ``height`` will be larger than what a device can
+display. In this case, the drawing window will include scroll bars to allow the
+user to view the entire area.
 
 .. _screen-background-color:
 
 Background Color
 ^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+To change the background color of the drawing space, use the syntax:
+
+.. sourcecode:: python
+
+   screen_name.bgcolor('color_name')
+
+Just like the :ref:`color <turtle-color>` and :ref:`fillcolor <turtle-fill>`
+methods, Python accepts color names and hex codes for ``value``.
+
+   [INSERT FIGURE HERE!!!!]
+
+   Screens with red, lightgreen, and gray backgrounds.
 
 .. _screen-title:
 
 Title
 ^^^^^
 
-Lorem ipsum...
+To add a title to the drawing window, use the syntax:
+
+.. sourcecode:: python
+
+   screen_name.title('title_text')
+
+``title_text`` must be a string, and it will appear along the top edge of the
+window when it opens.
 
 .. _screen-exit:
 
 Exit On Click
 ^^^^^^^^^^^^^
 
-Lorem ipsum...
+By default, Python closes the turtle window immediately after the program ends,
+which means any cool graphics get lost before we can fully appreciate them. To
+prevent this, add a statement at the end of the program that tells Python to
+pause before closing the window.
+
+.. sourcecode:: python
+
+   screen_name.exitonclick()
+
+``exitonclick()`` causes the turtle window to stay open until the user clicks
+somewhere inside that space.
 
 .. _screen-try:
 
