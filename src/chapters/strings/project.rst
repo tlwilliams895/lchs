@@ -1,0 +1,4 @@
+Strings: Project
+================
+
+Lorem ipsum...

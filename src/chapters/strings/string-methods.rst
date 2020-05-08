@@ -1,0 +1,4 @@
+String Methods
+==============
+
+Lorem ipsum...

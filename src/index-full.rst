@@ -7,17 +7,20 @@ Chapters
 
    chapters/introduction/index
    chapters/booleans-and-conditionals/index
+   chapters/strings/index
 
 .. toctree::
 
    genindex
 
-Studios
-=======
+Projects
+========
 
 .. toctree::
    :maxdepth: 1
    :name: studiostoc
+
+   chapters/strings/project
 
 Assignments
 ===========
