@@ -10,5 +10,4 @@ Python Turtles
    creating-turtles
    moving-turtles
    turtle-properties
-   loops-etc
    turtle-links
