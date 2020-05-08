@@ -35,10 +35,10 @@ to a more detailed description.
      - :ref:`bgcolor() <screen-background-color>`
    * - :ref:`speed() <turtle-speed>`
      - :ref:`pendown() <pen-up-down>`
-     - :ref:`title() <screen-title>`
+     - :ref:`exitonclick() <screen-exit>`
    * - :ref:`fillcolor() <turtle-fill>`
      - :ref:`clear() <pen-clear-reset>`
-     - :ref:`exitonclick() <screen-exit>`
+     - 
    * - :ref:`begin_fill() end_fill() <turtle-fill-shape>`
      - :ref:`reset() <pen-clear-reset>`
      - 
@@ -354,10 +354,35 @@ default values.
 Try It! (Pen)
 ^^^^^^^^^^^^^
 
-   INSERT REPL HERE!!!!
+In the editor below, use the pen control methods to do the following:
 
-Try drawing a dashed line, a stamped line, thick and thin lines, steadily
-increasing lines, etc.
+#. Draw a row of turtle stamps.
+
+   .. figure:: ./figures/row-of-stamps.png
+      :alt: Image showing a row of turtle stamps without connecting lines.
+
+#. Draw a dashed line.
+
+   .. figure:: ./figures/dashed-line.png
+      :alt: Image showing a dashed line.
+
+#. Make the dashes different thicknesses (e.g. steady increase, steady decrease,
+   or no pattern).
+
+   .. figure:: ./figures/changing-line-thickness.png
+      :alt: Image showing changing thicknesses for a dashed line.
+
+.. raw:: html
+
+   <iframe height="500px" width="80%" src="https://repl.it/@launchcode/Tutrle-appendix-editor-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
+
+
+4. *Challenge*: Bring in the :ref:`fill methods <turtle-fill-shape>` to try to make
+   something that looks like this:
+
+   .. figure:: ./figures/pen-challenge.png
+      :alt: Image showing a hexagon filled with 3 different colors.
+      :scale: 80%
 
 Screen Control
 --------------
@@ -405,25 +430,7 @@ To change the background color of the drawing space, use the syntax:
    screen_name.bgcolor('color_name')
 
 Just like the :ref:`color <turtle-color>` and :ref:`fillcolor <turtle-fill>`
-methods, Python accepts color names and hex codes for ``value``.
-
-   [INSERT FIGURE HERE!!!!]
-
-   Screens with red, lightgreen, and gray backgrounds.
-
-.. _screen-title:
-
-Title
-^^^^^
-
-To add a title to the drawing window, use the syntax:
-
-.. sourcecode:: python
-
-   screen_name.title('title_text')
-
-``title_text`` must be a string, and it will appear along the top edge of the
-window when it opens.
+methods, Python accepts color names and hex codes for ``color_name``.
 
 .. _screen-exit:
 
@@ -447,6 +454,17 @@ somewhere inside that space.
 Try It! (Screen)
 ^^^^^^^^^^^^^^^^
 
-   INSERT REPL HERE!!!!
+In the editor below, run the program as-is first, then use the screen control
+methods to do the following:
 
-Try opening a small/large window, green background, and a unique title.
+#. Change the background color of the drawing space.
+#. Change the width of the drawing space. For your device, how large can you
+   make the width before a scroll bar appears?
+#. Change the height of the drawing space. For your device, how large can you
+   make the width before a scroll bar appears?
+#. Note the default starting position for ``bob`` with each new screen size.
+#. Note what happens when you click inside and outside of the drawing space.
+
+.. raw:: html
+
+   <iframe height="600px" width="80%" src="https://repl.it/@launchcode/Turtle-appendix-editor-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
