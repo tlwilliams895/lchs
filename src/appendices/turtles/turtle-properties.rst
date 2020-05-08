@@ -17,9 +17,9 @@ change its appearance.
    Default turtle shape.
 
 The ``turtle`` module contains methods that change the properties of either the
-turtle object or the screen object. The table below lists the common methods
-used to change the look of what gets drawn. Clicking on any of the keywords
-leads to a more detailed description.
+turtle object or the screen object. The table below lists some common methods
+for changing the look of what gets drawn. Clicking on any of the keywords leads
+to a more detailed description.
 
 .. list-table:: Common Turtle Methods
    :header-rows: 1
@@ -180,7 +180,7 @@ example, ``bob.shape('circle')`` changes ``bob`` from its default shape to a
 circle.
 
 .. figure:: ./figures/circle-turtle-line.png
-   :alt: Image comparing the default drawing shape vs. a circle shape.
+   :alt: Image comparing the default turtle shape vs. a circle shape.
 
    Classic turtle shape + line vs. circle shape + line.
 
@@ -201,8 +201,8 @@ the finished shape on the screen.
 
 .. _turtle-fill-shape:
 
-Fill a Shape
-^^^^^^^^^^^^
+Fill a Drawing
+^^^^^^^^^^^^^^
 
 To fill the design drawn by a turtle, use the syntax:
 
@@ -212,7 +212,29 @@ To fill the design drawn by a turtle, use the syntax:
    # Drawing code
    turtle_name.end_fill()
 
-Lorem ipsum...
+Once the drawing code between ``begin_fill()`` and ``end_fill()`` completes,
+Python shades the design with the turtle's current fill color.
+
+.. admonition:: Example
+
+   Note how the placement of drawing commands between ``begin_fill()`` and
+   ``end_fill()`` affects the coloring.
+
+   .. sourcecode:: python
+      :lineno-start: 5
+
+      bob.begin_fill()
+      bob.circle(100, 180)    # Draw a half circle.
+      bob.circle(100, 180)    # Draw another half circle.
+      bob.end_fill()
+
+      bob.begin_fill()
+      bob.circle(100, 180)    # Draw a half circle.
+      bob.end_fill()
+      bob.circle(100, 180)    # Draw another half circle.
+   
+   .. figure:: ./figures/fill-shapes.png
+      :alt: Image showing completely filled vs. half-filled circles.      
 
 .. _turtle-stamp:
 
@@ -220,33 +242,44 @@ Making a Stamp
 ^^^^^^^^^^^^^^
 
 The ``stamp()`` method leaves a print of the turtle's shape on the page.
-Compare the results of the two code samples below. They both result in a line
+Compare the results of the two code samples below. Each turtle draws a line
 that is 200 pixels long.
 
 .. sourcecode:: python
-   :linenos:
+   :lineno-start: 5
 
    bob.forward(100)
    bob.forward(100)
 
-   bob.stamp()
-   bob.forward(100)
-   bob.stamp()
-   bob.forward(100)
+   mae.stamp()
+   mae.forward(100)
+   mae.stamp()
+   mae.forward(100)
 
-INSERT FIGURE HERE!!!!
+.. figure:: ./figures/stamped-lines.png
+   :alt: Image showing a stamped turtle line.
 
-Notice how the second line shows where ``bob`` left an imprint (a stamp)
-on the drawing before moving to the next position.
+Notice how the second line shows where the turtle ``mae`` left an imprint (a
+stamp) on the drawing before moving to the next position.
 
 .. _draw-try:
 
 Try It! (Drawing)
 ^^^^^^^^^^^^^^^^^
 
-   INSERT REPL HERE!!!!
+In the editor below, use the color, shape, speed, stamp, and filling methods to
+do the following:
 
-Focus should be on turtle appearance.
+#. Change the turtle shape, line color, and fill color.
+#. Try several different speed values from 0 - 10.
+#. Move the ``begin_fill()`` and ``end_fill()`` statements around to see how
+   their location in the code affects the drawing. Also, feel free to add or
+   remove ``begin_fill/end_fill`` pairs.
+#. Leave stamps at different points on the drawing.
+
+.. raw:: html
+
+   <iframe height="800px" width="80%" src="https://repl.it/@launchcode/Turtle-appendix-editor-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Pen Control
 -----------
@@ -311,7 +344,8 @@ default values.
 
    Watch below as ``clear`` and ``reset`` are applied to two of the turtles.
 
-      [INSERT GIF HERE!!!!]
+   .. figure:: ./figures/clear-vs-reset.gif
+      :alt: GIF comparing the clear() and reset() turtle methods.
    
    Which turtle uses ``clear()``, and which one uses ``reset()``?
 
