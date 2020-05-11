@@ -31,11 +31,11 @@ A **character** is a string that contains exactly one element, such as ``'a'``,
 Strings are built out of these single characters. In this way, strings can be
 broken down into smaller pieces.
 
-   [INSERT PYTHON CHARACTER DIAGRAM HERE!!!!]
+.. figure:: ./figures/python-string.png
+   :alt: The string "Python" broken down into individual letters.
 
-.. todo:: Add the Python character figure here.
-
-   A string is made up of characters, which are strings of length 1.
+   The string "Python" is made up of 6 characters, each of which is a string of
+   length 1.
 
 Ordered Collections
 -------------------
@@ -47,6 +47,53 @@ We also call strings **ordered collections** of characters. This means that the
 individual characters in the string follow a particular order from left to
 right. The string ``"LaunchCode"`` is different from the string
 ``"CodeLaunch"``, even though they contain the exact same characters.
+
+Collection Length
+-----------------
+
+.. index:: ! len
+
+Strings can contain any number of characters, and we often need to determine
+how many are in the collection. Fortunately, Python gives us a convenient
+function to return this value.
+
+The **length function**, ``len()``, returns the number of elements inside of a
+collection. We can put the collection itself inside the parentheses, like
+``len('hello')``, or we can use a variable.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      text = "Don't count the number of characters yourself. Python will do it for you!"
+
+      length_of_text = len(text)
+      print(length_of_text)
+
+   **Console Output**
+
+   ::
+
+      73
+
+Note that in the example above, the spaces in the string also count as
+characters.
+
+The Empty String
+^^^^^^^^^^^^^^^^
+
+.. index:: ! empty string
+
+A string that contains no characters, called the **empty string**, is still
+considered a string. It simply contains zero characters and is represented by
+``''`` or ``""`` (two single or two double quotes with nothing in between).
+
+We used an empty string before, when we practiced the accumulator pattern.
+
+.. todo::
+
+   Add an internal book link here to the accumulator pattern section.
 
 Quote Reminder
 --------------
