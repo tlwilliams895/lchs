@@ -18,6 +18,8 @@ within a given string.
 .. figure:: ./figures/index-figure.png
    :alt: The string "Go Python!" with index values labeled below each character.
 
+   The index values of a string.
+
 .. index:: zero-based indexing
 
 Note that this is another example of *zero-based indexing*. The count begins
@@ -37,7 +39,11 @@ characters that make up a string. To access a character, we use the syntax:
 
 where ``index`` is the position of the character we want.
 
-The expression ``some_string[2]`` gives the character at index ``2``.
+The expression ``'school'[2]`` selects the character at index ``2``, and
+creates a new string containing just this one character.
+
+With zero-based indexing, the letter at index 0 of ``'school'`` is ``'s'``. So
+at position [2] we have the letter ``'h'``.
 
 .. admonition:: Try It!
 
@@ -53,7 +59,7 @@ The expression ``some_string[2]`` gives the character at index ``2``.
       
       print(this_string[3])
 
-      print("Alphabet soup'[5])
+      print('Alphabet soup'[5])
    
    Recall that with zero-based indexing, the *first* character always has an
    index value of ``0``.
@@ -62,10 +68,57 @@ The expression ``some_string[2]`` gives the character at index ``2``.
 
    #. Change the index values in lines 3 and 5 to see how they affect the
       output.
-   #. What happens if you use an index that doesn't exist, like a number larger
-      than the length of the string? TRY IT! Enter ``20`` into the brackets in
-      line 3.
+   #. Enter ``40`` into the brackets in line 3. What happens when you use an
+      index value that is larger than the length of the string?
    #. Place a negative number, like ``-1``, inside the brackets. What happens?
+
+In step 2 above, ``this_string[40]`` causes an *index out of range* error.
+This happens anytime we try to reference an index location that does not exist
+in the string.
+
+How do we access the *last* character in the string without having to count all
+of the characters?
+
+Expressions for ``index``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``index`` must either be an integer---like 0, 1, 2, etc.---or an expression
+that evaluates to an integer.
+
+Recall that we can use the ``len()`` function to return the number of
+characters in a string.
+
+.. sourcecode:: Python
+   :linenos:
+
+   this_string = 'Zero-based indexing!'
+
+   print(len(this_string))
+
+**Console Output**
+
+::
+
+   20
+
+In the editor above, try replacing ``print(this_string[3])`` with
+``print(this_string[len(this_string])``.
+
+Wait...what? We got an *index out of range* error, but we KNOW that
+``this_string`` is 20 characters long!
+
+The reason is, once again, zero-based indexing. Since we start counting the
+index values at ``0``, the 20th character has an index value of ``19``.
+
+We can access the last character of the string and avoid the out of range error
+by using ``print(this_string[len(this_string) - 1])``. The expression
+``len(this_string) - 1`` evaluates to ``19``, and ``this_string[19]`` is the
+last character (``'!'``).
+
+Taking a ``slice``
+------------------
+
+Lorem ipsum...
 
 Saving Characters
 ^^^^^^^^^^^^^^^^^
@@ -73,11 +126,78 @@ Saving Characters
 Lorem ipsum...
 
 Negative Index Values
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Lorem ipsum...
 
-Taking a ``slice``
-------------------
+Check Your Understanding
+------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   If ``phrase = 'Code for fun'``, then ``phrase[2]`` evaluates to:
+
+   #. ``"o"``
+   #. ``"d"``
+   #. ``"for"``
+   #. ``"fun"``
+
+.. admonition:: Question
+
+   Which of the following returns ``true`` given ``myStr = 'Index'``?  Choose all correct answers.
+
+   #. ``myStr[2] === 'n';``
+   #. ``myStr[4] === 'x';``
+   #. ``myStr[6] === ' ';``
+   #. ``myStr[0] === 'I';``
+
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: js
+      :linenos:
+
+      let phrase = "JavaScript rocks!";
+      console.log(phrase[phrase.length - 8]);
+
+   #. ``"p"``
+   #. ``"i"``
+   #. ``"r"``
+   #. ``"t"``
+
+.. admonition:: Question
+
+   Given ``language = 'Python``, what does ``language[1,4]`` return?
+
+   #. ``"Pyth"``
+   #. ``"Pyt"``
+   #. ``"yth"``
+   #. ``"ytho"``
+
+.. Answer: d
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

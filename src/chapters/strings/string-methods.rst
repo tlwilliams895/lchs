@@ -8,32 +8,6 @@ new string from the characters of the original.
 
 Python provides many useful methods for string objects. 
 
-As we learned, strings are immutable. Therefore, string methods will NOT change
-the value of a string itself. Instead, they *return* a new string that is the
-result of the operation.
-
-We saw this behavior in the ``.lower()`` example.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      nonprofit = "LaunchCode"
-
-      print(nonprofit.lower())
-      print(nonprofit)
-
-   **Console Output**
-
-   ::
-
-      launchcode
-      LaunchCode
-
-While ``nonprofit.lower()`` evaluated to ``"launchcode"``, the value of
-``nonprofit`` stayed the same. This will be case for every string method.
-
 Common String Methods
 ---------------------
 
@@ -100,6 +74,52 @@ You can find complete lists of the Python string methods at:
    
    What would ``word.lower().strip('p').find('t')`` return?
 
+Strings Are Immutable
+---------------------
+
+As we learned, strings are *immutable*. Therefore, string methods will NOT
+change the value of a string itself. Instead, they *return* a new string that
+is the result of the operation.
+
+Let's take a look at this behavior with the ``lower()`` and ``replace()``
+methods.
+
+.. todo:: Insert interactive string method repl here!
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      nonprofit = "LaunchCode"
+      lowercase = nonprofit.lower()
+      meal_plan = nonprofit.replace('a', '')
+
+      print(lowercase)
+      print(meal_plan)
+      print(nonprofit)
+
+   **Console Output**
+
+   ::
+
+      launchcode
+      LunchCode
+      LaunchCode
+
+Note the following:
+
+#. In line 2, ``nonprofit.lower()`` evaluates to ``"launchcode"`` and assigns
+   that string to the variable ``lowercase``.
+#. In line 3, ``nonprofit.replace('a', '')`` removes the letter 'a' and assigns
+   a new string to ``meal_plan``.
+#. Despite the actions in lines 2 and 3, the value of ``nonprofit`` stays the
+   same.
+
+This will be true for EVERY string method. Each method creates a *brand new
+string*, which we can print to the screen or assign to a variable. The
+original string never changes.
+
 Check Your Understanding
 ------------------------
 
@@ -117,22 +137,16 @@ Review the content and then answer the following questions.
       text.replace('o', 'q')
       text.strip('!P')
       print(text)
+   
+   .. raw:: html
 
-   #. ``Pythqn rocks``
-   #. ``Python rqcks``
-   #. ``ythqn rqcks!``
-   #. ``ythqn rqcks``
-
-.. Answer: d
-
-.. admonition:: Question
-
-   Given ``language = 'Python``, what does ``language[1,4]`` return?
-
-   #. ``"Pyth"``
-   #. ``"Pyt"``
-   #. ``"yth"``
-   #. ``"ytho"``
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Pythqn rocks</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Python rqcks</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> ythqn rqcks!</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> ythqn rqcks</li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer: d
 
@@ -148,10 +162,15 @@ Review the content and then answer the following questions.
 
       print(trimmed)
 
-   #. ``"  The LaunchCode Foundation "``
-   #. ``"The LaunchCode Foundation"``
-   #. ``"TheLaunchCodeFoundation"``
-   #. ``" The LaunchCode Foundation"``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"  The LaunchCode Foundation "</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">"The LaunchCode Foundation"</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"TheLaunchCodeFoundation"</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">" The LaunchCode Foundation"</span></li>
+      </ol>
+      <p id="Q2"></p>
 
 .. Answer: b
 
@@ -160,10 +179,39 @@ Review the content and then answer the following questions.
    Given ``word = "Rutabaga"`` is the value returned by
    ``word.lower().strip('r').find('t')``?
 
-   #. ``'utabaga'``
-   #. ``2``
-   #. ``1``
-   #. ``'t'``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'utabaga'</span></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 1</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'t'</span></li>
+      </ol>
+      <p id="Q3"></p>
 
 .. Answer: c
-   
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
