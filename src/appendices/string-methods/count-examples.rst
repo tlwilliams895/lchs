@@ -15,6 +15,7 @@ This method returns the number of times ``search_string`` occurs in
 .. admonition:: Example
 
    .. sourcecode:: python
+      :linenos:
          
       print('bananas'.count('a'))
       print('bananas'.count('B'))
@@ -47,6 +48,7 @@ up to but NOT including the ``end`` index.
 .. admonition:: Example
 
    .. sourcecode:: python
+      :linenos:
 
       produce = 'Bananas and rutabagas!'
       # Note that the first three 'a' characters are at index values 1, 3, and 5.

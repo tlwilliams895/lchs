@@ -66,17 +66,17 @@ any method leads to examples and a more detailed description.
      - Returns a copy of the given string, with all uppercase letters converted
        to lowercase.
    * - :ref:`replace <string-replace-examples>`
-     - ``string_name.replace(original, replacement)``
-     - Returns a copy of ``string_name`` with every occurrence of the
-       ``original`` string replaced by the ``replacement`` string.
+     - ``string_name.replace(a_string, replacement)``
+     - Returns a copy of ``string_name`` with every occurrence of ``a_string``
+       replaced by the ``replacement`` string.
    * - :ref:`split and list <string-split-examples>`
-     - ``string_name.split(character)``
+     - ``string_name.split('character')``
      - Splits the string at each occurrence of ``character``, and returns a
        list of smaller strings.
    * - :ref:`strip <string-strip-examples>`
-     - ``string_name.strip(character)``
+     - ``string_name.strip('characters')``
      - Returns a copy of the given string with leading and trailing
-       ``character`` strings removed. By default, ``character`` is a space.
+       ``characters`` strings removed. By default, ``characters`` is a space.
    * - :ref:`upper <string-upper-examples>`
      - ``string_name.upper()``
      - Returns a copy of the given string, with all lowercase letters converted

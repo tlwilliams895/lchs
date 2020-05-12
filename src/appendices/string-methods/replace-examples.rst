@@ -5,51 +5,64 @@
 
 The general syntax for this method is:
 
-.. sourcecode:: js
+.. sourcecode:: python
 
-   stringName.replace(searchChar, replacementChar);
+   string_name.replace(a_string, replacement)
 
-Given a search string ``searchChar`` and a replacement value ``replacementChar``, this method returns a copy of ``stringName`` with the *first* occurence of ``searchChar`` replaced by ``replacementChar``.
-
-.. note::
-
-   The ``replace`` method can be used in more powerful ways utilizing regular expressions. We will not cover those here, but you can `read more at MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace>`_.
+This method returns a copy of ``string_name`` with every occurrence of
+``a_string`` replaced by the ``replacement`` string. If ``a_string`` is NOT
+found in ``string_name``, then the original string gets returned.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: python
+      :linenos:
+
+      pets = 'Dogs and dogs and dogs!'
          
-      "carrot".replace("r", "t");
+      print('Replace the spaces'.replace(' ', '-'))
+      print(pets.replace('dog', 'cat'))
+      print(pets.replace('zebra', 'anaconda')
 
-      "Launch Code".replace(" ", "");
+   **Console Output**
 
-   **Output**
+   ::
 
-   .. sourcecode:: bash
+      Replace-the-spaces
+      Dogs and cats and cats!
+      Dogs and dogs and dogs!
 
-      catrot
-      LaunchCode
+.. admonition:: Note
+
+   The ``replace`` method is case-sensitive. This is why ``Dog`` did not
+   change to ``cat`` when line 4 printed to the console.
+
+Replace Less Than All
+---------------------
+
+By default, the method replaces ALL occurrences of ``a_string`` with the
+``replacement`` string. By adding a third parameter, we can tell Python how
+many replacements to make. The syntax is:
+
+.. sourcecode:: python
+
+   string_name.replace(a_string, replacement, num_to_replace) 
+
+``num_to_replace`` must be an integer.
 
 .. admonition:: Example
 
-   Some email providers, including Gmail, allow users to put a ``.`` anywhere before the ``@`` symbol. This means that ``fake.email@launchcode.org`` is the same as ``fakeemail@launchcode.org``.
+   .. sourcecode:: python
+      :linenos:
 
-   Remove the ``.`` before the ``@`` symbol in an email address.
+      produce = 'Bananas and rutabagas'
+         
+      print(produce.replace('a', 'u'))       # Replaces all 'a' characters with 'u'.
+      print(produce.replace('a', 'u', 2))    # Replaces the first 2 'a' characters with 'u'.
 
-   .. sourcecode:: js
-   
-      let input = " fake.email@launchcode.org ";
-      let email = input.replace(".", "");
-      console.log(email);
+   **Console Output**
 
-   **Output**
+   ::
 
-   .. sourcecode:: bash
-
-      fakeemail@launchcode.org
-
-   This example illustrates a common use case of ``replace``, which is to *remove* a character by replacing it with the empty string.
-
-.. warning::
-
-   Notice in the last example that if there is not a ``.`` before the ``@`` symbol, the ``.`` that is part of the domain, ``launchcode.org`` would be inadvertently removed. In a real application, we would want to isolate the portion in front of ``@`` using ``slice``.
+      Bununus und rutubugus
+      Bununas and rutabagas

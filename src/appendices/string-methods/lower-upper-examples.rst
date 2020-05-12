@@ -16,6 +16,7 @@ converted to lowercase. It leaves non-alphabetic characters alone.
 variable that points to a string value.
 
 .. sourcecode:: python
+   :linenos:
 
    print("LaunchCode".lower())
 
