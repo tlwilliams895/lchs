@@ -37,7 +37,11 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+   appendices/about-this-book
+   appendices/string-methods/index
+
 .. toctree::
    :hidden:
 
+   todos
    index-full

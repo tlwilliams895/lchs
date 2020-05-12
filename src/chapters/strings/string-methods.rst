@@ -50,8 +50,8 @@ any method leads to examples and a more detailed description.
      - Syntax
      - Description
    * - :ref:`count <string-count-examples>`
-     - ``string_name.count(a_string)``
-     - Returns the number of times ``a_string`` occurs in ``string_name``.
+     - ``string_name.count(search_string)``
+     - Returns the number of times ``search_string`` occurs in ``string_name``.
    * - :ref:`find <string-find-examples>`
      - ``string_name.find(a_string)``
      - Returns the index of the first occurrence of ``a_string`` in
@@ -61,7 +61,7 @@ any method leads to examples and a more detailed description.
      - Returns the index of the first occurrence of ``a_string`` in
        ``string_name``. If ``a_string`` is not found, the method throws an
        error.
-   * - :ref:`trim <string-lower-examples>`
+   * - :ref:`lower <string-lower-examples>`
      - ``string_name.lower()``
      - Returns a copy of the given string, with all uppercase letters converted
        to lowercase.
@@ -90,8 +90,10 @@ You can find complete lists of the Python string methods at:
 .. admonition:: Tip
 
    String methods can be combined in a process called **method chaining**.
-   Given ``word = 'Python'``, ``word.upper()`` returns ``PYTHON``, and
-   ``word.replace('n', 'n!!!')`` returns ``Python!!!``.
+   Given ``word = 'Python'``:
+   
+   #. ``word.upper()`` returns ``PYTHON``.
+   #. ``word.replace('n', 'n!!!')`` returns ``Python!!!``
    
    Chaining the methods together as ``word.replace('n', 'n!!!').upper()``
    returns ``PYTHON!!!``.
