@@ -8,9 +8,9 @@ Special Characters
 
 Aside from letters, numbers, and symbols, there is another class of characters
 we can use in strings, known as **special characters**. These characters
-involve special character combinations that all begin with a ``\`` (backslash).
-Special characters allow us to include control characters, whitespace
-characters, and items that do not appear on our keyboards (like emojis).
+involve special codes that all begin with a ``\`` (backslash). Special
+characters allow us to include control characters, whitespace characters, and
+items that do not appear on our keyboards (like shapes or emojis).
 
 Newline and Tab
 ---------------
@@ -48,7 +48,9 @@ newline and tab characters, respectively. A **newline** represents tapping the
       print statement.
 
 
-   .. todo:: Add special character practice repl here!
+   .. raw:: html
+
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Special-Character-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 Other Characters
 ----------------
@@ -56,11 +58,10 @@ Other Characters
 .. index:: unicode
 
 We can also add characters to a string that do not appear on all keyboards.
-These **Unicode characters** use character combinations of the form ``\uXXXX``,
-where the four Xs are numbers or letters that stand for a particular symbol.
-This allows us to use character sets that don't use the Latin letters (A-Z),
-such as Greek, Cyrillic, and Arabic, as well as a wide array of non-letter
-symbols.
+These **Unicode characters** use combinations of the form ``\uXXXX``, where the
+four Xs are numbers or letters that stand for a particular symbol. This allows
+us to use character sets that don't use the Latin letters (A-Z), such as Greek,
+Cyrillic, and Arabic, as well as a wide array of non-letter symbols.
 
 .. admonition:: Example
 
