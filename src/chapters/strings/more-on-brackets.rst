@@ -4,7 +4,7 @@ Taking a Slice
 .. index:: ! substring, ! slice
 
 In addition to accessing single characters in a string, we can also use bracket
-notation to access multiple characters. This smaller set of characters is
+notation to return multiple characters. This smaller set of characters is
 called a **substring** of the original.
 
 A substring is also called a **slice** of the original string. Selecting a
@@ -59,72 +59,72 @@ the end of the string.
    
    What do you think ``fruit[:]`` means?
 
-Saving Substrings
-^^^^^^^^^^^^^^^^^
+   How about ``fruit[-5:-2]``?
 
-Lorem ipsum...
+Saving Substrings
+-----------------
+
+In many of the bracket notation examples, we simply printed a substring to the
+console, like ``print(fruit[:3])``. This works because when we use brackets to
+return part of a string, we actually *create a new string*.
+
+Since this new string is a piece of data, we can perform operations on it. The
+expression ``fruit[:3]`` returns the string ``'cuc'``, so the ``print`` function
+displays that data in the console. However, once line 2 finishes, the program
+loses track of the new string. If we need to use ``'cuc'`` again, we would have
+to take another slice from ``fruit``.
+
+Instead of creating, using, then losing a new string, we can assign it to a
+variable whenever we use bracket notation.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+      :linenos:
+
+      vegetable = "carrot"
+      top_half = vegetable[0:3]
+      end_piece = vegetable[-1]
+
+      print(top_half, end_piece, vegetable)
+   
+   **Console Output**
+
+   ::
+   
+      car t carrot
+
+By assigning the substrings ``'car'`` and ``'t'`` to variables, we can use
+those strings elsewhere in the program.
+
+.. admonition:: Note
+
+   **BIG IDEA**!!! Notice that taking two slices from the string ``'carrot'``
+   did NOT change the string itself. We will explore this idea in the next
+   section.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   If ``phrase = 'Code for fun'``, then ``phrase[2]`` evaluates to:
+   Given ``language = 'Python'``, what does ``language[1:4]`` return?
 
-   #. ``"o"``
-   #. ``"d"``
-   #. ``"for"``
-   #. ``"fun"``
+   .. raw:: html
 
-.. admonition:: Question
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"Pyth"</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"Pyt"</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">"yth"</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"ytho"</li>
+      </ol>
+      <p id="Q1"></p>
 
-   Which of the following returns ``true`` given ``myStr = 'Index'``?  Choose all correct answers.
-
-   #. ``myStr[2] === 'n';``
-   #. ``myStr[4] === 'x';``
-   #. ``myStr[6] === ' ';``
-   #. ``myStr[0] === 'I';``
-
-.. admonition:: Question
-
-   What is printed by the following code?
-
-   .. sourcecode:: js
-      :linenos:
-
-      let phrase = "JavaScript rocks!";
-      console.log(phrase[phrase.length - 8]);
-
-   #. ``"p"``
-   #. ``"i"``
-   #. ``"r"``
-   #. ``"t"``
-
-.. admonition:: Question
-
-   Given ``language = 'Python``, what does ``language[1,4]`` return?
-
-   #. ``"Pyth"``
-   #. ``"Pyt"``
-   #. ``"yth"``
-   #. ``"ytho"``
-
-.. Answer: d
+.. Answer: c
 
 .. raw:: html
 
    <script type="text/JavaScript">
-      function highlight(id, answer) {
-         text = document.getElementById(id).innerHTML
-         if (answer) {
-            document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = text + ' - Correct!';
-         } else {
-            document.getElementById(id).innerHTML = text + ' - Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-
       function evaluateMC(id, correct) {
          if (correct) {
             document.getElementById(id).innerHTML = 'Yep!';

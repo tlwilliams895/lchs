@@ -40,10 +40,12 @@ characters that make up a string. To access a character, we use the syntax:
 where ``index`` is the position of the character we want.
 
 The expression ``'school'[2]`` selects the character at index ``2`` and creates
-a new string containing just this one character.
+a new string containing just that one character.
 
 With zero-based indexing, the letter at index 0 of ``'school'`` is ``'s'``. So
 at position [2] we have the letter ``'h'``.
+
+.. _string-index-try-it:
 
 .. admonition:: Try It!
 
@@ -73,7 +75,7 @@ Expressions for ``index``
 
 If we want to access the *last* character in a string, we need to know its
 index value. How can we find this number without having to count all of the
-characters first?
+characters?
 
 An index value must either be an integer---like 0, 1, 2, etc.---or an
 expression that evaluates to an integer.
@@ -81,18 +83,23 @@ expression that evaluates to an integer.
 Recall that we can use the ``len()`` function to return the number of
 characters in a string.
 
-.. sourcecode:: Python
-   :linenos:
+.. admonition:: Example
 
-   this_string = 'Zero-based indexing!'
+   .. sourcecode:: Python
+      :linenos:
 
-   print(len(this_string))
+      this_string = 'Zero-based indexing!'
 
-**Console Output**
+      print(len(this_string))
 
-::
+   **Console Output**
 
-   20
+   ::
+
+      20
+
+   ``len(this_string)`` evaluates to 20, and that value gets printed to the
+   console.
 
 In the *Try It* example above, replace ``print(this_string[3])`` with
 ``print(this_string[len(this_string)])``.
@@ -100,8 +107,8 @@ In the *Try It* example above, replace ``print(this_string[3])`` with
 Wait...what? We got an *index out of range* error, but we KNOW that
 ``this_string`` is 20 characters long!
 
-The reason is, once again, zero-based indexing. Since we start counting the
-index values at ``0``, the 20th character has an index value of ``19``.
+The reason is, once again, zero-based indexing. Since we start counting index
+values at ``0``, the 20th character has an index value of ``19``.
 
 .. admonition:: Tip
 
@@ -118,7 +125,31 @@ index values at ``0``, the 20th character has an index value of ``19``.
 Negative Index Values
 ---------------------
 
-Lorem ipsum...
+Consider the string ``'Go Python!'`` again. From left to right, the characters
+take the index values 0 - 9.
+
+Python also allows us to use index values that move from the end of the string
+to the beginning (right to left). In this case, the index values are
+*negative* integers.
+
+.. figure:: ./figures/full-string-index.png
+   :alt: The string "Go Python!" with positive and negative index values shown.
+
+   The positive and negative index values of a string.
+
+Note that when we move from right to left, the index values start with ``-1``.
+
+Try It!
+^^^^^^^
+
+Return to the :ref:`editor above <string-index-try-it>` and do the following:
+
+#. Use a negative index to print the character ``'x'`` from the string
+   ``Zero-based indexing!``
+#. What is the smallest negative number that gives an *index out of range*
+   error? In this case "smallest" means "closest to zero".
+#. ``this_string[len(this_string)]`` throws an error. What about
+   ````this_string[-len(this_string)]``?
 
 Check Your Understanding
 ------------------------
@@ -127,45 +158,72 @@ Check Your Understanding
 
    If ``phrase = 'Code for fun'``, then ``phrase[2]`` evaluates to:
 
-   #. ``"o"``
-   #. ``"d"``
-   #. ``"for"``
-   #. ``"fun"``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'o'</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">'d'</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'for'</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'fun'</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
 
 .. admonition:: Question
 
-   Which of the following returns ``true`` given ``myStr = 'Index'``?  Choose all correct answers.
+   Which of the following returns ``True`` given ``my_str = 'index'``?  Choose
+   ALL correct answers.
 
-   #. ``myStr[2] === 'n';``
-   #. ``myStr[4] === 'x';``
-   #. ``myStr[6] === ' ';``
-   #. ``myStr[0] === 'I';``
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', false)">my_str[2] == 'n'</span></li>
+         <li><span id = "b" onclick="highlight('b', true)">my_str[4] == 'x'</span></li>
+         <li><span id = "c" onclick="highlight('c', false)">my_str[6] == ' '</span></li>
+         <li><span id = "d" onclick="highlight('d', true)">my_str[0] == 'i'</span></li>
+      </ol>
+
+.. Answers = b & d
 
 .. admonition:: Question
 
    What is printed by the following code?
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
-      let phrase = "JavaScript rocks!";
-      console.log(phrase[phrase.length - 8]);
+      phrase = "Python rocks!"
+      print(phrase[len(phrase) - 9])
 
-   #. ``"p"``
-   #. ``"i"``
-   #. ``"r"``
-   #. ``"t"``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">'o'</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'t'</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'n'</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'c'</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = a
 
 .. admonition:: Question
 
-   Given ``language = 'Python``, what does ``language[1,4]`` return?
+   Given ``my_str = 'ABC DEF GHI'``, which of the following
+   expressions returns ``'F'``?
 
-   #. ``"Pyth"``
-   #. ``"Pyt"``
-   #. ``"yth"``
-   #. ``"ytho"``
+   .. raw:: html
 
-.. Answer: d
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">my_str[-3]</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">my_str[-4]</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">my_str[-5]</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">my_str[-6]</li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = c
 
 .. raw:: html
 
