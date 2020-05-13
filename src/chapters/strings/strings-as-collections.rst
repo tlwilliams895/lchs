@@ -77,8 +77,7 @@ collection. We can put the collection itself inside the parentheses, like
 
       73
 
-Note that in the example above, the spaces in the string also count as
-characters.
+   Note that any spaces in a string also count as characters.
 
 The Empty String
 ^^^^^^^^^^^^^^^^

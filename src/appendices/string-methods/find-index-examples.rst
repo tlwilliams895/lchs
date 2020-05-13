@@ -10,7 +10,7 @@ The general syntax for these methods is:
    string_name.find(a_string)
    string_name.index(a_string)
 
-.. index:: ! substring
+.. index:: substring
 
 ``a_string`` is called a **substring**, which means that it will match a
 smaller part of ``string_name``.

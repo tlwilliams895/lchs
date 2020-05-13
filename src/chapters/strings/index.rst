@@ -6,6 +6,7 @@ Stringing Characters Together
 
    strings-as-collections
    bracket-notation
+   more-on-brackets
    string-immutability
    string-methods
    special-characters
