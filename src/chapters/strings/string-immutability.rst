@@ -56,14 +56,14 @@ string *variables*.
       The Princess Bride
 
 In this example, the change made on line 3 works. The difference between this
-example and the one above is that here we are modifying the value that the
-variable stores. We are not trying to change the original string itself. Using
-our visual analogy of a variable as a label that "points at" a value, the
-second example has the following effect:
+example and the first is that here we assign a new value to the variable. We
+are not trying to change the original string itself. If we picture a variable
+as a label that "points at" a value, the second example has the following
+effect:
 
-.. todo:: Update string-var-reassignment.png figure to fit Python examples.
-
-   A variable, ``title``, pointing at "The princess Bride" with a lowercase-p.
+.. figure:: ./figures/string-var-reassignment.png
+   :alt: A variable, ``title``, pointing at "The Princess Bride" with an uppercase P.
+   :scale: 80%
 
    When the value of a variable storing a string is changed, the variable then
    points to a new value, with the old value remaining unchanged.

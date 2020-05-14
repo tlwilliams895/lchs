@@ -147,7 +147,7 @@ Return to the :ref:`editor above <string-index-try-it>` and do the following:
 #. Use a negative index to print the character ``'x'`` from the string
    ``Zero-based indexing!``
 #. What is the smallest negative number that gives an *index out of range*
-   error? In this case "smallest" means "closest to zero".
+   error? In this case, "smallest" means "closest to zero".
 #. ``this_string[len(this_string)]`` throws an error. What about
    ````this_string[-len(this_string)]``?
 
