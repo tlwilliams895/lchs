@@ -11,7 +11,7 @@ order to create a specific output:
    .. sourcecode:: python
       :linenos:
 
-      name = Jack
+      name = 'Jack'
       current_age = 9
 
       print("Next year, " + name + " will be " + str(current_age + 1) + ".")
@@ -34,31 +34,44 @@ depends on multiple variables. Also, concatenation usually requires several
 test runs of the code in order to check for syntax errors and proper spacing.
 Fortunately, Python offers us a better way to accomplish the same thing.
 
+The Zen of Python
+-----------------
+
+   Beautiful is better than ugly,
+
+   Simple is better than complex,
+
+   Readability counts.
+
 .. index:: ! template literal
 
 **Template literals** allow for the automatic insertion of expressions and
 variable values into strings.
 
-Within a template literal, type the output you want, but leave *placeholders*
-where you want to insert values. Placeholders are identified by using a pair of
-curly braces, ``{}``. When the program runs, the placeholders are replaced by
-the values we want to include in the string.
+Within a template literal, type the string, but leave *placeholders* where you
+want to insert values. Placeholders are identified by a pair of curly braces,
+``{}``. When the program runs, the placeholders are replaced by the values we
+want to include in the string.
 
 Let's compare the string concatenation in the example above to a template
 literal:
 
 .. sourcecode:: python
 
-   # Concatenation
+   # Concatenation (ugly, complicated, hard to read)
    "Next year, " + name + " will be " + str(current_age + 1) + "."
 
-   # Template literal
+   # Template literal (beautiful, simple, easier to read)
    "Next year, {} will be {}."
 
 The braces ``{}`` indicate where we want to insert the values for ``name`` and
 ``current_age + 1``. Note how we only need one pair of quotes, and the spacing
-fits naturally with the {}. Python also takes care of any data type
+fits naturally around the ``{}``. Python also takes care of any data type
 conversions.
+
+.. index:: ! format method
+
+.. _format-string-method:
 
 The ``format()`` Method
 -----------------------
@@ -74,9 +87,9 @@ The general syntax is:
 
 .. sourcecode:: python
 
-   string_with_braces.format(value_1, value_2, etc.)
+   string_with_braces.format(value_1, value_2, etc)
 
-The values inside the () may be actual numbers or strings, but they will most
+The values inside the () can be actual numbers or strings, but they will most
 often be variables or expressions.
 
 .. admonition:: Example
@@ -87,7 +100,7 @@ often be variables or expressions.
    .. sourcecode:: python
       :linenos:
 
-      name = "Jack"
+      name = 'Jack'
       current_age = 9
       output = "Next year, {} will be {}."
 
@@ -106,44 +119,162 @@ with the next value inside ``format()``.
 
 .. admonition:: Try It!
 
-   .. todo:: Insert interactive .format() repl here!!!
-
    Experiment with the ``format()`` string method.
 
-   #. Do this...
-   #. Do this...
-   #. Do this...
-   #. Mismatched {} and values.
+   #. Run the program several times with different values for ``my_string`` and
+      ``my_number``.
+   #. Change the order of ``my_number`` and ``my_string`` inside the ``format``
+      parentheses. What happens?
+   #. Change the location of one set of ``{}`` in ``output``. What happens?
+   #. Remove one set of ``{}`` from ``output`` and run the program. What
+      happens?
+   #. Use four or more ``{}`` inside ``output`` and run the program. What
+      happens?
+
+   .. raw:: html
+   
+      <iframe height="550px" width="100%" src="https://repl.it/@launchcode/LCHS-format-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+
+.. admonition:: Note
+
+   Python fills the empty braces ``{}`` from left to right through the string,
+   and it uses the values given in ``format`` from left to right as well.
+
+   A mismatch between the number of braces in the string and the number of
+   values in ``format`` will NOT throw an error. However, the output will not
+   look the way you want.
+
+Indexes with ``format()``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+What if we want to use the same value multiple times in a string?
+
+.. admonition:: Example
+
+   Let's take the case where we add a number to itself three times:
 
    .. sourcecode:: python
-      :linenos:
 
-      my_string = 'Hello'
-      my_number = 3
-      my_expression = my_string * my_number
-      
-      output = '''This is my_string: {}. 
-      This is a my_number: {}.
-      This is the length of my_string * my_number: {}'''
+      my_num = 10
+      output = '{} + {} + {} = {}'
 
-      print(output.format(my_string, my_number, len(my_expression))
+      print(output.format(my_num, my_num, my_num, 3*my_num))
 
-Indexes in ``format()``
-^^^^^^^^^^^^^^^^^^^^^^^
+   **Console Output**
 
-Lorem ipsum...
+   ::
+
+      10 + 10 + 10 = 30
+
+Remember that when we code, we want to avoid repeating ourselves as much as
+possible. Typing ``my_num`` three times inside ``format()`` should set off
+alarm bells in our heads. There is a shorter way.
+
+We can include index values inside of the curly braces ``{}``. These indexes
+refer to the items inside ``format()``, and the indexes begin with 0.
+
+.. admonition:: Example
+
+   Let's add index values to the template literal:
+
+   .. sourcecode:: python
+
+      my_num = 10
+      output = '{0} + {0} + {0} = {1}'
+
+      print(output.format(my_num, 3*my_num))
+
+   **Console Output**
+
+   ::
+
+      10 + 10 + 10 = 30
+
+When Python evaluates ``{0}``, it inserts the *first* value from ``format()``.
+``{1}`` gets replaced by the second value. Since ``{0}`` occurs three times,
+``my_num`` is used for each one.
+
+If we add another value inside ``format()``, we can insert it into the string
+by adding ``{2}`` to ``output``.
+
+Index values also allow us to split up the link between the order of the curly
+braces and the order of the values within ``format()``.
+
+.. admonition:: Example
+
+   .. sourcecode:: python
+
+      output = "Hello, {1}. You turn {0} years old today. Happy birthday, {1}!"
+
+      print(output.format(5, 'Anna'))
+
+   **Console Output**
+
+   ::
+
+      Hello, Anna. You turn 5 years old today. Happy birthday, Anna!
+
+Notice how the string ``'Anna'`` gets used first in the output, even though it
+comes second within ``format()``.
+
+.. admonition:: Tip
+
+   Even if you do not think you will need indexes in a template literal, it is
+   a good idea to use them anyway!
+
+   In this book, most of the template literals used in the examples and starter
+   code will contain index values.
 
 f-Strings
 ---------
 
-Lorem ipsum...
+.. index:: ! f-string
 
-Zen of Python
--------------
+Python versions 3.6 and later provide another way to insert values and
+expressions into a string. The new format is called an **f-string**, for
+*format string*.
 
-   Beautiful is better than ugly, 
-   Simple is better than complex,
-   Readability counts.
+.. sourcecode:: python
+
+   f"This is a string with a {name}, an {age}, and a calculated result, {3+2*10}."
+
+Items to note:
+
+#. f-strings begin with the character ``f``, followed by the string in quotes.
+#. Instead of index values, variable names or expressions are placed inside the
+   curly braces ``{}``.
+
+.. admonition:: Example
+
+   Let's refactor an earlier example to use an f-string:
+
+   .. sourcecode:: python
+      :linenos:
+
+      name = 'Jack'
+      current_age = 9
+      output = f"Next year, {name} will be {current_age + 1}."
+
+      print(output)
+
+   **Console Output**
+
+   ::
+
+      Next year, Jack will be 10.
+
+Essentially, ``f`` replaces ``.format``, and using variable names and/or
+expressions inside the braces replaces the index values. When Python comes
+across an ``f`` in front of a string, it evaluates everything within the curly
+braces and inserts the results into the string.
+
+.. admonition:: Note
+
+   We won't discuss f-strings further in this book. If you are interested in
+   digging deeper, here are a couple of places to start:
+
+   #. `Python String Formatting Best Practices <https://realpython.com/python-string-formatting/>`__,
+   #. `Python 3's f-Strings <https://realpython.com/python-f-strings/>`__.
 
 Check Your Understanding
 ------------------------
@@ -153,17 +284,13 @@ Check Your Understanding
    Mad Libs are games where one player asks the group to supply random words
    (e.g. "Give me a verb," or, "I need a color"). The words are substituted
    into blanks within a story, which is then read for everyone's amusement. In
-   elementary school classrooms, giggles and hilarity often ensue. TRY IT!
+   elementary school classrooms, giggles and hilarity often occur. TRY IT!
 
-   Refactor the following code to replace the awkward string concatenation with template literals. Be sure to add your own choices for the variables.
+   Refactor the following code to replace the awkward string concatenation with
+   a template literal. Be sure to add your own choices for the variables!
 
-   .. sourcecode:: python
-      :linenos:
+   Feel free to use either ``.format()`` or and f-string.
 
-      pluralNoun = ''
-      name = ''
-      verb = ''
-      adjective = ''
-      color = ''
+   .. raw:: html
 
-      print("Python provides a "+ color +" collection of tools — including " + adjective + " syntax and " + pluralNoun + " — that allows "+ name +" to "+ verb +" with strings.")
+      <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Mad-Lib-Exercise?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
