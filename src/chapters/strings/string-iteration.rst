@@ -5,8 +5,8 @@ One of the most common uses of a ``for`` loop is to carry out a task on each
 item in a collection. When using a loop with a collection in this way, we say
 that the loop *iterates over* the collection.
 
-Iterating Over Strings
-----------------------
+Iterate by Index or Characters
+------------------------------
 
 .. todo:: Insert internal book link(s) to the relevant section(s) of the Loops chapter.
 

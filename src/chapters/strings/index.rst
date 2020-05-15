@@ -12,6 +12,7 @@ Stringing Characters Together
    special-characters
    template-literals
    string-iteration
+   string-conditionals
    string-module
    exercises
    project
