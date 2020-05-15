@@ -11,7 +11,7 @@ Stringing Characters Together
    string-methods
    special-characters
    template-literals
-   string-module
    string-iteration
+   string-module
    exercises
    project

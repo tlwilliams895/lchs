@@ -89,8 +89,8 @@ The general syntax is:
 
    string_with_braces.format(value_1, value_2, etc)
 
-The values inside the () can be actual numbers or strings, but they will most
-often be variables or expressions.
+The values inside ``format()`` can be actual numbers or strings, but they will
+most often be variables or expressions.
 
 .. admonition:: Example
 
