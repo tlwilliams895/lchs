@@ -56,7 +56,7 @@ the different data types.  (*TRY IT*!)
 Comparing Strings
 -----------------
 
-We can use the comparison operators ``==, <, >, <=, >=`` on strings.
+We can use the comparison operators ``==, !=, <, >, <=, >=`` on strings.
 
 .. admonition:: Example
 
@@ -81,13 +81,14 @@ We can use the comparison operators ``==, <, >, <=, >=`` on strings.
 
 #. Line 5 evaluates if the strings ``'dog'`` and ``'cat'`` are identical and
    then prints the boolean result (``False``).
-#. Line 6 evaluates if the first character in ``'cat'`` and ``'cheetah'`` are
-   the same (``True``).
+#. Line 6 evaluates if the first character in ``'cat'`` and ``'crow'`` are the
+   same (``True``).
 
-   - Note that the first character comparison for ``'cat'`` and ``'Cheetah'``
-     returns ``False`` due to the different cases.
-   - To make the expression cases-insensitive, we need to convert each character
-     to the same case (e.g. ``your_pet[0].lower() == other_pet[0].lower()``).
+   - Note that the first character comparison for ``'cat'`` and ``'Crow'``
+     would return ``False`` due to the different cases.
+   - To make the expression *case-insensitive*, we need to convert each
+     character to the same case (e.g.
+     ``your_pet[0].lower() == other_pet[0].lower()``).
 
 #. Line 7 evaluates if ``'dog'`` comes earlier in the alphabet than ``'cat'``.
    A string that comes earlier is considered *less than* a string that comes
@@ -165,9 +166,136 @@ substring of another.
 Checking Case
 -------------
 
-Lorem ipsum...
+The ``upper()`` and ``lower()`` methods return a new string with all of the
+letters shifted to the same case. Recall, however, that the methods do NOT
+change the original string. This gives us a way to check the case for either a
+single character, a slice, or the entire string.
+
+.. admonition:: Example
+
+   .. sourcecode:: Python
+      :linenos:
+
+      title = "Harry Potter and the Sorcerer's Stone"
+      cap_count = 0
+
+      for char in title:
+         if char.upper() == char:
+            cap_count += 1
+
+      print(f"'{title]' contains {cap_count} capital letters.")
+      
+      if title.upper() == title:
+         print("Stop yelling!")
+      elif title.lower() == title:
+         print("The title is not capitalized correctly.")
+
+   In line 5, ``char.upper()`` creates a new string (the uppercase version of
+   ``char``) and compares it to the original. If they match, then the original
+   character in ``title`` is a capital letter, and ``cap_count`` gets increased
+   by 1.
+
+   In a similar manner, lines 10 and 12 check if the entire string is either
+   all uppercase or all lowercase.
 
 Check Your Understanding
-------------------------
+------------------------ 
 
-Lorem ipsum...
+Evaluate whether the following expressions are ``True`` or ``False``:
+
+.. admonition:: Question
+
+   .. sourcecode:: Python
+
+      "dog" < "doghouse"
+
+   .. raw:: html
+   
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">False</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = True
+
+.. admonition:: Question
+
+   .. sourcecode:: Python
+
+      "dog" < "Dog"
+
+   .. raw:: html
+   
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">False</span></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = False
+
+.. admonition:: Question
+
+   .. sourcecode:: Python
+
+      "dog" < "Doghouse"
+   
+   .. raw:: html
+   
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">False</span></li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = False
+
+.. admonition:: Question
+
+   .. sourcecode:: Python
+
+      "app" in "Happy"
+
+   .. raw:: html
+   
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">False</span></li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = True 
+
+.. admonition:: Question
+
+   For which of the following would ``text.upper() == text`` return
+   ``True``?
+
+   .. raw:: html
+   
+      <ol type="a">
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">text = 'Stop Yelling!'</span></li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">text = 'STOP YELLING!'</span></li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">text = 'stop yelling!'</span></li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">text = 'STOP YELLINg!'</span></li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> All return <span style="color:#419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> None return <span style="color:#419f6a; font-weight: bold">True</span></li>
+      </ol>
+      <p id="Q5"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
