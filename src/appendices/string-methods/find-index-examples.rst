@@ -1,5 +1,8 @@
 .. _string-find-examples:
 
+.. index::
+   single: string; find
+
 ``find`` and ``index`` Examples
 ===============================
 

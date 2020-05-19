@@ -62,7 +62,7 @@ module. For a complete list, refer to the
      - Returns the string ``'abcdefghijklmnopqrstuvwxyz'``
    * - ``string.ascii_uppercase``
      - Returns the string ``'ABCDEFGHIJKLMNOPQRSTUVWXYZ'``
-   * - ``string.letters``
+   * - ``string.ascii_letters``
      - Returns a string containing all of the uppercase and lowercase letters.
    * - ``string.punctuation``
      - Returns the string ``'!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'``.
@@ -73,23 +73,9 @@ Try It!
 Run the following code to see the values assigned to each ``string`` module
 constant:
 
-.. todo:: Insert interactive string module repl here!
+.. raw:: html
 
-.. sourcecode:: Python
-   :linenos:
-
-   import string
-
-   print(string.ascii_lowercase)
-   print(string.ascii_uppercase)
-   print(string.letters)
-   print(string.digits)
-   print(string.punctuation)
-
-   my_string = '*'
-
-   if my_string in string.ascii_lowercase:
-      print("{0} is a lowercase letter.".format(my_string))
+   <iframe height="650px" width="100%" src="https://repl.it/@launchcode/LCHS-String-Module-Intro?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Now try this:
 
@@ -100,9 +86,9 @@ Now try this:
    digits, or punctuation.
 #. Assign a longer string to ``my_string``. Add a loop to your code so that it
    checks each character in ``my_string`` and reports the results.
-#. Note that *whitespace* characters are not included in any of the constants.
-   Can you guess the name for the ``string`` module constant that contains
-   ``' ', '\t', and '\n'``?
+#. Note that *whitespace* characters are not included in any of these
+   constants. Can you guess the name for the ``string`` module constant that
+   contains ``' ', '\t'``, and ``'\n'``?
 
 .. admonition:: Note
 

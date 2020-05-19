@@ -1,5 +1,8 @@
 .. _string-lower-examples:
 
+.. index::
+   single: string; lower
+
 ``lower`` Examples
 ==================
 
@@ -31,6 +34,9 @@ variable that points to a string value.
    some title with non-letters!
 
 .. _string-upper-examples:
+
+.. index::
+   single: string; upper
 
 ``upper`` Examples
 ==================

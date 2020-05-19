@@ -21,23 +21,22 @@ Let's see how we can use the ``type()`` function to check for a string.
 
 .. admonition:: Example
 
-   .. todo:: Insert interactive repl here! (Check variable type).
+   .. raw:: html
 
-   .. sourcecode:: Python
-      :linenos:
-
-      my_var = 42
-
-      if type(my_var) == str:
-         print("The value '{0}' is a string.".format(my_var))
-      else:
-         print("The value {0} is NOT a string.".format(my_var))
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-String-Conditionals-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
    Run the program with each of the following values for ``my_var``:
 
-   #. '1234' vs. 1234
+   #. ``'1234'`` vs. ``1234``
    #. ``True`` or ``False`` vs. ``"True"`` or ``"False"``
-   #. 0.3333 vs. '0.333'
+   #. ``0.333`` vs. ``'0.333'``
+
+   **Follow Up**:
+
+   #. Add an ``elif`` statement and code block to check for the ``int`` data
+      type.
+   #. Repeat this process for the ``float`` and ``bool`` data types.
+   #. Rerun the program with the different ``my_var`` values.
       
 We can easily modify line 3 to check if ``my_var`` is an ``int``, ``float``,
 or ``bool`` data type. We could also use an ``if/elif/else`` block to check for
@@ -137,31 +136,20 @@ substring of another.
 
 .. admonition:: Try It!
 
-   Use the ``in`` (or ``not in``) operator to count the number of vowels in a
-   string.
+   This example uses the ``in`` operator to decide when to increase the value
+   of ``vowel_count``.
 
-   .. todo:: Insert interactive repl here (in vs. not in).
+   .. raw:: html
 
-   .. sourcecode:: Python
-      :linenos:
-
-      text = "Armadillos or anteaters"
-      vowels = 'aeiou'
-      vowel_count = 0
-
-      for char in text:
-         if char in vowels:
-            count += 1
-      
-      print(f"'{text}' contains {vowel_count} vowels.")
+      <iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Conting-Vowels-Example?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
    #. The program does not quite work yet. There are 9 vowels in
       ``'Armadillos or anteaters'``, but the code does not count the capital
       ``A``.
    #. Fix the code to be *case-insensitive*. Both capital and lowercase vowels
       should increase ``vowel_count``.
-   #. Modify the code to give the number of consonants (non-vowels) in the
-      string.
+   #. Refactor the code to report the number of consonants (non-vowels) in the
+      string. (*Hint*: Use the ``not in`` operator).
 
 Checking Case
 -------------

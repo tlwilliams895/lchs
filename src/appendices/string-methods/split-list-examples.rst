@@ -1,5 +1,8 @@
 .. _string-split-examples:
 
+.. index::
+   single: string; split
+
 ``split`` Examples
 ==================
 
@@ -43,6 +46,9 @@ string at each space.
 
 Notice that in each case, the ``delimiter`` string is NOT included in the
 resulting list.
+
+.. index::
+   single: string; list
 
 ``list`` Examples
 -----------------

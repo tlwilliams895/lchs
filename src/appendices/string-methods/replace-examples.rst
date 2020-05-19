@@ -1,5 +1,8 @@
 .. _string-replace-examples:
 
+.. index::
+   single: string; replace
+
 ``replace`` Examples
 ====================
 

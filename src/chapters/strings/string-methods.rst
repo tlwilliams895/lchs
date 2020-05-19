@@ -1,8 +1,6 @@
 String Methods
 ==============
 
-.. todo:: Add index links to each string method appendix page.
-
 The ``str`` data type includes a special group of operations, called *methods*,
 that we can use to make routine tasks easier. A method performs a specific
 action on the data within an object. For strings, the methods usually create a
@@ -85,8 +83,6 @@ is the result of the operation.
 
 Let's take a look at this behavior with the ``lower()`` and ``replace()``
 methods.
-
-.. todo:: Insert interactive string method repl here!
 
 .. admonition:: Example
 

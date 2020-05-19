@@ -1,5 +1,8 @@
 .. _string-count-examples:
 
+.. index::
+   single: string; count
+
 ``count`` Examples
 ==================
 

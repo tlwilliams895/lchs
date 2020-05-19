@@ -1,5 +1,8 @@
 .. _string-strip-examples:
 
+.. index::
+   single: string; strip
+
 ``strip`` Examples
 ==================
 
