@@ -1,3 +1,5 @@
+.. _list-methods:
+
 List Methods
 ============
 
