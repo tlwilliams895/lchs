@@ -1,4 +1,4 @@
-Strings: Project
+Project: Strings
 ================
 
 Lorem ipsum...

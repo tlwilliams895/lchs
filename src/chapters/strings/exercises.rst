@@ -1,4 +1,4 @@
-Strings: Exercises
+Exercises: Strings
 ==================
 
 Part One: Bracket Notation
