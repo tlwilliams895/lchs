@@ -99,8 +99,7 @@ To see detailed examples for a particular method, click on its name.
 Check Your Understanding
 ------------------------
 
-Follow the links in the table above for ``sort``, ``list``, ``split``, and
-``join``. Review the content and then answer the following questions.
+As you answer these questions, follow the links in the table above as needed.
 
 .. admonition:: Question
 
@@ -168,6 +167,75 @@ Follow the links in the table above for ``sort``, ``list``, ``split``, and
       <p id="Q3"></p>
 
 .. Answer = a
+
+.. admonition:: Question
+
+   What is printed by the following program?
+
+   .. sourcecode:: python
+      :linenos:
+
+      a_list = [4, 2, 8, 6, 5]
+      a_list.append(True)
+      a_list.append(False)
+      print(a_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 2, 8, 6, 5, False, True]</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, 8, 6, 5, True, False]</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> [True, False, 4, 2, 8, 6, 5]</li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   What is printed by the following program?
+
+   .. sourcecode:: python
+      :linenos:
+
+      a_list = [4, 2, 8, 6, 5]
+      a_list.insert(2, True)
+      a_list.insert(0, False)
+      print(a_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, true)"> [False, 4, 2, True, 8, 6, 5]</li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> [4, False, True, 2, 8, 6, 5]</li>
+         <li><input type="radio" name="Q5" autocomplete="off" onclick="evaluateMC(name, false)"> [False, 2, True, 6, 5]</li>
+      </ol>
+      <p id="Q5"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   What is printed by the following program?
+
+   .. sourcecode:: python
+      :linenos:
+
+      a_list = [4, 2, 8, 6, 5]
+      a_list.pop(2)
+      a_list.pop()
+      print(a_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q6" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 8, 6]</li>
+         <li><input type="radio" name="Q6" autocomplete="off" onclick="evaluateMC(name, false)"> [2, 6, 5]</li>
+         <li><input type="radio" name="Q6" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, 6]</li>
+      </ol>
+      <p id="Q6"></p>
+
+.. Answer = c
 
 .. raw:: html
 
