@@ -47,19 +47,16 @@ Just like strings, we can use the ``in`` and ``not in`` operators to check if a
 specific value is present in a list. The operators return ``True`` or ``False``
 depending on if the value matches an element.
 
+.. _in-not-in-editor:
+
 .. admonition:: Try It!
 
-   .. todo:: Insert interactive repl for ``in`` and ``not in``.
+   Run this program to see the results returned by the ``in`` and ``not in``
+   operators.
 
-   .. sourcecode:: Python
-      :linenos:
+   .. raw:: html
 
-      fruit = ["apple", "orange", "banana", "cherry", "tomato", "bell pepper"]
-
-      print("apple" in fruit)
-      print("pear" in fruit)
-      print("nana" in fruit)
-      print("carrot" not in fruit)
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-in-and-not-in-List-Example?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>
 
    Note that even though the substring ``'nana'`` is present in ``'banana'``,
    the result of line 5 is still ``False``. In this case, the ``in`` operator
@@ -112,10 +109,91 @@ The index values in the new list begin at 0.
 Try It!
 ^^^^^^^
 
-In the editor above, add slices to check only a portion of the ``fruit`` list
-(e.g. ``print("apple" in fruit[2:4])``).
+In the :ref:`editor above <in-not-in-editor>`, add slices to check only a
+portion of the ``fruit`` list (e.g. ``print("apple" in fruit[2:4])``).
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: Python
+      :linenos:
+
+      a_list = [4, 2, 8, 6, 5, 4]
+      a_list[2] = True
+      print(a_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 2, True, 8, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 2, 8, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, True, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 8, 6, 5, 4]</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   Given ``num_list = [8, 6, 7, 5, 3, 0, 9]``, what does ``num_list[2:5]``
+   return?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> [7, 5, 3]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [7, 5, 3, 0]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [6, 7, 5]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [6, 7, 5, 3]</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   Given ``fruit = ["apple", "orange", "banana", "cherry", "tomato", "bell pepper"]``,
+   which of the following statements return ``True``? Select ALL that apply.
+
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', false)">apples in fruit</span></li>
+         <li><span id = "b" onclick="highlight('b', false)">pepper in fruit</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">banana in fruit[:3]</span></li>
+         <li><span id = "d" onclick="highlight('d', false)">tomato in fruit[1:4]</span></li>
+         <li><span id = "e" onclick="highlight('e', true)">broccoli not in fruit</span></li>
+         <li><span id = "f" onclick="highlight('f', true)">orange not in fruit[2:]</span></li>
+      </ol>
+
+.. Answers = c, e, f
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

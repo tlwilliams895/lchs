@@ -57,11 +57,11 @@ Note that ``del`` does NOT use parentheses ``()``.
       :linenos:
 
       num_strings = ['one', 'two', 'three']
-      del num_strings[1]
+      del num_strings[1]      # Removes the element at index 1.
       print(num_strings)
 
       letter_list = ['a', 'b', 'c', 'x', 'y', 'z']
-      del letter_list[1:5]
+      del letter_list[1:5]    # Removes each element from index 1 - 4.
       print(letter_list)
 
    **Console Output**
@@ -184,6 +184,8 @@ We can combine lists to create a new, longer list.
    #. Can we add two lists?  Try printing ``one_list + another_list``.
    #. Can we subtract two lists? Try printing ``one_list - another_list``.
    #. Multiplication? Kinda. Try printing ``one_list * 3``.
+
+   .. todo:: Insert interactive repl here (list concatenation)!
 
 Try It!
 -------

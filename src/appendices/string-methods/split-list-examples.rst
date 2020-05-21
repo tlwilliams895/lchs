@@ -50,7 +50,9 @@ resulting list.
 .. index::
    single: string; list
 
-``list`` Examples
+.. _list-function:
+
+``list`` Function
 -----------------
 
 Sometimes we might want to split a string into a list of individual characters.

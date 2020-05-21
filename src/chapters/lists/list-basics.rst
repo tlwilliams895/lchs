@@ -60,27 +60,21 @@ at ``-1`` for the last element in the list.
 
 .. admonition:: Try It!
 
-   Use index values to print out different elements from the list.
+   Use index values to print out different elements from a list.
 
    #. Add at least three new elements to ``my_list``. Feel free to use values
       of the same data type or different data types.
-   #. Note that line 3 prints the entire list (with brackets) to the console.
-   #. Change the index value in line 4 to print different elements from
+   #. Note that line 4 prints the entire list (with brackets) to the console.
+   #. Change the index value in line 5 to print different elements from
       ``my_list``. Be sure to try both positive and negative integers.
-   #. Try using an expression (like ``len(my_list) - 2``) as the index in
-      line 4.
+   #. Try using an expression (like ``len(my_list) - 2``) inside the brackets
+      in line 5.
    #. What happens if you use an index value larger than the number of elements
       in the list?
 
-   .. todo:: Insert interactive repl here (accessing list elements).
+   .. raw:: html
 
-   .. sourcecode:: Python
-      :linenos:
-
-      my_list = ["Python"]
-
-      print(my_list)
-      print(my_list[0])
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Accessing-List-Elements?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Check Your Understanding
 ------------------------
@@ -147,17 +141,6 @@ Check Your Understanding
 .. raw:: html
 
    <script type="text/JavaScript">
-      function highlight(id, answer) {
-         text = document.getElementById(id).innerHTML
-         if (answer) {
-            document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = text + ' - Correct!';
-         } else {
-            document.getElementById(id).innerHTML = text + ' - Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-
       function evaluateMC(id, correct) {
          if (correct) {
             document.getElementById(id).innerHTML = 'Yep!';

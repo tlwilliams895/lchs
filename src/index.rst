@@ -40,6 +40,7 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book
+   appendices/list-methods/index
    appendices/string-methods/index
 
 .. toctree::

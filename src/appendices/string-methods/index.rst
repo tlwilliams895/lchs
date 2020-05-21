@@ -1,4 +1,4 @@
-.. _string-methods:
+.. _string-methods-appendix:
 
 Common Python String Methods
 ============================
