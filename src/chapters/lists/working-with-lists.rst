@@ -16,6 +16,9 @@ To update a single item in a list, use the syntax:
 
    list_name[index] = new_value
 
+``list_name[index]`` identifies the element in the list that we want to change.
+The ``=`` operator assigns ``new_value`` to that index location.
+
 .. admonition:: Example
 
    .. sourcecode:: python
@@ -24,8 +27,8 @@ To update a single item in a list, use the syntax:
       grocery_list = ["granola bars", "veggies", "TP", "other healthy stuff"]
       print(grocery_list)
 
-      grocery_list[0] = "pears"
-      grocery_list[-1] = "chocolate"
+      grocery_list[0] = "pears"        # Set the value at index 0 to be "pears"
+      grocery_list[-1] = "chocolate"   # Set the value at index -1 to be "chocolate"
       print(grocery_list)
 
    **Console Output**
@@ -46,8 +49,8 @@ The general syntax is:
 .. sourcecode:: python
 
    del list_name[index]       # Removes the element at index.
-   del list_name[start:end]   # Removes the elements from 'start' up to but NOT
-                              # including 'end'.
+   del list_name[start:end]   # Removes the elements from the 'start' index up to but
+                              # NOT including the 'end' index.
 
 Note that ``del`` does NOT use parentheses ``()``.
 
@@ -171,22 +174,6 @@ values.
       [10, 20, 30, 40, 50, 60, 70, 80]
       [10, 70, 80]
 
-Combining Lists
----------------
-
-We can combine lists to create a new, longer list.
-
-.. admonition:: Try It!
-
-   Experiment with using different operators on two lists. Keep notes about the
-   results.
-
-   #. Can we add two lists?  Try printing ``one_list + another_list``.
-   #. Can we subtract two lists? Try printing ``one_list - another_list``.
-   #. Multiplication? Kinda. Try printing ``one_list * 3``.
-
-   .. todo:: Insert interactive repl here (list concatenation)!
-
 Try It!
 -------
 
@@ -194,15 +181,89 @@ Try It!
 
    In the editor below:
 
-   #. Change a single value inside ``my_list``.
-   #. Use ``del`` to remove a single value from ``my_list``.
-   #. Use ``del`` to remove multiple values from ``my_list``.
+   #. Change a single value inside ``conjunctions``.
+   #. Use ``del`` to remove a single value from ``conjunctions``.
+   #. Use ``del`` to remove multiple values from ``conjunctions``.
    #. Practice using the slice operator to insert, remove, or replace one or
-      more elements from ``my_list``.
+      more elements from ``conjunctions``.
    
-   .. todo:: Insert interactive repl here (mutating lists)!
+   .. raw:: html
+
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Mutating-Lists?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: Python
+      :linenos:
+
+      a_list = [4, 2, 8, 6, 5, 4]
+      a_list[2] = True
+      print(a_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 2, True, 8, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 2, 8, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, True, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 8, 6, 5, 4]</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   In the following code, we want to add ``'B'`` and ``'b'`` to the beginning
+   of ``b_list`` without losing any of the other items.
+
+   .. sourcecode:: Python
+      :linenos:
+
+      b_list = ['barber', 'baby', 'bubbles', 'bumblebee']
+      b_list[start_index : end_index] = ['B', 'b']
+
+   What values should we use for ``start_index`` and ``end_index``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> [0 : 0]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [0 : 1]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [1 : 1]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [0 : ]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [ : 1]</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

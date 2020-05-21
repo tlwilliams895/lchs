@@ -40,6 +40,34 @@ Note that the statement ``print(letters[len(letters)])`` will throw an *index
 out of range* error. Since index values start at 0, the last element in any
 list will always have a value of ``len(list_name) - 1``.
 
+Combining Lists
+---------------
+
+Just like strings, we can use the ``+`` and ``*`` operators for *concatenation*
+and *repetition*. Concatenation combines different lists to create one new,
+longer list. Repetition makes multiple copies of the same elements within a
+single list.
+
+.. admonition:: Try It!
+
+   Experiment with using different operators on lists. Take notes about the
+   results you see.
+
+   #. Does order matter?  Print ``first_list + second_list`` vs. 
+      ``second_list + first_list``, and then write down your answer.
+   #. Does the ``+`` operator change the original list? To check, print
+      ``first_list`` again after your code from step 1.
+   #. Try printing ``first_list + 13`` vs. ``first_list + [13]``. What happens?
+   #. Can we subtract two lists? Try printing ``first_list - second_list``.
+   #. What does the ``*`` operator do to a list? Try printing
+      ``second_list * 3``.
+   #. Does the ``*`` operator change the original list? To check, print
+      ``second_list`` again after your code from step 5.
+
+   .. raw:: html
+
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-List-Concatentation?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
+
 ``in`` and ``not in``
 ---------------------
 
@@ -109,8 +137,8 @@ The index values in the new list begin at 0.
 Try It!
 ^^^^^^^
 
-In the :ref:`editor above <in-not-in-editor>`, add slices to check only a
-portion of the ``fruit`` list (e.g. ``print("apple" in fruit[2:4])``).
+In the :ref:`(in/not in) editor above <in-not-in-editor>`, add slices to check
+only a portion of the ``fruit`` list (e.g. ``print("apple" in fruit[2:4])``).
 
 Check Your Understanding
 ------------------------
@@ -123,16 +151,15 @@ Check Your Understanding
       :linenos:
 
       a_list = [4, 2, 8, 6, 5, 4]
-      a_list[2] = True
-      print(a_list)
+      print(a_list[3])
 
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 2, True, 8, 6, 5, 4]</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 2, 8, 6, 5, 4]</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, True, 6, 5, 4]</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [4, True, 8, 6, 5, 4]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 8</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 6</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
       </ol>
       <p id="Q1"></p>
 
@@ -154,6 +181,28 @@ Check Your Understanding
       <p id="Q2"></p>
 
 .. Answer = a
+
+.. admonition:: Question
+
+   What is printed by the following code?
+
+   .. sourcecode:: Python
+      :linenos:
+
+      a_list = [4, 2, 8]
+      print(a_list * 2)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> [4, 4, 2, 2, 8, 8]</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> [4, 2, 8, 4, 2, 8]</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> [8, 4, 16]</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> The code throws an error.</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = b
 
 .. admonition:: Question
 
