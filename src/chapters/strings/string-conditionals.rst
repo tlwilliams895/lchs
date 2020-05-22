@@ -154,40 +154,82 @@ substring of another.
 Checking Case
 -------------
 
+Let's explore how we can check the case for a character, slice, or an entire
+string.
+
+First Attempt
+^^^^^^^^^^^^^
+
 The ``upper()`` and ``lower()`` methods return a new string with all of the
 letters shifted to the same case. Recall, however, that the methods do NOT
-change the original string. This gives us a way to check the case for either a
-single character, a slice, or the entire string.
+change the original string. This gives us a way to create a new string in
+upper- or lowercase and compare it to the original.
 
 .. admonition:: Example
 
    .. sourcecode:: Python
       :linenos:
 
-      title = "Harry Potter and the Sorcerer's Stone"
-      cap_count = 0
+      character = 'a'
+      word = "yep!"
+      non_letters = '$10.75'
 
-      for char in title:
-         if char.upper() == char:
-            cap_count += 1
+      print(character.upper() == character)
+      print(word.lower() == word)
+      print(non_letters.upper() == non_letters)
+   
+   **Console Output**
 
-      print(f"'{title]' contains {cap_count} capital letters.")
-      
-      if title.upper() == title:
-         print("Stop yelling!")
-      elif title.lower() == title:
-         print("The title is not capitalized correctly.")
+   ::
 
-   In line 5, ``char.upper()`` creates a new string (the uppercase version of
-   ``char``) and compares it to the original. If they match, then the original
-   character in ``title`` is a capital letter, and ``cap_count`` gets increased
-   by 1.
+      False
+      True
+      True
 
-   In a similar manner, lines 10 and 12 check if the entire string is either
-   all uppercase or all lowercase.
+   #. ``character.upper()`` returns ``'A'``, which results in ``False`` when
+      compared to ``'a'``.
+   #. ``word.lower()`` returns ``'yep!'``, which is the same as ``word``. Note
+      that ``lower()`` ignores non-letter characters.
+   #. ``non_letters.upper() == non_letters`` returns ``True``, even though there
+      are NO letters in the string!
+
+As a first attempt, the results are mixed. If a string contains letters, the
+approach works fine, but it gives inaccurate results for non-letter strings.
+
+Case Methods
+^^^^^^^^^^^^
+
+Fortunately, Python provides methods that check the case of a string, and they
+deal with non-letter characters properly.
+
+.. admonition:: Example
+
+   .. sourcecode:: Python
+      :linenos:
+
+      character = 'a'
+      word = "yep!"
+      non_letters = '$10.75'
+
+      print(character.isupper())
+      print(word.islower())
+      print(non_letters.isupper())
+   
+   **Console Output**
+
+   ::
+
+      False
+      True
+      False
+
+The ``isupper()`` method returns ``True`` if all the letters in a string are
+uppercase. If the string contains a single lowercase letter, or no letters at
+all, the method returns ``False``. The ``islower()`` method behaves in a
+similar way, but it checks for lowercase letters.
 
 Check Your Understanding
------------------------- 
+------------------------
 
 Evaluate whether the following expressions are ``True`` or ``False``:
 
