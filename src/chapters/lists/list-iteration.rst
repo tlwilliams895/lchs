@@ -92,17 +92,19 @@ and access each element from the list.
 "Do Something With" vs. "Do Something To"
 -----------------------------------------
 
-When should we *iterate by element* or *iterate by index*? In most cases, both
-methods accomplish the same thing. However, there is a small difference in how
-each method uses the list items.
+.. todo:: Not happy with the flow of the writing in this section. Ideas?
+
+Should we *iterate by element* or *iterate by index*? In many cases, the choice
+comes down to personal preference. Sometimes, however, one option will be
+better than the other.
 
 The following example shows a case where we do something WITH the list
 elements:
 
 .. admonition:: Example
 
-   Given ``scores = [10, 25, 8, 33, 0]``, the code below shows two ways to use
-   a loop to add up all of the values from the list:
+   Given ``scores = [10, 25, 8, 33, 0]``, the code shows two ways to add up all
+   of the values from the list:
 
    .. sourcecode:: Python
       :linenos:
@@ -113,13 +115,69 @@ elements:
       for index in range(len(scores)): # Option 2: Loop by index
          total_points += scores[index]
 
+The end result is the same for both loops, ``total_points`` winds up with a
+value of ``76``. However, the syntax for looping by element (option 1) is
+cleaner, since we do not have to worry about bracket notation.
 
+This example shows doing something WITH the list elements. We access each one
+in turn and add it to ``total_points``. We do NOT change any of the elements
+themselves. ``print(scores)`` returns ``[10, 25, 8, 33, 0]`` even after the
+loop finishes.
 
-Since lists are mutable, we can use a loop to modify each element. The
-following code squares all the numbers from 1 to 5 using iteration by position.
+The next example shows a case where we do something TO the list elements:
 
-Turtle Lists
-------------
+.. admonition:: Example
+
+   Given ``scores = [10, 25, 8, 33, 0]``, the code below adds extra points to
+   some of the values:
+
+   .. sourcecode:: Python
+      :linenos:
+      
+      print(scores)
+
+      for index in range(len(scores)):    # Loop by index
+         if index >= 2:                   # Check position in list
+            scores[index] += 12           # Increase the value of the element
+
+      print(scores)
+
+   **Console Output**
+
+   ::
+
+      [10, 25, 8, 33, 0]
+      [10, 25, 20, 45, 12]
+   
+   Take a moment to think about what happens inside the loop. We must keep
+   track of both the *location* of an element in the list and its *value*.
+   
+   #. We do NOT add more points if the element's value is larger than 2.
+   #. Instead, we add more points if the *location* of the element in the list
+      is at index 2 or later.
+
+Since lists are mutable, we can use a loop to change some or all of the
+elements. To do this, we must know the *position* of the element in the list,
+and this requires an index value.
+
+Take Home Idea
+^^^^^^^^^^^^^^
+
+#. If we just need to access the values inside a list without changing them,
+   iterating by element is the cleaner approach. Looping by element also avoids
+   *index out of range* errors. (*Doing something WITH the list values*)
+#. If we need to change one or more of the values in a list, then we MUST loop
+   by index. (*Doing Something TO the list values*)
+#. Doing something with only certain list elements??????
+
+Try It!
+-------
+
+The following program contains a list of turtle colors.
+
+#. Loop through the list by element...
+#. Loop through by index to add "light" to color names...
+#. (Bonus) Nested loop (by element) to do shapes and colors.
 
 [IDEA: Iterate through a list of turtles to make each move and/or to assign
 properties. (Starburst pattern?)]
