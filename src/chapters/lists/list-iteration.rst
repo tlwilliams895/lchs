@@ -4,8 +4,8 @@ Iterating Through Lists
 Just like with strings, we can use a loop to iterate through the elements in a
 list.
 
-Iterate by Element
-------------------
+Loop by Element
+---------------
 
 Since a list is simply a sequence of separate data values, Python gives us a
 way to automatically iterate over those elements.
@@ -35,8 +35,8 @@ way to automatically iterate over those elements.
 The syntax almost reads like natural language: *For each item in
 shopping_list_items, print a tab character plus the item*.
 
-Each iteration, Python assigns the next element in the list to the loop
-variable ``item``. The elements may be of any data type.
+Each time the loop repeats, Python assigns the next element in the list to the
+loop variable ``item``. The elements may be of any data type.
 
 .. admonition:: Tip
 
@@ -54,15 +54,69 @@ variable ``item``. The elements may be of any data type.
    can think to yourself, *Each time the loop repeats, my code takes one
    car element from the cars list*.
 
-Iterate by Index
-----------------
+Loop by Index
+-------------
 
-Lorem ipsum...
+We can also use the ``range`` command to generate index values, and then use
+bracket notation to access each element from the list:
+
+.. admonition:: Example
+
+   .. sourcecode:: Python
+      :linenos:
+
+      shopping_list_items = ['apples', 'oranges', 'bananas', 'bread', 'toothpaste']
+
+      for index in range(len(shopping_list_items)):     # Iterate by index
+         print("{0}) {1}".format(index+1, shopping_list_items[index]))
+      
+   **Console Output**
+
+   ::
+
+      1) apples
+      2) oranges
+      3) bananas
+      4) bread
+      5) toothpaste
+
+For this loop, ``range(len(shopping_list_items))`` generates a sequence of
+integers (0, 1, 2...) up to but not including the length of the list.
+
+Each time the loop repeats, Python assigns the next integer in the sequence to
+the loop variable ``index``.
+
+In line 4, note how we use the ``index`` values to calculate the item numbers
+and access each element from the list.
 
 "Do Something With" vs. "Do Something To"
 -----------------------------------------
 
-Lorem ipsum...
+When should we *iterate by element* or *iterate by index*? In most cases, both
+methods accomplish the same thing. However, there is a small difference in how
+each method uses the list items.
+
+The following example shows a case where we do something WITH the list
+elements:
+
+.. admonition:: Example
+
+   Given ``scores = [10, 25, 8, 33, 0]``, the code below shows two ways to use
+   a loop to add up all of the values from the list:
+
+   .. sourcecode:: Python
+      :linenos:
+
+      for score in scores:             # Option 1: Loop by element
+         total_points += score
+      
+      for index in range(len(scores)): # Option 2: Loop by index
+         total_points += scores[index]
+
+
+
+Since lists are mutable, we can use a loop to modify each element. The
+following code squares all the numbers from 1 to 5 using iteration by position.
 
 Turtle Lists
 ------------
