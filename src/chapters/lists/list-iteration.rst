@@ -173,10 +173,36 @@ Take Home Idea
 Try It!
 -------
 
-The following program contains a list of turtle colors.
+The following program contains a list of turtle colors and shapes. It is an
+extension of the sprite loop, but the idea here is to use the number of colors
+in the list to draw and shade each leg.
 
-#. Loop through the list by element...
-#. Loop through by index to add "light" to color names...
+.. todo:: Insert interactive repl here (turtle list iteration)!
+
+#. On line X, set up a ``for`` statement that iterates through the elements in
+   the ``colors`` list.
+
+   a. Inside the loop, use the loop variable to set the color for ``bob``.
+   b. Move ``bob`` forward and back 75 units.
+   c. Use ``bob.left(360.0/len(colors))`` to make ``bob`` rotate by the proper
+      amount.
+   d. Run your program to verify that your code works. Properly done, your
+      output should behave something like this:
+
+      [INSERT GIF HERE]
+
+#. On line Y, set up a ``for`` statement that iterates by index through the
+   ``colors`` list.
+   
+   a. Inside the loop, use the ``index`` value to reassign the color values in
+      the list.
+   b. Replace each string in the list with the lighter version of the same
+      color (e.g. ``blue`` gets replaced with ``lightblue``).
+   c. Run your program to verify that your code works. Properly done, your
+      output should now behave something like this:
+
+      [INSERT GIF HERE]
+ 
 #. (Bonus) Nested loop (by element) to do shapes and colors.
 
 [IDEA: Iterate through a list of turtles to make each move and/or to assign
