@@ -22,14 +22,14 @@ Nested lists can store strings, numbers, and even more lists.
 In ``multidim_list``, the element at index 2 is a nested list. If we
 ``print(multidim_list[2])``, we see ``[1, 2, 3]`` appear in the console.
 
-The figure below demonstrates a ``synonyms`` list that has lists as values. The
-*nested* lists contain words that are synonyms of each other. Notice each inner
-list has an index position.  
+The figure below shows a ``courses`` list that holds lists at each index
+position. Each *nested* list contains classes from the same subject area.
+Notice that each nested list has its own set of index values.
 
-.. todo:: Insert figure for a multi-dimensional list here!
+.. figure:: figures/multi-dim-list.png
+   :alt: A label, 'courses', pointing to a list that contains lists at it's three indexes. Each nested list contains classes from the same subject area. 
 
-   A label, synonyms, pointing to a list that contains lists at it's four
-   indexes. Each inner list has a list of words that are synonyms. 
+   Lists within lists.
 
 Two Dimensional Lists
 ---------------------
@@ -54,34 +54,35 @@ element is a nested list, which contains multiple data values.
 
 ``two_dim_list`` holds three elements, each of which is a list. Note that the
 ``len()`` function only counts these three elements and NOT the total number of
-items inside of these nested lists.
+items inside of the nested lists.
 
-To access items in a two dimensional list, use two sets of square brackets and
+To access the values from a nested list, use two sets of square brackets and
 two index values. The indexes evaluate from left to right. The first index
 selects one of the nested lists, and the second index selects an element from
 that nested list.
 
 .. admonition:: Example
 
-   Use a two dimensional list to contain three different lists of space shuttle
-   crews.
+   Use one set of brackets to access a nested list, and add a second set of
+   brackets to access the values inside that list.
 
    .. sourcecode:: python
       :linenos:
 
       two_dim_list = [['a', 'b', 'c'], [90, 101], [True, False, False, True]]
 
-      print(two_dim_list[0])
+      print(two_dim_list[0])     # Print the lists at indexes 0, 1, and 2
       print(two_dim_list[1])
       print(two_dim_list[2])
 
-      print(two_dim_list[0][2])
-      print(two_dim_list[1][1])
-      print(two_dim_list[2][3])
+      print(two_dim_list[0][2])  # Print the element from list 0, index 2
+      print(two_dim_list[1][1])  # Print the element from list 1, index 1
+      print(two_dim_list[2][3])  # Print the element from list 2, index 3
 
    **Console Output**
 
    ::
+
       ['a', 'b', 'c']
       [90, 101]
       [True, False, False, True]
@@ -93,8 +94,8 @@ that nested list.
 Multi-Dimensions and List Methods
 ----------------------------------
 
-In a multi-dimensional list, both the inner and outer lists can be altered
-with list methods. However, bracket notation must be used correctly.
+We can apply list methods to either the nested or outer lists. However,
+we must use bracket notation carefully.
 
 To apply a method to the outer list, the syntax is:
 
@@ -102,7 +103,7 @@ To apply a method to the outer list, the syntax is:
 
    multilist_name.method()
 
-To apply a method to one of the inner lists, the syntax is:
+To apply a method to one of the nested lists, the syntax is:
 
 .. sourcecode:: python
 
@@ -110,61 +111,127 @@ To apply a method to one of the inner lists, the syntax is:
 
 .. admonition:: Example
 
-   Use list methods to add an additional crew list and alter existing lists.
+   Examine how including bracket notation affects how the ``reverse`` method
+   changes each list.
 
    .. sourcecode:: python
       :linenos:
 
-      shuttle_crews = [
-         ['Robert Gibson', 'Mark Lee', 'Mae Jemison'],
-         ['Kent Rominger', 'Ellen Ochoa', 'Bernard Harris'],
-         ['Eilen Collins', 'Winston Scott',  'Catherin Coleman']
-      ]
+      list_a = [ ['a', 'b', 'c'], ['A', 'b', 'c'], ['A', 'B', 'C'] ]
+      list_b = [ ['a', 'b', 'c'], ['A', 'b', 'c'], ['A', 'B', 'C'] ]
 
-      let newCrew = ['Mark Polansky', 'Robert Curbeam', 'Joan Higginbotham']
+      list_a.reverse()     # Change the order of the 3 nested lists, but NOT their elements.
+      list_b[2].reverse()  # Change the order of the list at index 2.
 
-      # Add a new crew list to the end of shuttleCrews
-      shuttleCrews.push(newCrew)
-      print(shuttleCrews[3][2])
-
-      # Reverse the order of the crew at index 1
-      shuttleCrews[1].reverse()
-      print(shuttleCrews[1])
+      print(list_a, '\n', list_b)
 
    **Console Output**
 
    ::
 
-      Joan Higginbotham
-      [ 'Bernard Harris', 'Ellen Ochoa', 'Kent Rominger' ]
+      [ ['A', 'B', 'C'], ['A', 'b', 'c'], ['a', 'b', 'c'] ] 
+      [ ['a', 'b', 'c'], ['A', 'b', 'c'], ['C', 'B', 'A'] ]
+
+Try It!
+^^^^^^^
+
+In the editor below, do the following:
+
+#. Append ``new_nums`` to ``id_number_lists``, and append the value ``444`` to
+   the first list in ``id_number_lists``.
+#. Print ``id_number_lists`` to verify your changes. Also, print the length of
+   ``id_number_lists`` (which should be ``4``).
+#. Print a slice of the last two elements in ``id_number_lists``. Also, print a
+   slice of the first two elements from the third list in ``id_number_lists``.
+#. Sample output:
+
+   ::
+
+      [ [111, 222, 333, 444], [987, 654], [1010, 1100, 0, 1], [1138, 42, 5] ] 
+      4
+      [ [1010, 1100, 0, 1], [1138, 42, 5] ]
+      [1010, 1100]
+
+#. When done with steps 1 - 4, paste these statements to the bottom of your
+   code. Run the program and examine the output. Write down your explanation of
+   what happens at each step in the loops.
+
+   .. sourcecode:: python
+      :lineno-start: 12
+
+      for id_numbers in id_number_lists:
+         print('Outer loop:', id_numbers)
+
+         for number in id_numbers:
+            print('Nested loop:', number)
+
+         print('--------------')
+
+.. raw:: html
+
+   <iframe height="550px" width="100%" src="https://repl.it/@launchcode/LCHS-Multi-dimensional-Lists?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
 Beyond Two Dimensional lists
 -----------------------------
 
-Generally, there is no limit to how many dimensions you can have when creating
-lists. However it is rare that you will use more than two dimensions. Later on
-in the class we will learn about more collection types that can handle complex
-problems beyond the scope of two dimensional lists.
+There is no limit to how many layers we can have inside our lists. However, it
+is rare to use more than two dimensions.
 
 
 Check Your Understanding
 ------------------------
 
+Use the following list to answer the questions:
+
+.. sourcecode:: python
+   :linenos:
+
+   data = [
+      ["science", "computer", "art"],
+      ["Jones", "Willoughby", "Rhodes"]
+   ]
+
 .. admonition:: Question
 
-   What are the two dimensional indexes for ``"Jones"``?
+   Which of the following will access the name ``"Jones"``?
 
-   .. sourcecode:: python
-      :linenos:
+   .. raw:: html
 
-      school = [
-         ["science", "computer", "art"],
-         ["Jones", "Willoughby", "Rhodes"]
-      ]
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">data[0][0]</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">data[0][1]</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">data[1][0]</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">data[1][1]</span></li>
+      </ol>
+      <p id="Q1"></p>
 
+.. Answer = c
 
+.. admonition:: Question
 
-   How would you add ``"dance"`` to the list at ``school[0]``?
+   How would you add ``"dance"`` to the first nested list?
 
-   How would you add ``"Holmes"`` to the list at ``school[1]``?
+   .. raw:: html
 
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">data.append('dance')</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">data[0].append('dance')</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">data[1].append('dance')</span></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

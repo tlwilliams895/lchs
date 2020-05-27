@@ -177,33 +177,40 @@ The following program contains a list of turtle colors and shapes. It is an
 extension of the sprite loop, but the idea here is to use the number of colors
 in the list to draw and shade each leg.
 
-.. todo:: Insert interactive repl here (turtle list iteration)!
+.. raw:: html
 
-#. On line X, set up a ``for`` statement that iterates through the elements in
+   <iframe height="800px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Lists?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
+
+#. On line 15, set up a ``for`` statement that iterates through the elements in
    the ``colors`` list.
 
    a. Inside the loop, use the loop variable to set the color for ``bob``.
-   b. Move ``bob`` forward and back 75 units.
-   c. Use ``bob.left(360.0/len(colors))`` to make ``bob`` rotate by the proper
+   b. Move ``bob`` forward and back 75 units. (If you wish, add a stamp at the
+      end of each leg).
+   c. Use ``bob.left(360/len(colors))`` to make ``bob`` rotate by the proper
       amount.
-   d. Run your program to verify that your code works. Properly done, your
-      output should behave something like this:
+   d. Run your program to verify that your code works (feel free to change the
+      number of elements in the ``colors`` list). Properly done, your output
+      should behave something like this:
 
-      [INSERT GIF HERE]
+      .. figure:: figures/color-sprite.gif
+         :alt: Gif showing a turtle drawing a six-sided sprite with each leg a different color.
 
-#. On line Y, set up a ``for`` statement that iterates by index through the
+#. On line 12, set up a ``for`` statement that iterates by index through the
    ``colors`` list.
    
    a. Inside the loop, use the ``index`` value to reassign the color values in
       the list.
-   b. Replace each string in the list with the lighter version of the same
-      color (e.g. ``blue`` gets replaced with ``lightblue``).
+   b. Replace each string in the list with the darker version of the same
+      color (e.g. ``blue`` gets replaced with ``dark blue``).
    c. Run your program to verify that your code works. Properly done, your
       output should now behave something like this:
 
-      [INSERT GIF HERE]
- 
-#. (Bonus) Nested loop (by element) to do shapes and colors.
+      .. figure:: figures/dark-color-sprite.gif
+         :alt: Gif showing a turtle drawing a six-sided sprite with each leg a new color.
 
-[IDEA: Iterate through a list of turtles to make each move and/or to assign
-properties. (Starburst pattern?)]
+#. *BONUS*: Using index values, try iterating over both the ``shapes`` and
+   ``colors`` lists.
+
+      .. figure:: figures/shape-color-sprite.gif
+         :alt: Gif showing a six-sided sprite drawn with different turtle colors and shapes.

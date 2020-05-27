@@ -7,7 +7,10 @@ The Python **list** data type is another example of an *ordered collection*.
 Lists store data values, which are called **elements**. Just like strings, each
 element has its own index value.
 
-.. todo:: Insert List diagram here (programming languages).
+.. figure:: figures/list-diagram.png
+   :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
+
+   This list contains four strings, and each value has its own index position.
 
 Strings are ordered collections of *characters*, which are just strings of
 length 1. Lists are ordered collections of *elements*, but these elements can
