@@ -40,6 +40,8 @@ Note that the statement ``print(letters[len(letters)])`` will throw an *index
 out of range* error. Since index values start at 0, the last element in any
 list will always have a value of ``len(list_name) - 1``.
 
+.. _concatenating-lists:
+
 Combining Lists
 ---------------
 
@@ -90,6 +92,8 @@ depending on if the value matches an element.
    the result of line 5 is still ``False``. In this case, the ``in`` operator
    checks if the string ``'nana'`` is its own element in ``fruit``. To check if
    ``'nana'`` is a smaller piece of each element requires more code.
+
+.. _slicing-lists:
 
 List Slices
 -----------
