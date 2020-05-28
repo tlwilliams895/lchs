@@ -1,12 +1,91 @@
 Common List Tasks
 =================
 
-Lorem ipsum...
+Lists provide a very flexible tool for storing and organizing data. As you use
+them again and again, you will often find yourself running the same type of
+task.
+
+Let's take a moment to look at some routine list techniques.
+
+Switching Two Elements
+----------------------
+
+The ``sort`` and ``reverse`` methods reorder all of the elements in a list.
+However, sometimes we only need to swap the positions of two items.
+
+Let's take a look at the long way first, so you can appreciate the shortcut
+that much more.
+
+.. admonition:: Example
+
+   Swapping two elements the long way. We need to use a variable to temporarily
+   store one of the values we want to swap.
+
+   .. sourcecode:: python
+      :linenos:
+
+      my_list = ['r', 'a', 't']
+
+      temp_value = my_list[0]    # Assigns the value 'r' to temp_value 
+      my_list[0] = my_list[2]    # Changes ['r', 'a', 't'] to ['t', 'a', 't']
+      my_list[2] = temp_value    # Finishes the exchange
+
+      print(my_list)
+
+   **Console Output**
+
+   ::
+
+      ['t', 'a', 'r']
+   
+   #. Line 3 assigns the value at index 0 (``'r'``) to the ``temp_value``
+      variable.
+   #. Line 4 assigns the value at index 2 to index 0. Printing ``my_list`` at
+      this point would return ``['t', 'a', 't']``.
+   #. Line 5 assigns ``temp_value`` to index 2.
+
+Switching the order of two list elements is so common that Python gives us a
+shortcut.
+
+.. admonition:: Example
+
+   Swapping two elements the short way. 
+
+   .. sourcecode:: python
+      :linenos:
+
+      my_list = ['r', 'a', 't']
+
+      my_list[0], my_list[2] = my_list[2], my_list[0]
+
+      print(my_list)
+
+   **Console Output**
+
+   ::
+
+      ['t', 'a', 'r']
+
+The idea behind the shortcut is that, if we have two list elements---``a`` and
+``b``---then the syntax:
+
+::
+
+   a, b = b, a
+
+switches the positions of the two elements inside the list.
 
 Accumulating List Elements
 --------------------------
 
+.. todo:: Add internal book link to the accumulator pattern section.
+
 Just like strings, we can use the accumulator pattern to add items to a list.
+Since the ``append`` method only adds one element at a time, placing the
+statement inside a loop allows us to continually increase the size of a list.
+
+As we did when keeping a running total, we need to define an accumulator
+variable, but in this case it will be assigned an empty list, ``[]``.
 
 .. admonition:: Example
 
@@ -28,7 +107,10 @@ Just like strings, we can use the accumulator pattern to add items to a list.
 
       [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-   Now let's add selected elements from one list to another:
+We can also use the accumulator pattern to add selected elements from one list
+to another.
+
+.. admonition:: Example
 
    .. sourcecode:: python
       :linenos:
@@ -53,15 +135,15 @@ Just like strings, we can use the accumulator pattern to add items to a list.
    One benefit of using the accumulator pattern is that it preserves the
    original list.
 
-Adding To Multiple Lists
-^^^^^^^^^^^^^^^^^^^^^^^^
+Multiple List Options
+^^^^^^^^^^^^^^^^^^^^^
 
 In the same accumulator loop, we can use a conditional to decide which list
 receives a value.
 
 .. admonition:: Example
 
-   Let's divide a list of mixed data types:
+   Let's divide a list of mixed data types into strings and integers:
 
    .. sourcecode:: python
       :linenos:
@@ -71,9 +153,9 @@ receives a value.
       strings = []
 
       for item in mixed_types:
-         if type(item) == str:
+         if type(item) == str:      # Check if item is a string data type.
             strings.append(item)
-         elif type(item) == int:
+         elif type(item) == int:    # Check if item is an int data type.
             integers.append(item)
       
       print(mixed_types)
@@ -92,38 +174,45 @@ receives a value.
    list, since they are of the ``float`` and ``bool`` data types,
    respectively.
 
-We could easily extend the ``if/elif`` block to deal with other data types.
+   We could easily extend the ``if/elif`` block to deal with other data types.
+
+Try It!
+^^^^^^^
+
+In the code editor below, practice using the accumulator pattern to add
+selected elements to different lists.
 
 .. admonition:: Try It!
 
-   .. todo:: Insert interactive repl here (list accumulation).
+   Assign elements from the ``strings`` list into either ``vowel_start``,
+   ``digit_start``, or ``other_start``.
 
-   Add statements to the code to assign elements from the ``strings`` list
-   into either ``vowel_start``, ``digit_start``, or ``other_start``.
+   #. In line 7, use a ``for`` statement to loop through ``strings`` by
+      element.
 
-   .. sourcecode:: python
-      :linenos:
+      .. sourcecode:: python
 
-      strings = ['apple', 'banana', '9-to-5', '@launchcode', 'everyone can code', ':-)', '4EVR']
-      vowel_start = []
-      digit_start = []
-      other_start = []
+         for item in strings:
 
-      for item in strings:
-         if item[0].lower() in 'aeiou':
-            vowel_start.append(item)
-         elif item[0] in '0123456789':
-            digit_start.append(item)
-         else:
-            other_start.append(item)
+   #. In line 8, use an ``if`` statement to check if ``item`` starts with a
+      vowel. If so, append ``item`` to the ``vowel_start`` list.
+   #. Add an ``elif`` statement to check if ``item`` starts with a digit (0-9).
+      If so, append ``item`` to ``digit_start``.
+   #. Add an ``else`` block to deal with strings that do NOT start with a digit
+      or a vowel.
+   #. Print the lists after the loop to check your work.
 
-   **Expected Output**
+   .. raw:: html
+
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-List-Accumulator?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
+
+   **Expected Results**
 
    ::
 
-      ['apple', 'everyone can code']
-      ['9-to-5', '4EVR']
-      ['banana', '@launchcode', ':-)']
+      vowel_start: ['apple', 'Everyone can code']
+      digit_start: ['9 to 5', '4EVR']
+      other_start: ['banana', '@launchcode', ':-)']
 
 Finding Max and Min
 -------------------
@@ -131,60 +220,60 @@ Finding Max and Min
 Often, we want to find the largest or smallest value from the elements in a
 list. We can accomplish this two different ways.
 
-.. admonition:: Example
-
-   Sorting a list arranges the elements from the smallest to largest value.
+#. Sorting a list arranges the elements from the smallest to largest value.
    The maximum (or minimum) value can then be accessed with bracket notation.
 
-   .. sourcecode:: python
-      :linenos:
+   .. admonition:: Example
 
-      numbers = [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
-      output = "Minimum = {0}, Maximum = {1}"
+      .. sourcecode:: python
+         :linenos:
 
-      numbers.sort()
-      print(numbers)
-      print(output.format(numbers[0], numbers[-1]))
-      # Index 0 is the first element in the list, and index -1 is the last.
+         numbers = [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
+         output = "Minimum = {0}, Maximum = {1}"
 
-   **Console Output**
+         numbers.sort()
+         print(numbers)
+         print(output.format(numbers[0], numbers[-1]))
+         # Index 0 is the first element in the list, and index -1 is the last.
 
-   ::
+      **Console Output**
 
-      [-36, -28, 27, 30, 30, 32, 42, 46, 53, 53]
-      Minimum = -36, Maximum = 53
+      ::
 
-.. admonition:: Example
+         [-36, -28, 27, 30, 30, 32, 42, 46, 53, 53]
+         Minimum = -36, Maximum = 53
 
-   Python also has two functions, ``max()`` and ``min()``, that return the
+#. Python also has two functions, ``max()`` and ``min()``, that return the
    largest and smallest values from a collection.
 
-   .. sourcecode:: python
-      :linenos:
+   .. admonition:: Example
 
-      numbers = [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
-      output = "Minimum = {0}, Maximum = {1}"
+      .. sourcecode:: python
+         :linenos:
 
-      largest = max(numbers)
-      smallest = min(numbers)
-      print(numbers)
-      print(output.format(smallest, largest))
+         numbers = [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
+         output = "Minimum = {0}, Maximum = {1}"
 
-   **Console Output**
+         largest = max(numbers)
+         smallest = min(numbers)
+         print(numbers)
+         print(output.format(smallest, largest))
 
-   ::
+      **Console Output**
 
-      [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
-      Minimum = -36, Maximum = 53
+      ::
 
-   Since the ``max`` and ``min`` functions *return* a value, we could easily
-   use the expressions inside ``format``.
+         [42, 27, 30, 46, -36, 30, -28, 53, 53, 32]
+         Minimum = -36, Maximum = 53
 
-   .. sourcecode:: python
-      :lineno-start: 4
+      Since the ``max`` and ``min`` functions *return* a value, we could easily
+      use the expressions inside ``format``.
 
-      print(numbers)
-      print(output.format(min(numbers), max(numbers)))
+      .. sourcecode:: python
+         :lineno-start: 4
+
+         print(numbers)
+         print(output.format(min(numbers), max(numbers)))
 
 .. admonition:: Note
 
@@ -196,4 +285,99 @@ list. We can accomplish this two different ways.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   What does the following program print?
+
+   .. sourcecode:: python
+      :linenos:
+
+      my_list = []
+
+      for num in range(7):
+         if num%2 == 0:
+            my_list.append(num)
+      
+      print(my_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> []</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [0, 1, 2, 3, 4, 5, 6]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> [0, 2, 4, 6]</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> [1, 3, 5]</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   What does the following program print?
+
+   .. sourcecode:: python
+      :linenos:
+
+      my_list = [8, 2, 7, 4, 10]
+
+      my_list[2], my_list[4] = my_list[4], my_list[2]
+      
+      print(my_list)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [8, 2, 7, 4, 10]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [8, 4, 7, 2, 10]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> [10, 4, 7, 2, 8]</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> [8, 2, 10, 4, 7]</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   What does the following program print?
+
+   .. sourcecode:: python
+      :linenos:
+
+      word = 'bookkeeper'
+      some_letters = []
+      other_letters = []
+      
+      for char in word:
+         if char not in 'aeiou':
+            some_letters.append(char)
+         else:
+            other_letters.append(char)
+      
+      print(some_letters)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> ['b', 'k', 'k', 'p', 'r']</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> ['o', 'o', 'e', 'e', 'e']</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> ['bkkpr']</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> ['ooeee']</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = a
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
