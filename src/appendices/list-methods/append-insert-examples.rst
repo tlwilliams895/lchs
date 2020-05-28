@@ -17,7 +17,7 @@ The general syntax for this method is:
 
    list_name.append(new_value)
 
-This method adds one new item to the END of a list. The new item may be of any
+``append`` adds one new item to the END of a list. The new item may be of any
 data type, including another list.
 
 .. admonition:: Example
@@ -80,7 +80,7 @@ The general syntax for this method is:
 
    list_name.insert(index, new_value)
 
-This method adds ``new_value`` at the specified ``index`` in the list. The new
+``insert`` adds ``new_value`` at the specified ``index`` in the list. The new
 element may be of any data type, including another list.
 
 Existing data values that come before ``index`` remain unchanged. Data values

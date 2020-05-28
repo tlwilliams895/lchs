@@ -18,7 +18,7 @@ The general syntax for this method is:
 
    list_name.clear()
 
-This method removes all elements from a list. The list still exists, but it is
+``clear`` removes all elements from a list. The list still exists, but it is
 empty.
 
 No arguments go inside the ``()``.
@@ -55,9 +55,9 @@ The general syntax for this method is:
 
    list_name.pop(index)
 
-This method removes the element at ``index`` from the list. However, providing
-an ``index`` value is *optional*. If left blank, ``pop()`` removes the last
-item from the list.
+``pop`` removes the element at ``index`` from the list. However, providing an
+``index`` value is *optional*. If left blank, ``pop()`` removes the last item
+from the list.
 
 In addition to *removing* an item from the list, ``pop`` also *returns* that
 value. This means ``list_name.pop(index)`` can be printed or assigned to a
@@ -90,7 +90,7 @@ variable.
 ``remove`` Examples
 -------------------
 
-The general syntax for this method is:
+The general syntax for ``remove`` is:
 
 .. sourcecode:: python
 
@@ -122,7 +122,7 @@ program will likely crash.
 
       [89, 87, 88, 89, 80, 88]
       Line 6:
-         b_list.remove(77)
+         b_list.remove(77) # Throws an error.
          ValueError: list.remove(x): x not in list      
 
 To remove ALL elements that match ``value``, we must repeatedly call the
