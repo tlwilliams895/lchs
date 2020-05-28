@@ -9,7 +9,7 @@ Lists Keep Things in Order
    working-with-lists
    list-methods
    list-iteration
-   accumulating-lists
+   common-list-tasks
    cloning-lists
    split-and-join
    multi-dimensional-lists
